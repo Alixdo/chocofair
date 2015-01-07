@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+  <head>
+    <title>CHOCOFAIR - Import and export of cocoa beans and chocolate products in the world</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="d3.v3.js"></script>
+    <script type="text/javascript" src="topojson.v1.min.js"></script>
+  </head>
+
+  <header>
+	<h1>CHOCOFAIR</h1>
+	<h2>Import and export of cocoa beans and chocolate products in the world</h2>
+  </header>
+
+  <body>
+  	<div id="container"></div>
+  	<script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
