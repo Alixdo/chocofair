@@ -8,12 +8,22 @@
   </head>
 
   <header>
-	<h1>CHOCOFAIR</h1>
 	<h2>Import and export of cocoa beans and chocolate products in the world</h2>
   </header>
 
   <body>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">function checkWidth(){
+  console.log("miew");
+  console.log(document.getElementById("container").offsetWidth);
+  var margin_left = document.getElementById("container").offsetWidth+20;
+  document.getElementById("checkbox_container").style.marginLeft = margin_left;
+}</script>
   	<div id="container"></div>
-  	<script type="text/javascript" src="script.js"></script>
+    <div id="checkbox_container" onload="checkWidth()">
+      <input type="checkbox" id="checkbox_cocoa" onchange="cocoa_check()"> Cocoa beans <br>
+      <input type="checkbox" id="checkbox_choco" onchange="choco_check()"> Chocolate products
+    </div>
+  	<script type="text/javascript" src="map_script.js"></script>
   </body>
 </html>
