@@ -1,3 +1,5 @@
+"use strict";
+
 d3.select(window).on("resize", throttle);
 
 var zoom = d3.behavior.zoom()
@@ -5,7 +7,6 @@ var zoom = d3.behavior.zoom()
     .on("zoom", move);
 
 var width = document.getElementById('container').offsetWidth-60;
-console.log(document.getElementById('container').offsetWidth);
 var height = width / 2;
 
 var topo,projection,path,svg,g;

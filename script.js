@@ -1,8 +1,10 @@
-function checkWidth(){
-  console.log("miew");
-  console.log(document.getElementById("container").offsetWidth);
-  var margin_left = document.getElementById("container").offsetWidth+20;
-  document.getElementById("checkbox_container").style.marginLeft = margin_left;
+"use strict";
+
+function checkProp(){
+  var margin_left = document.getElementById("container").offsetWidth + 20;
+  var checkWidth = document.getElementById("header").offsetWidth - margin_left - 14;
+  document.getElementById("checkbox_container").style.marginLeft = margin_left.toString() + "px";
+  document.getElementById("checkbox_container").style.width = checkWidth.toString() + "px";
 }
 
 function cocoa_check(){

@@ -49,7 +49,7 @@ table {
 
 /*--------------------------------------------------------------------------------------*/
 header{
-  margin: 10px;
+  margin: 10px 10px 0px 10px;
   padding:10px;
   border:2px solid #d0d0d0;
   border-radius: 5px;
@@ -86,11 +86,9 @@ div.tooltip {
 }
 
 #checkbox_container{
-  margin: 10px 0px;
+  margin: 10px;
   padding: 10px;
   border: 2px solid #d0d0d0;
   border-radius: 5px;
-  width: 20%;
   position: absolute;
-  float: right;
 }
