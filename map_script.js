@@ -52,7 +52,7 @@ function draw(topo) {
       .attr("d", path)
       .attr("id", function(d,i) { return d.id; })
       .attr("title", function(d,i) { return d.properties.name; })
-      .style("fill", function(d,i) { return d.properties.color; });
+      .style("fill", function(d,i) { return"grey"; });
 
   //ofsets plus width/height of transform, plus 20 px of padding, plus 20 extra for tooltip offset off mouse
   var offsetL = document.getElementById('map_container').offsetLeft+(width/2)+40;
