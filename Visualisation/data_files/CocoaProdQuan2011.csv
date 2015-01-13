@@ -1,0 +1,86 @@
+Domain Code,Domain,AreaCode,AreaName,ElementCode,ElementName,ItemCode,ItemName,Year,Value,Flag,FlagD
+QC,Crops,5,American Samoa,5510,Production,661,"Cocoa, beans",2011,1,F,FAO estimate
+QC,Crops,7,Angola,5510,Production,661,"Cocoa, beans",2011,336,Im,FAO data based on imputation methodology
+QC,Crops,19,Bolivia (Plurinational State of),5510,Production,661,"Cocoa, beans",2011,5612,,Official data
+QC,Crops,21,Brazil,5510,Production,661,"Cocoa, beans",2011,248524,,Official data
+QC,Crops,23,Belize,5510,Production,661,"Cocoa, beans",2011,26,,Official data
+QC,Crops,25,Solomon Islands,5510,Production,661,"Cocoa, beans",2011,6495,,Official data
+QC,Crops,32,Cameroon,5510,Production,661,"Cocoa, beans",2011,239000,*,Unofficial figure
+QC,Crops,37,Central African Republic,5510,Production,661,"Cocoa, beans",2011,117,Im,FAO data based on imputation methodology
+QC,Crops,38,Sri Lanka,5510,Production,661,"Cocoa, beans",2011,1630,,Official data
+QC,Crops,44,Colombia,5510,Production,661,"Cocoa, beans",2011,44241,,Official data
+QC,Crops,45,Comoros,5510,Production,661,"Cocoa, beans",2011,23.2,Fc,Calculated data
+QC,Crops,46,Congo,5510,Production,661,"Cocoa, beans",2011,1500,*,Unofficial figure
+QC,Crops,48,Costa Rica,5510,Production,661,"Cocoa, beans",2011,690,,Official data
+QC,Crops,49,Cuba,5510,Production,661,"Cocoa, beans",2011,1510,,Official data
+QC,Crops,53,Benin,5510,Production,661,"Cocoa, beans",2011,100,F,FAO estimate
+QC,Crops,55,Dominica,5510,Production,661,"Cocoa, beans",2011,500,*,Unofficial figure
+QC,Crops,56,Dominican Republic,5510,Production,661,"Cocoa, beans",2011,54279,,Official data
+QC,Crops,58,Ecuador,5510,Production,661,"Cocoa, beans",2011,224163,,Official data
+QC,Crops,60,El Salvador,5510,Production,661,"Cocoa, beans",2011,179,,Official data
+QC,Crops,61,Equatorial Guinea,5510,Production,661,"Cocoa, beans",2011,900,*,Unofficial figure
+QC,Crops,66,Fiji,5510,Production,661,"Cocoa, beans",2011,1,,Official data
+QC,Crops,74,Gabon,5510,Production,661,"Cocoa, beans",2011,600,*,Unofficial figure
+QC,Crops,81,Ghana,5510,Production,661,"Cocoa, beans",2011,700020,,Official data
+QC,Crops,86,Grenada,5510,Production,661,"Cocoa, beans",2011,700,*,Unofficial figure
+QC,Crops,87,Guadeloupe,5510,Production,661,"Cocoa, beans",2011,0,F,FAO estimate
+QC,Crops,89,Guatemala,5510,Production,661,"Cocoa, beans",2011,10927,,Official data
+QC,Crops,90,Guinea,5510,Production,661,"Cocoa, beans",2011,12000,*,Unofficial figure
+QC,Crops,91,Guyana,5510,Production,661,"Cocoa, beans",2011,427,Im,FAO data based on imputation methodology
+QC,Crops,93,Haiti,5510,Production,661,"Cocoa, beans",2011,9560,Im,FAO data based on imputation methodology
+QC,Crops,95,Honduras,5510,Production,661,"Cocoa, beans",2011,1957,Im,FAO data based on imputation methodology
+QC,Crops,100,India,5510,Production,661,"Cocoa, beans",2011,14400,,Official data
+QC,Crops,101,Indonesia,5510,Production,661,"Cocoa, beans",2011,712200,,Official data
+QC,Crops,107,Côte d'Ivoire,5510,Production,661,"Cocoa, beans",2011,1559441,,Official data
+QC,Crops,109,Jamaica,5510,Production,661,"Cocoa, beans",2011,499,,Official data
+QC,Crops,123,Liberia,5510,Production,661,"Cocoa, beans",2011,11700,*,Unofficial figure
+QC,Crops,129,Madagascar,5510,Production,661,"Cocoa, beans",2011,6500,*,Unofficial figure
+QC,Crops,131,Malaysia,5510,Production,661,"Cocoa, beans",2011,4605,,Official data
+QC,Crops,135,Martinique,5510,Production,661,"Cocoa, beans",2011,,M,Data not available
+QC,Crops,138,Mexico,5510,Production,661,"Cocoa, beans",2011,83000,F,FAO estimate
+QC,Crops,145,Micronesia (Federated States of),5510,Production,661,"Cocoa, beans",2011,29,F,FAO estimate
+QC,Crops,155,Vanuatu,5510,Production,661,"Cocoa, beans",2011,1200,,Official data
+QC,Crops,157,Nicaragua,5510,Production,661,"Cocoa, beans",2011,1742,Im,FAO data based on imputation methodology
+QC,Crops,159,Nigeria,5510,Production,661,"Cocoa, beans",2011,391000,*,Unofficial figure
+QC,Crops,166,Panama,5510,Production,661,"Cocoa, beans",2011,711,,Official data
+QC,Crops,168,Papua New Guinea,5510,Production,661,"Cocoa, beans",2011,47600,*,Unofficial figure
+QC,Crops,170,Peru,5510,Production,661,"Cocoa, beans",2011,56500,,Official data
+QC,Crops,171,Philippines,5510,Production,661,"Cocoa, beans",2011,4856,,Official data
+QC,Crops,176,Timor-Leste,5510,Production,661,"Cocoa, beans",2011,161,Im,FAO data based on imputation methodology
+QC,Crops,189,Saint Lucia,5510,Production,661,"Cocoa, beans",2011,130,F,FAO estimate
+QC,Crops,191,Saint Vincent and the Grenadines,5510,Production,661,"Cocoa, beans",2011,209,Im,FAO data based on imputation methodology
+QC,Crops,193,Sao Tome and Principe,5510,Production,661,"Cocoa, beans",2011,1600,*,Unofficial figure
+QC,Crops,197,Sierra Leone,5510,Production,661,"Cocoa, beans",2011,18000,,Official data
+QC,Crops,207,Suriname,5510,Production,661,"Cocoa, beans",2011,15,Im,FAO data based on imputation methodology
+QC,Crops,215,United Republic of Tanzania,5510,Production,661,"Cocoa, beans",2011,9500,*,Unofficial figure
+QC,Crops,216,Thailand,5510,Production,661,"Cocoa, beans",2011,760,Im,FAO data based on imputation methodology
+QC,Crops,217,Togo,5510,Production,661,"Cocoa, beans",2011,142500,*,Unofficial figure
+QC,Crops,219,Tonga,5510,Production,661,"Cocoa, beans",2011,,M,Data not available
+QC,Crops,220,Trinidad and Tobago,5510,Production,661,"Cocoa, beans",2011,400,*,Unofficial figure
+QC,Crops,226,Uganda,5510,Production,661,"Cocoa, beans",2011,18000,*,Unofficial figure
+QC,Crops,236,Venezuela (Bolivarian Republic of),5510,Production,661,"Cocoa, beans",2011,20000,*,Unofficial figure
+QC,Crops,244,Samoa,5510,Production,661,"Cocoa, beans",2011,440,F,FAO estimate
+QC,Crops,250,Democratic Republic of the Congo,5510,Production,661,"Cocoa, beans",2011,5392,,Official data
+QC,Crops,5000,World,5510,Production,661,"Cocoa, beans",2011,4679108.2,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5100,Africa,5510,Production,661,"Cocoa, beans",2011,3118229.2,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5101,Eastern Africa,5510,Production,661,"Cocoa, beans",2011,34023.2,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5102,Middle Africa,5510,Production,661,"Cocoa, beans",2011,249445,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5105,Western Africa,5510,Production,661,"Cocoa, beans",2011,2834761,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5200,Americas,5510,Production,661,"Cocoa, beans",2011,766501,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5204,Central America,5510,Production,661,"Cocoa, beans",2011,99232,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5206,Caribbean,5510,Production,661,"Cocoa, beans",2011,67787,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5207,South America,5510,Production,661,"Cocoa, beans",2011,599482,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5300,Asia,5510,Production,661,"Cocoa, beans",2011,738612,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5303,Southern Asia,5510,Production,661,"Cocoa, beans",2011,16030,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5304,South-Eastern Asia,5510,Production,661,"Cocoa, beans",2011,722582,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5500,Oceania,5510,Production,661,"Cocoa, beans",2011,55766,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5502,Melanesia,5510,Production,661,"Cocoa, beans",2011,55296,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5503,Micronesia,5510,Production,661,"Cocoa, beans",2011,29,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5504,Polynesia,5510,Production,661,"Cocoa, beans",2011,441,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5801,Least Developed Countries,5510,Production,661,"Cocoa, beans",2011,244084.2,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5802,Land Locked Developing Countries,5510,Production,661,"Cocoa, beans",2011,23729,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5803,Small Island Developing States,5510,Production,661,"Cocoa, beans",2011,125805.2,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5815,Low Income Food Deficit Countries,5510,Production,661,"Cocoa, beans",2011,3204633.2,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+QC,Crops,5817,Net Food Importing Developing Countries,5510,Production,661,"Cocoa, beans",2011,1942618.2,A,"Aggregate, may include official, semi-official, estimated or calculated data"
+,,,,,,,,,,,
+FAOSTAT Date: Tue Jan 13 19:07:08 CET 2015,,,,,,,,,,,
