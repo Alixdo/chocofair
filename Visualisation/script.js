@@ -108,3 +108,8 @@ function color_map(dataFile, scale="fraction") {
 }
 
 
+var country = g.selectAll(".country")
+
+country.on("mousemove", function(d,i) {
+	console.log("miew")
+})

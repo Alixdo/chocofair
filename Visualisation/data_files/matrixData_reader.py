@@ -4,8 +4,8 @@
 import csv
 import json
 
-csvFile = 'TradeMatrCocoaExpVal2011.csv'
-jsonFileName = '_TradeMatrCocoaExpVal2011.json'
+csvFile = 'TradeMatrCocoaExpQuan2011.csv'
+jsonFileName = '_TradeMatrCocoaExpQuan2011.json'
 
 dataDic = {}
 
@@ -17,6 +17,8 @@ with open(csvFile, 'rb') as csvfile:
 	lastCountry = ""
 
 	for row in csvReader:
+		if row[1] == "":
+			break
 
 		# if row[5] == "European Union":
 		# 	continue
@@ -168,7 +170,7 @@ with open(csvFile, 'rb') as csvfile:
 		lastCountry = row[5]
 
 		dataDic[row[5]][row[7]] = int(row[15])
-		print dataDic
+		# print dataDic
 		print row[5],row[7]
 
 with open(jsonFileName, "w") as f:
