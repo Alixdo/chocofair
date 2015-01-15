@@ -1,0 +1,586 @@
+NoRecords,RecordOrder,Domain Code,Domain,Reporter Country Code,Reporter Countries,Partner Country Code,Partner Countries,Element Code,Element,Item Code,Item,Year Code,Year,Unit,Value,Flag,Flag Description
+583,1,TM,Detailed trade matrix,10,Australia,156,New Zealand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7,,Official data
+583,2,TM,Detailed trade matrix,10,Australia,171,Philippines,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,3,TM,Detailed trade matrix,11,Austria,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,58,,Official data
+583,4,TM,Detailed trade matrix,11,Austria,97,Hungary,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,5,TM,Detailed trade matrix,11,Austria,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,22,,Official data
+583,6,TM,Detailed trade matrix,57,Belarus,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,70,,Official data
+583,7,TM,Detailed trade matrix,255,Belgium,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,44,,Official data
+583,8,TM,Detailed trade matrix,255,Belgium,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,171,,Official data
+583,9,TM,Detailed trade matrix,255,Belgium,13,Bahrain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,10,TM,Detailed trade matrix,255,Belgium,21,Brazil,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,11,TM,Detailed trade matrix,255,Belgium,27,Bulgaria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,12,TM,Detailed trade matrix,255,Belgium,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12,,Official data
+583,13,TM,Detailed trade matrix,255,Belgium,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,14,TM,Detailed trade matrix,255,Belgium,96,"China, Hong Kong SAR",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,15,TM,Detailed trade matrix,255,Belgium,214,"China, Taiwan Province of",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,16,TM,Detailed trade matrix,255,Belgium,50,Cyprus,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,17,TM,Detailed trade matrix,255,Belgium,167,Czech Republic,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,18,TM,Detailed trade matrix,255,Belgium,54,Denmark,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10,,Official data
+583,19,TM,Detailed trade matrix,255,Belgium,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,20,TM,Detailed trade matrix,255,Belgium,67,Finland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,21,TM,Detailed trade matrix,255,Belgium,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,75029,,Official data
+583,22,TM,Detailed trade matrix,255,Belgium,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,145226,,Official data
+583,23,TM,Detailed trade matrix,255,Belgium,84,Greece,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,24,TM,Detailed trade matrix,255,Belgium,97,Hungary,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,65,,Official data
+583,25,TM,Detailed trade matrix,255,Belgium,99,Iceland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,26,TM,Detailed trade matrix,255,Belgium,100,India,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,27,TM,Detailed trade matrix,255,Belgium,104,Ireland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,28,TM,Detailed trade matrix,255,Belgium,105,Israel,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,78,,Official data
+583,29,TM,Detailed trade matrix,255,Belgium,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,11622,,Official data
+583,30,TM,Detailed trade matrix,255,Belgium,112,Jordan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,31,TM,Detailed trade matrix,255,Belgium,121,Lebanon,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,32,TM,Detailed trade matrix,255,Belgium,126,Lithuania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,33,TM,Detailed trade matrix,255,Belgium,256,Luxembourg,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,34,TM,Detailed trade matrix,255,Belgium,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,35,TM,Detailed trade matrix,255,Belgium,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,25575,,Official data
+583,36,TM,Detailed trade matrix,255,Belgium,162,Norway,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,37,TM,Detailed trade matrix,255,Belgium,173,Poland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,33,,Official data
+583,38,TM,Detailed trade matrix,255,Belgium,174,Portugal,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,39,TM,Detailed trade matrix,255,Belgium,185,Russian Federation,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,205,,Official data
+583,40,TM,Detailed trade matrix,255,Belgium,272,Serbia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,41,TM,Detailed trade matrix,255,Belgium,196,Seychelles,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,42,TM,Detailed trade matrix,255,Belgium,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,43,TM,Detailed trade matrix,255,Belgium,199,Slovakia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29326,,Official data
+583,44,TM,Detailed trade matrix,255,Belgium,198,Slovenia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,45,TM,Detailed trade matrix,255,Belgium,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,934,,Official data
+583,46,TM,Detailed trade matrix,255,Belgium,38,Sri Lanka,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,47,TM,Detailed trade matrix,255,Belgium,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,119,,Official data
+583,48,TM,Detailed trade matrix,255,Belgium,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1547,,Official data
+583,49,TM,Detailed trade matrix,255,Belgium,223,Turkey,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,230,,Official data
+583,50,TM,Detailed trade matrix,255,Belgium,230,Ukraine,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,317,,Official data
+583,51,TM,Detailed trade matrix,255,Belgium,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1854,,Official data
+583,52,TM,Detailed trade matrix,255,Belgium,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,324,,Official data
+583,53,TM,Detailed trade matrix,23,Belize,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,21,,Official data
+583,54,TM,Detailed trade matrix,19,Bolivia (Plurinational State of),9,Argentina,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,702,,Official data
+583,55,TM,Detailed trade matrix,19,Bolivia (Plurinational State of),54,Denmark,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,141,,Official data
+583,56,TM,Detailed trade matrix,19,Bolivia (Plurinational State of),79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,417,,Official data
+583,57,TM,Detailed trade matrix,19,Bolivia (Plurinational State of),106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9,,Official data
+583,58,TM,Detailed trade matrix,19,Bolivia (Plurinational State of),211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,643,,Official data
+583,59,TM,Detailed trade matrix,19,Bolivia (Plurinational State of),231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,89,,Official data
+583,60,TM,Detailed trade matrix,20,Botswana,147,Namibia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,61,TM,Detailed trade matrix,21,Brazil,9,Argentina,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,432,,Official data
+583,62,TM,Detailed trade matrix,21,Brazil,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,148,,Official data
+583,63,TM,Detailed trade matrix,21,Brazil,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,487,,Official data
+583,64,TM,Detailed trade matrix,21,Brazil,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,309,,Official data
+583,65,TM,Detailed trade matrix,21,Brazil,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,27,,Official data
+583,66,TM,Detailed trade matrix,21,Brazil,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1398,,Official data
+583,67,TM,Detailed trade matrix,21,Brazil,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,83,,Official data
+583,68,TM,Detailed trade matrix,21,Brazil,169,Paraguay,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,69,TM,Detailed trade matrix,21,Brazil,174,Portugal,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,13,,Official data
+583,70,TM,Detailed trade matrix,21,Brazil,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,71,TM,Detailed trade matrix,32,Cameroon,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,677,,Official data
+583,72,TM,Detailed trade matrix,32,Cameroon,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3884,,Official data
+583,73,TM,Detailed trade matrix,32,Cameroon,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3884,,Official data
+583,74,TM,Detailed trade matrix,32,Cameroon,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,285,,Official data
+583,75,TM,Detailed trade matrix,32,Cameroon,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,76,TM,Detailed trade matrix,32,Cameroon,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,34378,,Official data
+583,77,TM,Detailed trade matrix,32,Cameroon,101,Indonesia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7248,,Official data
+583,78,TM,Detailed trade matrix,32,Cameroon,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,409,,Official data
+583,79,TM,Detailed trade matrix,32,Cameroon,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,42785,,Official data
+583,80,TM,Detailed trade matrix,32,Cameroon,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,375024,,Official data
+583,81,TM,Detailed trade matrix,32,Cameroon,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,39744,,Official data
+583,82,TM,Detailed trade matrix,32,Cameroon,216,Thailand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4772,,Official data
+583,83,TM,Detailed trade matrix,32,Cameroon,223,Turkey,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2975,,Official data
+583,84,TM,Detailed trade matrix,33,Canada,3,Albania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,85,TM,Detailed trade matrix,33,Canada,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,22,,Official data
+583,86,TM,Detailed trade matrix,33,Canada,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,87,TM,Detailed trade matrix,33,Canada,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,37,,Official data
+583,88,TM,Detailed trade matrix,33,Canada,105,Israel,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,33,,Official data
+583,89,TM,Detailed trade matrix,33,Canada,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,231,,Official data
+583,90,TM,Detailed trade matrix,33,Canada,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1858,,Official data
+583,91,TM,Detailed trade matrix,351,China,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,92,TM,Detailed trade matrix,214,"China, Taiwan Province of",10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,93,TM,Detailed trade matrix,44,Colombia,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1031,,Official data
+583,94,TM,Detailed trade matrix,44,Colombia,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,95,TM,Detailed trade matrix,44,Colombia,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1009,,Official data
+583,96,TM,Detailed trade matrix,44,Colombia,100,India,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,673,,Official data
+583,97,TM,Detailed trade matrix,44,Colombia,101,Indonesia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,98,TM,Detailed trade matrix,44,Colombia,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1275,,Official data
+583,99,TM,Detailed trade matrix,44,Colombia,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1026,,Official data
+583,100,TM,Detailed trade matrix,44,Colombia,117,Republic of Korea,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,101,TM,Detailed trade matrix,44,Colombia,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,164,,Official data
+583,102,TM,Detailed trade matrix,44,Colombia,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1277,,Official data
+583,103,TM,Detailed trade matrix,44,Colombia,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,104,TM,Detailed trade matrix,44,Colombia,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,105,TM,Detailed trade matrix,44,Colombia,223,Turkey,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,355,,Official data
+583,106,TM,Detailed trade matrix,44,Colombia,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,90,,Official data
+583,107,TM,Detailed trade matrix,44,Colombia,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1081,,Official data
+583,108,TM,Detailed trade matrix,48,Costa Rica,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,109,TM,Detailed trade matrix,48,Costa Rica,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,339,,Official data
+583,110,TM,Detailed trade matrix,48,Costa Rica,105,Israel,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12,,Official data
+583,111,TM,Detailed trade matrix,48,Costa Rica,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,48,,Official data
+583,112,TM,Detailed trade matrix,48,Costa Rica,166,Panama,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,149,,Official data
+583,113,TM,Detailed trade matrix,48,Costa Rica,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12,,Official data
+583,114,TM,Detailed trade matrix,48,Costa Rica,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,115,TM,Detailed trade matrix,107,Côte d'Ivoire,4,Algeria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3230,,Official data
+583,116,TM,Detailed trade matrix,107,Côte d'Ivoire,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,225243,,Official data
+583,117,TM,Detailed trade matrix,107,Côte d'Ivoire,21,Brazil,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,91058,,Official data
+583,118,TM,Detailed trade matrix,107,Côte d'Ivoire,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,76684,,Official data
+583,119,TM,Detailed trade matrix,107,Côte d'Ivoire,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,13246,,Official data
+583,120,TM,Detailed trade matrix,107,Côte d'Ivoire,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,13246,,Official data
+583,121,TM,Detailed trade matrix,107,Côte d'Ivoire,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,119063,,Official data
+583,122,TM,Detailed trade matrix,107,Côte d'Ivoire,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,89044,,Official data
+583,123,TM,Detailed trade matrix,107,Côte d'Ivoire,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,243426,,Official data
+583,124,TM,Detailed trade matrix,107,Côte d'Ivoire,81,Ghana,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,17561,,Official data
+583,125,TM,Detailed trade matrix,107,Côte d'Ivoire,84,Greece,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1479,,Official data
+583,126,TM,Detailed trade matrix,107,Côte d'Ivoire,101,Indonesia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9251,,Official data
+583,127,TM,Detailed trade matrix,107,Côte d'Ivoire,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,111327,,Official data
+583,128,TM,Detailed trade matrix,107,Côte d'Ivoire,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,935,,Official data
+583,129,TM,Detailed trade matrix,107,Côte d'Ivoire,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,182339,,Official data
+583,130,TM,Detailed trade matrix,107,Côte d'Ivoire,138,Mexico,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,36415,,Official data
+583,131,TM,Detailed trade matrix,107,Côte d'Ivoire,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,836760,,Official data
+583,132,TM,Detailed trade matrix,107,Côte d'Ivoire,173,Poland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,33316,,Official data
+583,133,TM,Detailed trade matrix,107,Côte d'Ivoire,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,11004,,Official data
+583,134,TM,Detailed trade matrix,107,Côte d'Ivoire,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,50387,,Official data
+583,135,TM,Detailed trade matrix,107,Côte d'Ivoire,38,Sri Lanka,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,47,,Official data
+583,136,TM,Detailed trade matrix,107,Côte d'Ivoire,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1096,,Official data
+583,137,TM,Detailed trade matrix,107,Côte d'Ivoire,222,Tunisia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5373,,Official data
+583,138,TM,Detailed trade matrix,107,Côte d'Ivoire,223,Turkey,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,95745,,Official data
+583,139,TM,Detailed trade matrix,107,Côte d'Ivoire,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,49196,,Official data
+583,140,TM,Detailed trade matrix,107,Côte d'Ivoire,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,718857,,Official data
+583,141,TM,Detailed trade matrix,107,Côte d'Ivoire,252,Unspecified,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7101,,Official data
+583,142,TM,Detailed trade matrix,167,Czech Republic,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,39,,Official data
+583,143,TM,Detailed trade matrix,54,Denmark,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,144,TM,Detailed trade matrix,58,Ecuador,9,Argentina,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,288,,Official data
+583,145,TM,Detailed trade matrix,58,Ecuador,14,Barbados,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,146,TM,Detailed trade matrix,58,Ecuador,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,25365,,Official data
+583,147,TM,Detailed trade matrix,58,Ecuador,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10,,Official data
+583,148,TM,Detailed trade matrix,58,Ecuador,40,Chile,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,47,,Official data
+583,149,TM,Detailed trade matrix,58,Ecuador,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5452,,Official data
+583,150,TM,Detailed trade matrix,58,Ecuador,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5451,,Official data
+583,151,TM,Detailed trade matrix,58,Ecuador,214,"China, Taiwan Province of",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,152,TM,Detailed trade matrix,58,Ecuador,44,Colombia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10657,,Official data
+583,153,TM,Detailed trade matrix,58,Ecuador,48,Costa Rica,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,89,,Official data
+583,154,TM,Detailed trade matrix,58,Ecuador,67,Finland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,155,TM,Detailed trade matrix,58,Ecuador,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,579,,Official data
+583,156,TM,Detailed trade matrix,58,Ecuador,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,60966,,Official data
+583,157,TM,Detailed trade matrix,58,Ecuador,105,Israel,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,158,TM,Detailed trade matrix,58,Ecuador,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10323,,Official data
+583,159,TM,Detailed trade matrix,58,Ecuador,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10440,,Official data
+583,160,TM,Detailed trade matrix,58,Ecuador,121,Lebanon,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,40,,Official data
+583,161,TM,Detailed trade matrix,58,Ecuador,138,Mexico,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,53245,,Official data
+583,162,TM,Detailed trade matrix,58,Ecuador,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,58845,,Official data
+583,163,TM,Detailed trade matrix,58,Ecuador,166,Panama,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,598,,Official data
+583,164,TM,Detailed trade matrix,58,Ecuador,170,Peru,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,250,,Official data
+583,165,TM,Detailed trade matrix,58,Ecuador,174,Portugal,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,166,TM,Detailed trade matrix,58,Ecuador,117,Republic of Korea,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,670,,Official data
+583,167,TM,Detailed trade matrix,58,Ecuador,185,Russian Federation,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,168,TM,Detailed trade matrix,58,Ecuador,202,South Africa,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,8,,Official data
+583,169,TM,Detailed trade matrix,58,Ecuador,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,11083,,Official data
+583,170,TM,Detailed trade matrix,58,Ecuador,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,231,,Official data
+583,171,TM,Detailed trade matrix,58,Ecuador,225,United Arab Emirates,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,172,TM,Detailed trade matrix,58,Ecuador,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10,,Official data
+583,173,TM,Detailed trade matrix,58,Ecuador,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,222392,,Official data
+583,174,TM,Detailed trade matrix,58,Ecuador,235,Uzbekistan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,49,,Official data
+583,175,TM,Detailed trade matrix,59,Egypt,124,Libya,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,176,TM,Detailed trade matrix,60,El Salvador,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,61,,Official data
+583,177,TM,Detailed trade matrix,63,Estonia,119,Latvia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,178,TM,Detailed trade matrix,66,Fiji,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,179,TM,Detailed trade matrix,66,Fiji,156,New Zealand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,180,TM,Detailed trade matrix,67,Finland,162,Norway,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,181,TM,Detailed trade matrix,68,France,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,182,TM,Detailed trade matrix,68,France,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,183,TM,Detailed trade matrix,68,France,13,Bahrain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,184,TM,Detailed trade matrix,68,France,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,245,,Official data
+583,185,TM,Detailed trade matrix,68,France,21,Brazil,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7,,Official data
+583,186,TM,Detailed trade matrix,68,France,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,187,TM,Detailed trade matrix,68,France,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,188,TM,Detailed trade matrix,68,France,96,"China, Hong Kong SAR",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,189,TM,Detailed trade matrix,68,France,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,190,TM,Detailed trade matrix,68,France,214,"China, Taiwan Province of",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,191,TM,Detailed trade matrix,68,France,50,Cyprus,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,192,TM,Detailed trade matrix,68,France,167,Czech Republic,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,193,TM,Detailed trade matrix,68,France,54,Denmark,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29,,Official data
+583,194,TM,Detailed trade matrix,68,France,67,Finland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,195,TM,Detailed trade matrix,68,France,70,French Polynesia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,196,TM,Detailed trade matrix,68,France,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2754,,Official data
+583,197,TM,Detailed trade matrix,68,France,84,Greece,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,198,TM,Detailed trade matrix,68,France,97,Hungary,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,199,TM,Detailed trade matrix,68,France,99,Iceland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,200,TM,Detailed trade matrix,68,France,104,Ireland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,201,TM,Detailed trade matrix,68,France,105,Israel,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,202,TM,Detailed trade matrix,68,France,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,27,,Official data
+583,203,TM,Detailed trade matrix,68,France,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,114,,Official data
+583,204,TM,Detailed trade matrix,68,France,112,Jordan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,205,TM,Detailed trade matrix,68,France,121,Lebanon,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,206,TM,Detailed trade matrix,68,France,256,Luxembourg,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,207,TM,Detailed trade matrix,68,France,134,Malta,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,208,TM,Detailed trade matrix,68,France,143,Morocco,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,209,TM,Detailed trade matrix,68,France,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,256,,Official data
+583,210,TM,Detailed trade matrix,68,France,153,New Caledonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,14,,Official data
+583,211,TM,Detailed trade matrix,68,France,156,New Zealand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,212,TM,Detailed trade matrix,68,France,162,Norway,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,213,TM,Detailed trade matrix,68,France,173,Poland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,15,,Official data
+583,214,TM,Detailed trade matrix,68,France,174,Portugal,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,215,TM,Detailed trade matrix,68,France,179,Qatar,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,216,TM,Detailed trade matrix,68,France,117,Republic of Korea,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,8,,Official data
+583,217,TM,Detailed trade matrix,68,France,183,Romania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,17,,Official data
+583,218,TM,Detailed trade matrix,68,France,185,Russian Federation,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,8,,Official data
+583,219,TM,Detailed trade matrix,68,France,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,220,TM,Detailed trade matrix,68,France,199,Slovakia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,221,TM,Detailed trade matrix,68,France,198,Slovenia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,222,TM,Detailed trade matrix,68,France,202,South Africa,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,223,TM,Detailed trade matrix,68,France,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,60,,Official data
+583,224,TM,Detailed trade matrix,68,France,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,225,TM,Detailed trade matrix,68,France,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,52,,Official data
+583,226,TM,Detailed trade matrix,68,France,216,Thailand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,227,TM,Detailed trade matrix,68,France,224,Turks and Caicos Islands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,228,TM,Detailed trade matrix,68,France,230,Ukraine,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,229,TM,Detailed trade matrix,68,France,225,United Arab Emirates,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,132,,Official data
+583,230,TM,Detailed trade matrix,68,France,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29,,Official data
+583,231,TM,Detailed trade matrix,68,France,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,63,,Official data
+583,232,TM,Detailed trade matrix,79,Germany,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,16720,,Official data
+583,233,TM,Detailed trade matrix,79,Germany,167,Czech Republic,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,35,,Official data
+583,234,TM,Detailed trade matrix,79,Germany,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1485,,Official data
+583,235,TM,Detailed trade matrix,79,Germany,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3430,,Official data
+583,236,TM,Detailed trade matrix,79,Germany,126,Lithuania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29,,Official data
+583,237,TM,Detailed trade matrix,79,Germany,256,Luxembourg,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,238,TM,Detailed trade matrix,79,Germany,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,301,,Official data
+583,239,TM,Detailed trade matrix,79,Germany,162,Norway,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,32,,Official data
+583,240,TM,Detailed trade matrix,79,Germany,173,Poland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2818,,Official data
+583,241,TM,Detailed trade matrix,79,Germany,185,Russian Federation,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,242,TM,Detailed trade matrix,79,Germany,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1239,,Official data
+583,243,TM,Detailed trade matrix,79,Germany,38,Sri Lanka,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,244,TM,Detailed trade matrix,79,Germany,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,300,,Official data
+583,245,TM,Detailed trade matrix,79,Germany,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,20,,Official data
+583,246,TM,Detailed trade matrix,79,Germany,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,8,,Official data
+583,247,TM,Detailed trade matrix,89,Guatemala,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,248,TM,Detailed trade matrix,89,Guatemala,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,249,TM,Detailed trade matrix,89,Guatemala,60,El Salvador,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,250,TM,Detailed trade matrix,89,Guatemala,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,251,TM,Detailed trade matrix,89,Guatemala,105,Israel,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,252,TM,Detailed trade matrix,89,Guatemala,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,16,,Official data
+583,253,TM,Detailed trade matrix,100,India,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,11,,Official data
+583,254,TM,Detailed trade matrix,100,India,91,Guyana,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,255,TM,Detailed trade matrix,100,India,38,Sri Lanka,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1679,,Official data
+583,256,TM,Detailed trade matrix,101,Indonesia,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,257,TM,Detailed trade matrix,101,Indonesia,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,258,TM,Detailed trade matrix,101,Indonesia,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,15912,,Official data
+583,259,TM,Detailed trade matrix,101,Indonesia,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,22944,,Official data
+583,260,TM,Detailed trade matrix,101,Indonesia,96,"China, Hong Kong SAR",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,261,TM,Detailed trade matrix,101,Indonesia,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,22940,,Official data
+583,262,TM,Detailed trade matrix,101,Indonesia,214,"China, Taiwan Province of",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,263,TM,Detailed trade matrix,101,Indonesia,167,Czech Republic,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,264,TM,Detailed trade matrix,101,Indonesia,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,65,,Official data
+583,265,TM,Detailed trade matrix,101,Indonesia,67,Finland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,266,TM,Detailed trade matrix,101,Indonesia,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1048,,Official data
+583,267,TM,Detailed trade matrix,101,Indonesia,81,Ghana,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,290,,Official data
+583,268,TM,Detailed trade matrix,101,Indonesia,100,India,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,14032,,Official data
+583,269,TM,Detailed trade matrix,101,Indonesia,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,311,,Official data
+583,270,TM,Detailed trade matrix,101,Indonesia,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,626,,Official data
+583,271,TM,Detailed trade matrix,101,Indonesia,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,411106,,Official data
+583,272,TM,Detailed trade matrix,101,Indonesia,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2758,,Official data
+583,273,TM,Detailed trade matrix,101,Indonesia,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,98421,,Official data
+583,274,TM,Detailed trade matrix,101,Indonesia,38,Sri Lanka,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,97,,Official data
+583,275,TM,Detailed trade matrix,101,Indonesia,216,Thailand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,17207,,Official data
+583,276,TM,Detailed trade matrix,101,Indonesia,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29671,,Official data
+583,277,TM,Detailed trade matrix,105,Israel,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,278,TM,Detailed trade matrix,106,Italy,3,Albania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,15,,Official data
+583,279,TM,Detailed trade matrix,106,Italy,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,11,,Official data
+583,280,TM,Detailed trade matrix,106,Italy,167,Czech Republic,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7,,Official data
+583,281,TM,Detailed trade matrix,106,Italy,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,218,,Official data
+583,282,TM,Detailed trade matrix,106,Italy,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,336,,Official data
+583,283,TM,Detailed trade matrix,106,Italy,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,39,,Official data
+583,284,TM,Detailed trade matrix,106,Italy,134,Malta,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,285,TM,Detailed trade matrix,106,Italy,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,24,,Official data
+583,286,TM,Detailed trade matrix,106,Italy,183,Romania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,287,TM,Detailed trade matrix,106,Italy,198,Slovenia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,288,TM,Detailed trade matrix,106,Italy,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,638,,Official data
+583,289,TM,Detailed trade matrix,106,Italy,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,290,TM,Detailed trade matrix,106,Italy,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,24,,Official data
+583,291,TM,Detailed trade matrix,110,Japan,117,Republic of Korea,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,90,,Official data
+583,292,TM,Detailed trade matrix,121,Lebanon,103,Iraq,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9,,Official data
+583,293,TM,Detailed trade matrix,126,Lithuania,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,294,TM,Detailed trade matrix,256,Luxembourg,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,295,TM,Detailed trade matrix,256,Luxembourg,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,296,TM,Detailed trade matrix,256,Luxembourg,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,297,TM,Detailed trade matrix,129,Madagascar,4,Algeria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1071,,Official data
+583,298,TM,Detailed trade matrix,129,Madagascar,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2758,,Official data
+583,299,TM,Detailed trade matrix,129,Madagascar,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1949,,Official data
+583,300,TM,Detailed trade matrix,129,Madagascar,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1188,,Official data
+583,301,TM,Detailed trade matrix,129,Madagascar,100,India,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,716,,Official data
+583,302,TM,Detailed trade matrix,129,Madagascar,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,152,,Official data
+583,303,TM,Detailed trade matrix,129,Madagascar,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,304,TM,Detailed trade matrix,129,Madagascar,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6821,,Official data
+583,305,TM,Detailed trade matrix,129,Madagascar,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,274,,Official data
+583,306,TM,Detailed trade matrix,129,Madagascar,202,South Africa,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,307,TM,Detailed trade matrix,129,Madagascar,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1111,,Official data
+583,308,TM,Detailed trade matrix,129,Madagascar,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,864,,Official data
+583,309,TM,Detailed trade matrix,130,Malawi,114,Kenya,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,19,,Official data
+583,310,TM,Detailed trade matrix,130,Malawi,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9228,,Official data
+583,311,TM,Detailed trade matrix,131,Malaysia,101,Indonesia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2660,,Official data
+583,312,TM,Detailed trade matrix,131,Malaysia,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,45370,,Official data
+583,313,TM,Detailed trade matrix,131,Malaysia,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,566,,Official data
+583,314,TM,Detailed trade matrix,131,Malaysia,156,New Zealand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,930,,Official data
+583,315,TM,Detailed trade matrix,131,Malaysia,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,11956,,Official data
+583,316,TM,Detailed trade matrix,131,Malaysia,216,Thailand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9089,,Official data
+583,317,TM,Detailed trade matrix,131,Malaysia,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12909,,Official data
+583,318,TM,Detailed trade matrix,138,Mexico,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,342,,Official data
+583,319,TM,Detailed trade matrix,138,Mexico,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12,,Official data
+583,320,TM,Detailed trade matrix,138,Mexico,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,66,,Official data
+583,321,TM,Detailed trade matrix,138,Mexico,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,16,,Official data
+583,322,TM,Detailed trade matrix,138,Mexico,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,323,TM,Detailed trade matrix,138,Mexico,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,519,,Official data
+583,324,TM,Detailed trade matrix,138,Mexico,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,97,,Official data
+583,325,TM,Detailed trade matrix,150,Netherlands,1,Armenia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3310,,Official data
+583,326,TM,Detailed trade matrix,150,Netherlands,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29,,Official data
+583,327,TM,Detailed trade matrix,150,Netherlands,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,33042,,Official data
+583,328,TM,Detailed trade matrix,150,Netherlands,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29398,,Official data
+583,329,TM,Detailed trade matrix,150,Netherlands,27,Bulgaria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9,,Official data
+583,330,TM,Detailed trade matrix,150,Netherlands,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,149,,Official data
+583,331,TM,Detailed trade matrix,150,Netherlands,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,609,,Official data
+583,332,TM,Detailed trade matrix,150,Netherlands,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,609,,Official data
+583,333,TM,Detailed trade matrix,150,Netherlands,54,Denmark,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1335,,Official data
+583,334,TM,Detailed trade matrix,150,Netherlands,67,Finland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,8,,Official data
+583,335,TM,Detailed trade matrix,150,Netherlands,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,49538,,Official data
+583,336,TM,Detailed trade matrix,150,Netherlands,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,517628,,Official data
+583,337,TM,Detailed trade matrix,150,Netherlands,84,Greece,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,8727,,Official data
+583,338,TM,Detailed trade matrix,150,Netherlands,97,Hungary,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,339,TM,Detailed trade matrix,150,Netherlands,99,Iceland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,340,TM,Detailed trade matrix,150,Netherlands,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,23413,,Official data
+583,341,TM,Detailed trade matrix,150,Netherlands,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,342,TM,Detailed trade matrix,150,Netherlands,126,Lithuania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,343,TM,Detailed trade matrix,150,Netherlands,256,Luxembourg,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12,,Official data
+583,344,TM,Detailed trade matrix,150,Netherlands,162,Norway,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,345,TM,Detailed trade matrix,150,Netherlands,173,Poland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,8113,,Official data
+583,346,TM,Detailed trade matrix,150,Netherlands,183,Romania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,21,,Official data
+583,347,TM,Detailed trade matrix,150,Netherlands,185,Russian Federation,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,175,,Official data
+583,348,TM,Detailed trade matrix,150,Netherlands,272,Serbia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,45,,Official data
+583,349,TM,Detailed trade matrix,150,Netherlands,202,South Africa,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,129,,Official data
+583,350,TM,Detailed trade matrix,150,Netherlands,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4855,,Official data
+583,351,TM,Detailed trade matrix,150,Netherlands,38,Sri Lanka,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,352,TM,Detailed trade matrix,150,Netherlands,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,113,,Official data
+583,353,TM,Detailed trade matrix,150,Netherlands,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2344,,Official data
+583,354,TM,Detailed trade matrix,150,Netherlands,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,730,,Official data
+583,355,TM,Detailed trade matrix,156,New Zealand,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,44,,Official data
+583,356,TM,Detailed trade matrix,157,Nicaragua,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,63,,Official data
+583,357,TM,Detailed trade matrix,157,Nicaragua,48,Costa Rica,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,358,TM,Detailed trade matrix,157,Nicaragua,60,El Salvador,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,841,,Official data
+583,359,TM,Detailed trade matrix,157,Nicaragua,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,360,TM,Detailed trade matrix,157,Nicaragua,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1294,,Official data
+583,361,TM,Detailed trade matrix,157,Nicaragua,89,Guatemala,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,495,,Official data
+583,362,TM,Detailed trade matrix,157,Nicaragua,95,Honduras,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,363,TM,Detailed trade matrix,157,Nicaragua,138,Mexico,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,364,TM,Detailed trade matrix,157,Nicaragua,166,Panama,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,365,TM,Detailed trade matrix,157,Nicaragua,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,26,,Official data
+583,366,TM,Detailed trade matrix,162,Norway,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,367,TM,Detailed trade matrix,162,Norway,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,368,TM,Detailed trade matrix,165,Pakistan,2,Afghanistan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,369,TM,Detailed trade matrix,166,Panama,48,Costa Rica,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,24,,Official data
+583,370,TM,Detailed trade matrix,166,Panama,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,51,,Official data
+583,371,TM,Detailed trade matrix,166,Panama,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1253,,Official data
+583,372,TM,Detailed trade matrix,166,Panama,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1299,,Official data
+583,373,TM,Detailed trade matrix,166,Panama,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,374,TM,Detailed trade matrix,170,Peru,9,Argentina,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,45,,Official data
+583,375,TM,Detailed trade matrix,170,Peru,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,106,,Official data
+583,376,TM,Detailed trade matrix,170,Peru,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,13779,,Official data
+583,377,TM,Detailed trade matrix,170,Peru,27,Bulgaria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,169,,Official data
+583,378,TM,Detailed trade matrix,170,Peru,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1532,,Official data
+583,379,TM,Detailed trade matrix,170,Peru,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,36,,Official data
+583,380,TM,Detailed trade matrix,170,Peru,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,36,,Official data
+583,381,TM,Detailed trade matrix,170,Peru,44,Colombia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,13552,,Official data
+583,382,TM,Detailed trade matrix,170,Peru,167,Czech Republic,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,383,TM,Detailed trade matrix,170,Peru,67,Finland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,16,,Official data
+583,384,TM,Detailed trade matrix,170,Peru,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,90,,Official data
+583,385,TM,Detailed trade matrix,170,Peru,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2219,,Official data
+583,386,TM,Detailed trade matrix,170,Peru,105,Israel,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,387,TM,Detailed trade matrix,170,Peru,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9891,,Official data
+583,388,TM,Detailed trade matrix,170,Peru,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,88,,Official data
+583,389,TM,Detailed trade matrix,170,Peru,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9843,,Official data
+583,390,TM,Detailed trade matrix,170,Peru,156,New Zealand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,391,TM,Detailed trade matrix,170,Peru,162,Norway,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,392,TM,Detailed trade matrix,170,Peru,117,Republic of Korea,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,393,TM,Detailed trade matrix,170,Peru,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,78,,Official data
+583,394,TM,Detailed trade matrix,170,Peru,198,Slovenia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,395,TM,Detailed trade matrix,170,Peru,202,South Africa,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,396,TM,Detailed trade matrix,170,Peru,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,649,,Official data
+583,397,TM,Detailed trade matrix,170,Peru,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,398,TM,Detailed trade matrix,170,Peru,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4934,,Official data
+583,399,TM,Detailed trade matrix,170,Peru,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,261,,Official data
+583,400,TM,Detailed trade matrix,170,Peru,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7328,,Official data
+583,401,TM,Detailed trade matrix,171,Philippines,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,402,TM,Detailed trade matrix,171,Philippines,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,74,,Official data
+583,403,TM,Detailed trade matrix,171,Philippines,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,160,,Official data
+583,404,TM,Detailed trade matrix,171,Philippines,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,40,,Official data
+583,405,TM,Detailed trade matrix,171,Philippines,180,Palau,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,406,TM,Detailed trade matrix,171,Philippines,216,Thailand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,75,,Official data
+583,407,TM,Detailed trade matrix,171,Philippines,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,408,TM,Detailed trade matrix,173,Poland,167,Czech Republic,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,409,TM,Detailed trade matrix,173,Poland,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,410,TM,Detailed trade matrix,173,Poland,104,Ireland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,411,TM,Detailed trade matrix,173,Poland,119,Latvia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,412,TM,Detailed trade matrix,173,Poland,126,Lithuania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,413,TM,Detailed trade matrix,173,Poland,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,414,TM,Detailed trade matrix,173,Poland,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,415,TM,Detailed trade matrix,173,Poland,252,Unspecified,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,416,TM,Detailed trade matrix,183,Romania,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,417,TM,Detailed trade matrix,272,Serbia,80,Bosnia and Herzegovina,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,418,TM,Detailed trade matrix,200,Singapore,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,212,,Official data
+583,419,TM,Detailed trade matrix,200,Singapore,13,Bahrain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,420,TM,Detailed trade matrix,200,Singapore,115,Cambodia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,421,TM,Detailed trade matrix,200,Singapore,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,38,,Official data
+583,422,TM,Detailed trade matrix,200,Singapore,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,38,,Official data
+583,423,TM,Detailed trade matrix,200,Singapore,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12,,Official data
+583,424,TM,Detailed trade matrix,200,Singapore,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1259,,Official data
+583,425,TM,Detailed trade matrix,200,Singapore,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10838,,Official data
+583,426,TM,Detailed trade matrix,200,Singapore,156,New Zealand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,427,TM,Detailed trade matrix,200,Singapore,117,Republic of Korea,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,428,TM,Detailed trade matrix,200,Singapore,216,Thailand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,429,TM,Detailed trade matrix,200,Singapore,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1019,,Official data
+583,430,TM,Detailed trade matrix,198,Slovenia,98,Croatia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7,,Official data
+583,431,TM,Detailed trade matrix,25,Solomon Islands,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,353,,Official data
+583,432,TM,Detailed trade matrix,25,Solomon Islands,101,Indonesia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7837,,Official data
+583,433,TM,Detailed trade matrix,25,Solomon Islands,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5993,,Official data
+583,434,TM,Detailed trade matrix,25,Solomon Islands,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2343,,Official data
+583,435,TM,Detailed trade matrix,202,South Africa,81,Ghana,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,436,TM,Detailed trade matrix,202,South Africa,144,Mozambique,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,437,TM,Detailed trade matrix,203,Spain,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,438,TM,Detailed trade matrix,203,Spain,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,439,TM,Detailed trade matrix,203,Spain,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,11,,Official data
+583,440,TM,Detailed trade matrix,203,Spain,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,441,TM,Detailed trade matrix,203,Spain,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9,,Official data
+583,442,TM,Detailed trade matrix,203,Spain,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,17,,Official data
+583,443,TM,Detailed trade matrix,203,Spain,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,444,TM,Detailed trade matrix,203,Spain,143,Morocco,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,17,,Official data
+583,445,TM,Detailed trade matrix,203,Spain,166,Panama,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,249,,Official data
+583,446,TM,Detailed trade matrix,203,Spain,174,Portugal,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,447,TM,Detailed trade matrix,203,Spain,183,Romania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,448,TM,Detailed trade matrix,203,Spain,185,Russian Federation,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,449,TM,Detailed trade matrix,203,Spain,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,450,TM,Detailed trade matrix,203,Spain,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,451,TM,Detailed trade matrix,203,Spain,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,452,TM,Detailed trade matrix,203,Spain,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,453,TM,Detailed trade matrix,203,Spain,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,93,,Official data
+583,454,TM,Detailed trade matrix,203,Spain,252,Unspecified,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,455,TM,Detailed trade matrix,38,Sri Lanka,132,Maldives,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,456,TM,Detailed trade matrix,210,Sweden,162,Norway,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4,,Official data
+583,457,TM,Detailed trade matrix,211,Switzerland,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,458,TM,Detailed trade matrix,211,Switzerland,11,Austria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,459,TM,Detailed trade matrix,211,Switzerland,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,75,,Official data
+583,460,TM,Detailed trade matrix,211,Switzerland,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,15,,Official data
+583,461,TM,Detailed trade matrix,211,Switzerland,96,"China, Hong Kong SAR",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,14,,Official data
+583,462,TM,Detailed trade matrix,211,Switzerland,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,463,TM,Detailed trade matrix,211,Switzerland,54,Denmark,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,464,TM,Detailed trade matrix,211,Switzerland,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,842,,Official data
+583,465,TM,Detailed trade matrix,211,Switzerland,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,489,,Official data
+583,466,TM,Detailed trade matrix,211,Switzerland,100,India,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,467,TM,Detailed trade matrix,211,Switzerland,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,43,,Official data
+583,468,TM,Detailed trade matrix,211,Switzerland,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,469,TM,Detailed trade matrix,211,Switzerland,118,Kuwait,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,470,TM,Detailed trade matrix,211,Switzerland,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,471,TM,Detailed trade matrix,211,Switzerland,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2086,,Official data
+583,472,TM,Detailed trade matrix,211,Switzerland,194,Saudi Arabia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,473,TM,Detailed trade matrix,211,Switzerland,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,474,TM,Detailed trade matrix,211,Switzerland,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,475,TM,Detailed trade matrix,211,Switzerland,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,476,TM,Detailed trade matrix,211,Switzerland,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,32,,Official data
+583,477,TM,Detailed trade matrix,211,Switzerland,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,107,,Official data
+583,478,TM,Detailed trade matrix,216,Thailand,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,479,TM,Detailed trade matrix,216,Thailand,96,"China, Hong Kong SAR",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,480,TM,Detailed trade matrix,216,Thailand,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,481,TM,Detailed trade matrix,216,Thailand,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,482,TM,Detailed trade matrix,217,Togo,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,543,,Official data
+583,483,TM,Detailed trade matrix,217,Togo,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,445,,Official data
+583,484,TM,Detailed trade matrix,217,Togo,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,445,,Official data
+583,485,TM,Detailed trade matrix,217,Togo,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1114,,Official data
+583,486,TM,Detailed trade matrix,217,Togo,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,598,,Official data
+583,487,TM,Detailed trade matrix,217,Togo,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2560,,Official data
+583,488,TM,Detailed trade matrix,217,Togo,101,Indonesia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,23,,Official data
+583,489,TM,Detailed trade matrix,217,Togo,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,323,,Official data
+583,490,TM,Detailed trade matrix,217,Togo,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3509,,Official data
+583,491,TM,Detailed trade matrix,217,Togo,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,109,,Official data
+583,492,TM,Detailed trade matrix,217,Togo,195,Senegal,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7,,Official data
+583,493,TM,Detailed trade matrix,217,Togo,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,38,,Official data
+583,494,TM,Detailed trade matrix,217,Togo,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,41,,Official data
+583,495,TM,Detailed trade matrix,222,Tunisia,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,583,,Official data
+583,496,TM,Detailed trade matrix,223,Turkey,52,Azerbaijan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,497,TM,Detailed trade matrix,223,Turkey,61,Equatorial Guinea,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,498,TM,Detailed trade matrix,223,Turkey,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,499,TM,Detailed trade matrix,226,Uganda,4,Algeria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,387,,Official data
+583,500,TM,Detailed trade matrix,226,Uganda,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,165,,Official data
+583,501,TM,Detailed trade matrix,226,Uganda,27,Bulgaria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,47,,Official data
+583,502,TM,Detailed trade matrix,226,Uganda,351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,116,,Official data
+583,503,TM,Detailed trade matrix,226,Uganda,41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,116,,Official data
+583,504,TM,Detailed trade matrix,226,Uganda,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3519,,Official data
+583,505,TM,Detailed trade matrix,226,Uganda,100,India,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1936,,Official data
+583,506,TM,Detailed trade matrix,226,Uganda,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2458,,Official data
+583,507,TM,Detailed trade matrix,226,Uganda,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,508,TM,Detailed trade matrix,226,Uganda,114,Kenya,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,234,,Official data
+583,509,TM,Detailed trade matrix,226,Uganda,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4103,,Official data
+583,510,TM,Detailed trade matrix,226,Uganda,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4610,,Official data
+583,511,TM,Detailed trade matrix,226,Uganda,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3322,,Official data
+583,512,TM,Detailed trade matrix,226,Uganda,38,Sri Lanka,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,57,,Official data
+583,513,TM,Detailed trade matrix,226,Uganda,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,195,,Official data
+583,514,TM,Detailed trade matrix,226,Uganda,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,9318,,Official data
+583,515,TM,Detailed trade matrix,226,Uganda,229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12108,,Official data
+583,516,TM,Detailed trade matrix,226,Uganda,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1971,,Official data
+583,517,TM,Detailed trade matrix,229,United Kingdom,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,24,,Official data
+583,518,TM,Detailed trade matrix,229,United Kingdom,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1934,,Official data
+583,519,TM,Detailed trade matrix,229,United Kingdom,27,Bulgaria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10,,Official data
+583,520,TM,Detailed trade matrix,229,United Kingdom,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5106,,Official data
+583,521,TM,Detailed trade matrix,229,United Kingdom,48,Costa Rica,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,522,TM,Detailed trade matrix,229,United Kingdom,50,Cyprus,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,68,,Official data
+583,523,TM,Detailed trade matrix,229,United Kingdom,167,Czech Republic,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,524,TM,Detailed trade matrix,229,United Kingdom,54,Denmark,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,525,TM,Detailed trade matrix,229,United Kingdom,67,Finland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,89,,Official data
+583,526,TM,Detailed trade matrix,229,United Kingdom,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,214,,Official data
+583,527,TM,Detailed trade matrix,229,United Kingdom,84,Greece,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,528,TM,Detailed trade matrix,229,United Kingdom,97,Hungary,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,529,TM,Detailed trade matrix,229,United Kingdom,104,Ireland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,14,,Official data
+583,530,TM,Detailed trade matrix,229,United Kingdom,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,531,TM,Detailed trade matrix,229,United Kingdom,119,Latvia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,532,TM,Detailed trade matrix,229,United Kingdom,126,Lithuania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,533,TM,Detailed trade matrix,229,United Kingdom,134,Malta,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,534,TM,Detailed trade matrix,229,United Kingdom,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,5,,Official data
+583,535,TM,Detailed trade matrix,229,United Kingdom,162,Norway,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,46,,Official data
+583,536,TM,Detailed trade matrix,229,United Kingdom,173,Poland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,537,TM,Detailed trade matrix,229,United Kingdom,174,Portugal,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,3,,Official data
+583,538,TM,Detailed trade matrix,229,United Kingdom,183,Romania,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,539,TM,Detailed trade matrix,229,United Kingdom,198,Slovenia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,6,,Official data
+583,540,TM,Detailed trade matrix,229,United Kingdom,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,541,TM,Detailed trade matrix,229,United Kingdom,210,Sweden,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2,,Official data
+583,542,TM,Detailed trade matrix,229,United Kingdom,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7,,Official data
+583,543,TM,Detailed trade matrix,215,United Republic of Tanzania,4,Algeria,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2536,,Official data
+583,544,TM,Detailed trade matrix,215,United Republic of Tanzania,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,10007,,Official data
+583,545,TM,Detailed trade matrix,215,United Republic of Tanzania,20,Botswana,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,546,TM,Detailed trade matrix,215,United Republic of Tanzania,75,Gambia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,43,,Official data
+583,547,TM,Detailed trade matrix,215,United Republic of Tanzania,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1525,,Official data
+583,548,TM,Detailed trade matrix,215,United Republic of Tanzania,106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,480,,Official data
+583,549,TM,Detailed trade matrix,215,United Republic of Tanzania,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,4471,,Official data
+583,550,TM,Detailed trade matrix,215,United Republic of Tanzania,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,698,,Official data
+583,551,TM,Detailed trade matrix,215,United Republic of Tanzania,151,Netherlands Antilles,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,85,,Official data
+583,552,TM,Detailed trade matrix,215,United Republic of Tanzania,171,Philippines,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,203,,Official data
+583,553,TM,Detailed trade matrix,215,United Republic of Tanzania,203,Spain,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2357,,Official data
+583,554,TM,Detailed trade matrix,215,United Republic of Tanzania,231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,23,,Official data
+583,555,TM,Detailed trade matrix,231,United States of America,255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,786,,Official data
+583,556,TM,Detailed trade matrix,231,United States of America,33,Canada,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,25414,,Official data
+583,557,TM,Detailed trade matrix,231,United States of America,58,Ecuador,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,21,,Official data
+583,558,TM,Detailed trade matrix,231,United States of America,63,Estonia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29,,Official data
+583,559,TM,Detailed trade matrix,231,United States of America,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,713,,Official data
+583,560,TM,Detailed trade matrix,231,United States of America,105,Israel,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,25,,Official data
+583,561,TM,Detailed trade matrix,231,United States of America,110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,197,,Official data
+583,562,TM,Detailed trade matrix,231,United States of America,138,Mexico,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,344,,Official data
+583,563,TM,Detailed trade matrix,231,United States of America,150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1740,,Official data
+583,564,TM,Detailed trade matrix,231,United States of America,156,New Zealand,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,7,,Official data
+583,565,TM,Detailed trade matrix,231,United States of America,211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,885,,Official data
+583,566,TM,Detailed trade matrix,155,Vanuatu,10,Australia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,579,,Official data
+583,567,TM,Detailed trade matrix,155,Vanuatu,68,France,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,285,,Official data
+583,568,TM,Detailed trade matrix,155,Vanuatu,79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,46,,Official data
+583,569,TM,Detailed trade matrix,155,Vanuatu,131,Malaysia,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1449,,Official data
+583,570,TM,Detailed trade matrix,155,Vanuatu,171,Philippines,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,220,,Official data
+583,571,TM,Detailed trade matrix,155,Vanuatu,200,Singapore,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,182,,Official data
+583,572,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),255,Belgium,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,92,,Official data
+583,573,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),21,Brazil,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,12,,Official data
+583,574,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),351,China,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,575,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),41,"China, mainland",5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,0,,Official data
+583,576,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),79,Germany,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,590,,Official data
+583,577,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),97,Hungary,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,1,,Official data
+583,578,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),106,Italy,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,34,,Official data
+583,579,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),110,Japan,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,2548,,Official data
+583,580,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),150,Netherlands,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,544,,Official data
+583,581,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),211,Switzerland,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,47,,Official data
+583,582,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),229,United Kingdom,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,29,,Official data
+583,583,TM,Detailed trade matrix,236,Venezuela (Bolivarian Republic of),231,United States of America,5922,Export Value,661,"Cocoa, beans",2011,2011,1000 US$,67,,Official data
+,,,,,,,,,,,,,,,,,
+FAOSTAT Date: Thu Jan 15 13:55:39 CET 2015,,,,,,,,,,,,,,,,,
