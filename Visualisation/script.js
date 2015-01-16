@@ -11,7 +11,7 @@ function checkProp() {
 
 function cocoa_check() {
 	console.log("cocoa_check");
-    color_map("data_files/_CocoaExpVal2000_2011.json");
+    color_map("data_files/_CocoaExpVal2000_2011.json", "quantile");
 	// color_map("data_files/_CocoaExpVal2000_2011.json", "quantile");
 }
 
