@@ -159,6 +159,8 @@ with open(csvFile, 'rb') as csvfile:
 			row[7] = "Tanzania, United Republic of"
 		elif row[7] == "Democratic Republic of the Congo":
 			row[7] = "Congo, the Democratic Republic of the"
+		elif row[7] == "C\u00f4te d'Ivoire":
+			row[7] = "Ivory Coast"
 		elif row[7] == "Republic of Korea":
 			row[7] = "Korea, Republic of"
 

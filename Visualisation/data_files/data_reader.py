@@ -1,11 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: unicode -*-
+
 # Makes a json file that stores the important data of a csv 
 # file in a dictionnary.
 
 import csv
 import json
 
-csvFile = 'CocoaProdQuan2011.csv'
-jsonFileName = '_CocoaProdQuan2011.json'
+csvFile = 'CocoaExpVal2000_2011.csv'
+jsonFileName = '_CocoaExpVal2000_2011.json'
 
 dataDic = {}
 
@@ -125,6 +128,8 @@ with open(csvFile, 'rb') as csvfile:
 				row[3] = "Tanzania, United Republic of"
 			elif row[3] == "Democratic Republic of the Congo":
 				row[3] = "Congo, the Democratic Republic of the"
+			elif row[3] == "C\u00f4te d'Ivoire":
+				row[3] = "Ivory Coast"
 			elif row[3] == "Republic of Korea":
 				row[3] = "Korea, Republic of"
 			dataDic[row[3]] = int(row[9])

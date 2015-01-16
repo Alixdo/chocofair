@@ -22,8 +22,7 @@ function tradeCheck() {
 	console.log("t", country);
 
 	country.on("click", function(d,i) {
-			console.log("d,i", d);
-			console.log("name", d.properties.name)
+			blankMap();
 			matrColorMap("data_files/_TradeMatrCocoaExpVal2011.json", d);
 	});
 }
@@ -83,37 +82,22 @@ function colorMap(dataFile, scale="quantile") {
 				}
 			}
 		}
-		
-		if (scale == "quantile") {
-			var firstQuant = d3.quantile(dataValues, 0.2);
-			var secQuant = d3.quantile(dataValues, 0.4);
-			var thirdQuant = d3.quantile(dataValues, 0.6);
-			var fourthQuant = d3.quantile(dataValues, 0.8);
-			var fifthQuant = d3.quantile(dataValues, 1);
-			// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
-
-			for (var keyCountry in data) {
-				if (data[keyCountry] < firstQuant) {
-					document.getElementById(keyCountry).style.fill = "blue";
-				}
-				else if ((data[keyCountry] > firstQuant) && (data[keyCountry] < secQuant)) {
-					document.getElementById(keyCountry).style.fill = "green";
-				}
-				else if ((data[keyCountry] > secQuant) && (data[keyCountry] < thirdQuant)) {
-					document.getElementById(keyCountry).style.fill = "yellow";
-				}
-				else if ((data[keyCountry] > thirdQuant) && (data[keyCountry] < fourthQuant)) {
-					document.getElementById(keyCountry).style.fill = "orange";
-				}
-				else if (data[keyCountry] > fourthQuant) {
-					document.getElementById(keyCountry).style.fill = "red";
-				}
-			}	
-		}
 	}
 }
 
-/*Colors the map according to the matrix data stored in a JSON
+/*
+Erase all custom fills and strokes on the map.
+*/
+function blankMap() {
+	console.log("blanK");
+	d3.selectAll(".country")
+	 	.style("fill", "grey")
+	 	.style("stroke", "none");
+}
+
+
+/*
+Colors the map according to the matrix data stored in a JSON
 file, representing the connection between countries. The data 
 must be a dictionnary, with country names as keys and 
 dictionnaries as values. The value dictionnaries must have 
@@ -124,6 +108,7 @@ data.
 scale is divided. Can be either "fraction" or "quantile".
 */ 
 function matrColorMap(dataFile, d, scale="fraction") {
+	d3.select("#"+d.properties.name).style("stroke", "red");
 	d3.json(dataFile, color);
 
 	function color(error, data) {
@@ -140,16 +125,16 @@ function matrColorMap(dataFile, d, scale="fraction") {
   			return a - b;
 		}
 
-		console.log("data", data);
+		// console.log("data", data);
 		var dataMap = d3.map(data);
 		var dataDicVal = dataMap.values();
-		console.log(dataDicVal);
+		// console.log(dataDicVal);
 		var countryDic = dataMap.get(d.properties.name);
-		console.log("B", countryDic);
+		// console.log("B", countryDic);
 		var countryMap = d3.map(countryDic);
-		console.log("Bmap", countryMap);
+		// console.log("Bmap", countryMap);
 		var countryValUnsorted = countryMap.values();
-		console.log(countryValUnsorted);
+		// console.log(countryValUnsorted);
 		var countryValSorted = countryValUnsorted.sort(compareNumbers);
 
 		var max = d3.max(countryValSorted);
@@ -180,7 +165,31 @@ function matrColorMap(dataFile, d, scale="fraction") {
 			}
 		}
 
+		if (scale == "quantile") {
+			var firstQuant = d3.quantile(dataValues, 0.2);
+			var secQuant = d3.quantile(dataValues, 0.4);
+			var thirdQuant = d3.quantile(dataValues, 0.6);
+			var fourthQuant = d3.quantile(dataValues, 0.8);
+			var fifthQuant = d3.quantile(dataValues, 1);
+			// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
+
+			for (var keyCountry in data) {
+				if (data[keyCountry] < firstQuant) {
+					document.getElementById(keyCountry).style.fill = "blue";
+				}
+				else if ((data[keyCountry] > firstQuant) && (data[keyCountry] < secQuant)) {
+					document.getElementById(keyCountry).style.fill = "green";
+				}
+				else if ((data[keyCountry] > secQuant) && (data[keyCountry] < thirdQuant)) {
+					document.getElementById(keyCountry).style.fill = "yellow";
+				}
+				else if ((data[keyCountry] > thirdQuant) && (data[keyCountry] < fourthQuant)) {
+					document.getElementById(keyCountry).style.fill = "orange";
+				}
+				else if (data[keyCountry] > fourthQuant) {
+					document.getElementById(keyCountry).style.fill = "red";
+				}
+			}	
+		}
 	}
-
-
 }
