@@ -1,37 +1,45 @@
 "use strict";
 
-
-
 function checkProp() {
-	var margin_left = document.getElementById("map_container").offsetWidth + 20;
+	var margin_left = document.getElementById("mapContainer").offsetWidth + 20;
 	var checkWidth = document.getElementById("header").offsetWidth - margin_left - 14;	
-	document.getElementById("checkbox_container").style.marginLeft = margin_left.toString() + "px";
-	document.getElementById("checkbox_container").style.width = checkWidth.toString() + "px";
+	document.getElementById("checkboxContainer").style.marginLeft = margin_left.toString() + "px";
+	document.getElementById("checkboxContainer").style.width = checkWidth.toString() + "px";
 }
 
-function cocoa_check() {
+function cocoaCheck() {
 	console.log("cocoa_check");
-    color_map("data_files/_CocoaExpVal2000_2011.json", "quantile");
-	// color_map("data_files/_CocoaExpVal2000_2011.json", "quantile");
+    colorMap("data_files/_CocoaExpVal2000_2011.json");
+	// colorMap("data_files/_CocoaExpVal2000_2011.json", "quantile");
 }
 
-function choco_check() {
+function chocoCheck() {
 
+}
+
+function tradeCheck() {
+	var country = d3.selectAll(".country");
+	console.log("t", country);
+
+	country.on("click", function(d,i) {
+			console.log("d,i", d);
+			console.log("name", d.properties.name)
+			matrColorMap("data_files/_TradeMatrCocoaExpVal2011.json", d);
+	});
 }
 
 /*Colors the map according to the data stored in a JSON file.
 The data must be a dictionnary, with country names as keys and data
 values as values. One data value only per country.
 @ param dataFile: JSON file containing a dictionnary of the data.
-@ param scaleFunction: String that determines along which lines the color 
+@ param scale: String that determines along which lines the color 
 scale is divided. Can be either "fraction" or "quantile".
 */ 
-function color_map(dataFile, scale="fraction") {
-
+function colorMap(dataFile, scale="quantile") {
 	d3.json(dataFile, color);
 
-	function color(error, data){
-		console.log(data);
+	function color(error, data) {
+		// console.log(data);
 
 		for (var keyCountry in data) {
 			if (data[keyCountry] == 0) {
@@ -44,8 +52,8 @@ function color_map(dataFile, scale="fraction") {
 		}
 
 		var dataMap = d3.map(data);
-		var dataValues1 = dataMap.values()
-		var dataValues = dataValues1.sort(compareNumbers)
+		var dataValUnsorted = dataMap.values();
+		var dataValues = dataValUnsorted.sort(compareNumbers);
 		// console.log(dataValues)
 
 		var max = d3.max(dataValues);
@@ -55,7 +63,6 @@ function color_map(dataFile, scale="fraction") {
 			var twoFifth = 2*max/5;
 			var threeFifth = 3*max/5;
 			var fourFifth = 4*max/5;
-
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
 
 			for (var keyCountry in data) {
@@ -83,7 +90,6 @@ function color_map(dataFile, scale="fraction") {
 			var thirdQuant = d3.quantile(dataValues, 0.6);
 			var fourthQuant = d3.quantile(dataValues, 0.8);
 			var fifthQuant = d3.quantile(dataValues, 1);
-
 			// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
 
 			for (var keyCountry in data) {
@@ -107,9 +113,74 @@ function color_map(dataFile, scale="fraction") {
 	}
 }
 
+/*Colors the map according to the matrix data stored in a JSON
+file, representing the connection between countries. The data 
+must be a dictionnary, with country names as keys and 
+dictionnaries as values. The value dictionnaries must have 
+countries as keys and data values as values. 
+@ param dataFile: JSON file containing a dictionnary of the 
+data.
+@ param scale: String that determines along which lines the color 
+scale is divided. Can be either "fraction" or "quantile".
+*/ 
+function matrColorMap(dataFile, d, scale="fraction") {
+	d3.json(dataFile, color);
 
-var country = g.selectAll(".country")
+	function color(error, data) {
 
-country.on("mousemove", function(d,i) {
-	console.log("miew")
-})
+		for (var keyDic in data) {
+			for (var keyCountry in keyDic) {
+				if (data[keyCountry] == 0) {
+					delete data[keyCountry];
+				}
+			}
+		}
+
+		function compareNumbers(a, b) {
+  			return a - b;
+		}
+
+		console.log("data", data);
+		var dataMap = d3.map(data);
+		var dataDicVal = dataMap.values();
+		console.log(dataDicVal);
+		var countryDic = dataMap.get(d.properties.name);
+		console.log("B", countryDic);
+		var countryMap = d3.map(countryDic);
+		console.log("Bmap", countryMap);
+		var countryValUnsorted = countryMap.values();
+		console.log(countryValUnsorted);
+		var countryValSorted = countryValUnsorted.sort(compareNumbers);
+
+		var max = d3.max(countryValSorted);
+
+		if (scale == "fraction") {
+			var oneFifth = max/5;
+			var twoFifth = 2*max/5;
+			var threeFifth = 3*max/5;
+			var fourFifth = 4*max/5;
+			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
+
+			for (var keyCountry in countryDic) {
+				if (countryDic[keyCountry] < oneFifth) {
+					document.getElementById(keyCountry).style.fill = "blue";
+				}
+				else if ((countryDic[keyCountry] > oneFifth) && (countryDic[keyCountry] < twoFifth)) {
+					document.getElementById(keyCountry).style.fill = "green";
+				}
+				else if ((countryDic[keyCountry] > twoFifth) && (countryDic[keyCountry] < threeFifth)) {
+					document.getElementById(keyCountry).style.fill = "yellow";
+				}
+				else if ((countryDic[keyCountry] > threeFifth) && (countryDic[keyCountry] < fourFifth)) {
+					document.getElementById(keyCountry).style.fill = "orange";
+				}
+				else if (countryDic[keyCountry] > fourFifth) {
+					document.getElementById(keyCountry).style.fill = "red";
+				}
+			}
+		}
+
+	}
+
+
+}

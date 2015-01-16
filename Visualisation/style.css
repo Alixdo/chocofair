@@ -63,7 +63,7 @@ h2{
   stroke: #fff;
   stroke-width: .7px;
 }
-#map_container {
+#mapContainer {
   margin:10px 300px 0px 10px;
   padding: 10px;
   border:2px solid #d0d0d0;
@@ -88,7 +88,7 @@ div.tooltip {
 
 /*--------------------------------------------------------------------------------------*/
 /*------------------------------Styling of script.js------------------------------------*/
-#checkbox_container{
+#checkboxContainer{
   margin: 10px;
   padding: 10px;
   border: 2px solid #d0d0d0;
