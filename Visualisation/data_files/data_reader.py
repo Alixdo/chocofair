@@ -7,8 +7,8 @@
 import csv
 import json
 
-csvFile = 'CocoaExpVal2000_2011.csv'
-jsonFileName = '_CocoaExpVal2000_2011.json'
+csvFile = 'CocoaImpVal2000_2011.csv'
+jsonFileName = '_CocoaImpVal2000_2011.json'
 
 dataDic = {}
 

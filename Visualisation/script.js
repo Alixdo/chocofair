@@ -8,24 +8,172 @@ function checkProp() {
 }
 
 function cocoaCheck() {
-	console.log("cocoa_check");
-	blankMap();
-    colorMap("data_files/_CocoaExpVal2000_2011.json");
-	// colorMap("data_files/_CocoaExpVal2000_2011.json", "quantile");
+	document.getElementById("checkboxChoco").checked = false;
 }
-
 function chocoCheck() {
-
+	document.getElementById("checkboxCocoa").checked = false;
 }
+function importCheck() {
+	document.getElementById("checkboxExport").checked = false;
+	document.getElementById("checkboxPrice").checked = false;
+	document.getElementById("checkboxProduction").checked = false;
+}
+function exportCheck() {
+	document.getElementById("checkboxImport").checked = false;
+	document.getElementById("checkboxPrice").checked = false;
+	document.getElementById("checkboxProduction").checked = false;
+}
+function priceCheck() {
+	document.getElementById("checkboxImport").checked = false;
+	document.getElementById("checkboxExport").checked = false;
+	document.getElementById("checkboxProduction").checked = false;
+}
+function productionCheck() {
+	document.getElementById("checkboxImport").checked = false;
+	document.getElementById("checkboxExport").checked = false;
+	document.getElementById("checkboxPrice").checked = false;
+}
+function fractionCheck() {
+	document.getElementById("checkboxQuantiles").checked = false;
+}
+function quantileCheck() {
+	document.getElementById("checkboxFractions").checked = false;
+}
+function valCheck() {
+	document.getElementById("checkboxQuan").checked = false;
+}
+function quanCheck() {
+	document.getElementById("checkboxVal").checked = false;
+}
+// <input type="checkbox" id="checkboxTrade" onchange="importCheck()"> Import <br>
+//         <input type="checkbox" id="checkboxTrade" onchange="exportCheck()"> Export <br>
+//         <input type="checkbox" id="checkboxTrade" onchange="priceCheck()"> Wage/Price <br>
+//         <input type="checkbox" id="checkboxTrade" onchange="productionCheck()"> Production <br>
+//         <input type="checkbox" id="checkboxTrade" onchange="fractionCheck()"> Fraction <br>
+//         <input type="checkbox" id="checkboxTrade" onchange="quantileCheck()"> Quantile <br>
 
-function tradeCheck() {
+checkboxCocoa
+checkboxChoco
+checkboxImport
+checkboxExport
+checkboxPrice
+checkboxProduction
+checkboxFractions
+checkboxQuantiles
+checkboxVal
+checkboxQuan
+
+cocoaCheck()
+chocoCheck()
+importCheck()
+exportCheck()
+priceCheck()
+productionCheck()
+fractionCheck()
+quantileCheck()
+valCheck()
+quanCheck()
+
+function dataParam() {
+	blankMap();
 	var country = d3.selectAll(".country");
-	console.log("t", country);
+	var scale = "fraction";
 
-	country.on("click", function(d,i) {
-			blankMap();
-			matrColorMap("data_files/_TradeMatrCocoaExpVal2011.json", d);
-	});
+	if (document.getElementById("checkboxFractions").checked == true){
+		scale = "fraction";	
+	}			
+	if (document.getElementById("checkboxQuantiles").checked == true){
+		scale = "quantile";
+	}
+
+	if (document.getElementById("checkboxCocoa").checked == true){
+		if (document.getElementById("checkboxImport").checked == true){
+			if (document.getElementById("checkboxVal").checked == true) {
+				colorMap("data_files/_CocoaImpVal2000_2011.json", scale);
+
+				country.on("click", function(d,i) {
+					blankMap();
+					matrColorMap("data_files/_TradeMatrCocoaImpVal2011.json", d);
+				});
+			}	
+			if (document.getElementById("checkboxQuan").checked == true) {
+				colorMap("data_files/_CocoaImpQuan2000_2011.json", scale);
+
+				country.on("click", function(d,i) {
+					blankMap();
+					matrColorMap("data_files/_TradeMatrCocoaImpQuan2011.json", d);
+				});
+			}
+		}
+		if (document.getElementById("checkboxExport").checked == true){
+			if (document.getElementById("checkboxVal").checked == true) {
+				colorMap("data_files/_CocoaExpVal2000_2011.json", scale);
+
+				country.on("click", function(d,i) {
+					blankMap();
+					matrColorMap("data_files/_TradeMatrCocoaExpVal2011.json", d);
+				});
+			}	
+			if (document.getElementById("checkboxQuan").checked == true) {
+				colorMap("data_files/_CocoaExpQuan2000_2011.json", scale);
+
+				country.on("click", function(d,i) {
+					blankMap();
+					matrColorMap("data_files/_TradeMatrCocoaExpQuan2011.json", d);
+				});
+			}
+		}
+		if (document.getElementById("checkboxPrice").checked == true) {
+
+		}
+		if (document.getElementById("checkboxProduction").checked == true) {
+
+		}
+	}
+	if (document.getElementById("checkboxChoco").checked == true) {
+		if (document.getElementById("checkboxImport").checked == true) {
+			if (document.getElementById("checkboxVal").checked == true) {
+				colorMap("data_files/_ChocoImpVal2000_2011.json", scale);
+
+				country.on("click", function(d,i) {
+					blankMap();
+					matrColorMap("data_files/_TradeMatrChocoImpVal2011.json", d);
+				});
+			}	
+			if (document.getElementById("checkboxQuan").checked == true) {
+				colorMap("data_files/_ChocoImpQuan2000_2011.json", scale);
+
+				country.on("click", function(d,i) {
+					blankMap();
+					matrColorMap("data_files/_TradeMatrChocoImpQuan2011.json", d);
+				});
+			}
+		}
+		if (document.getElementById("checkboxExport").checked == true) {
+			if (document.getElementById("checkboxVal").checked == true) {
+				colorMap("data_files/_ChocoExpVal2000_2011.json", scale);
+
+				country.on("click", function(d,i) {
+					blankMap();
+					matrColorMap("data_files/_TradeMatrChocoExpVal2011.json", d);
+				});
+			}	
+			if (document.getElementById("checkboxQuan").checked == true) {
+				colorMap("data_files/_ChocoExpQuan2000_2011.json", scale);
+
+				country.on("click", function(d,i) {
+					blankMap();
+					matrColorMap("data_files/_TradeMatrChocoExpQuan2011.json", d);
+				});
+			}	
+		}
+		if (document.getElementById("checkboxPrice").checked == true) {
+
+		}
+		if (document.getElementById("checkboxProduction").checked == true) {
+
+		}
+	}
 }
 
 /*Colors the map according to the data stored in a JSON file.

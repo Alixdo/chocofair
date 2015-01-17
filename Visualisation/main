@@ -17,9 +17,16 @@
     <div id="container-fluid">
     	<div id="mapContainer"></div>
       <div id="checkboxContainer">
-        <input type="checkbox" id="checkboxCocoa" onchange="cocoaCheck()"> Cocoa beans <br>
-        <input type="checkbox" id="checkboxChoco" onchange="chocoCheck()"> Chocolate products <br>
-        <input type="checkbox" id="checkboxTrade" onchange="tradeCheck()"> Trade <br>
+        <input type="checkbox" id="checkboxCocoa" onchange="cocoaCheck(); dataParam()"> Cocoa beans <br>
+        <input type="checkbox" id="checkboxChoco" onchange="chocoCheck(); dataParam()"> Chocolate products <br>
+        <input type="checkbox" id="checkboxImport" onchange="importCheck(); dataParam()"> Import <br>
+        <input type="checkbox" id="checkboxExport" onchange="exportCheck(); dataParam()"> Export <br>
+        <input type="checkbox" id="checkboxPrice" onchange="priceCheck(); dataParam()"> Wage/Price <br>
+        <input type="checkbox" id="checkboxProduction" onchange="productionCheck(); dataParam()"> Production <br>
+        <input type="checkbox" id="checkboxFractions" onchange="fractionCheck(); dataParam()"> Fractions <br>
+        <input type="checkbox" id="checkboxQuantiles" onchange="quantileCheck(); dataParam()"> Quantiles <br>
+        <input type="checkbox" id="checkboxVal" onchange="valCheck(); dataParam()"> US dollars <br>
+        <input type="checkbox" id="checkboxQuan" onchange="quanCheck(); dataParam()"> Tonnes <br>
       </div>
     </div>
   	<script type="text/javascript" src="map_script.js"></script>
