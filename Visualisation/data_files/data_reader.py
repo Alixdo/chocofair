@@ -7,8 +7,8 @@
 import csv
 import json
 
-csvFile = 'CocoaImpVal2000_2011.csv'
-jsonFileName = '_CocoaImpVal2000_2011.json'
+csvFile = 'ChocoImpVal2000_2011.csv'
+jsonFileName = '_ChocoImpVal2000_2011.json'
 
 dataDic = {}
 
@@ -110,6 +110,15 @@ with open(csvFile, 'rb') as csvfile:
 				continue
 			elif row[3] == "Net Food Importing Developing Countries":
 				continue
+
+			elif row[3] == "Micronesia":
+				continue
+			elif row[3] == "Cabo Verde":
+				row[3] = "Cape Verde"
+			elif row[3] == "Tuvalu":
+				continue
+			elif row[3] == "Sudan (former)":
+				row[3] = "Sudan"
 
 
 			elif row[3] == "Bolivia (Plurinational State of)":

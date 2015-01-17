@@ -214,6 +214,7 @@ function colorMap(dataFile, scale="quantile") {
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
 
 			for (var keyCountry in data) {
+				console.log(keyCountry);
 				if (data[keyCountry] < oneFifth) {
 					document.getElementById(keyCountry).style.fill = "blue";
 				}
