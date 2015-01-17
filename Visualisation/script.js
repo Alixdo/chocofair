@@ -9,6 +9,7 @@ function checkProp() {
 
 function cocoaCheck() {
 	console.log("cocoa_check");
+	blankMap();
     colorMap("data_files/_CocoaExpVal2000_2011.json");
 	// colorMap("data_files/_CocoaExpVal2000_2011.json", "quantile");
 }
@@ -82,6 +83,33 @@ function colorMap(dataFile, scale="quantile") {
 				}
 			}
 		}
+
+		if (scale == "quantile") {
+			var firstQuant = d3.quantile(dataValues, 0.2);
+			var secQuant = d3.quantile(dataValues, 0.4);
+			var thirdQuant = d3.quantile(dataValues, 0.6);
+			var fourthQuant = d3.quantile(dataValues, 0.8);
+			var fifthQuant = d3.quantile(dataValues, 1);
+			// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
+
+			for (var keyCountry in data) {
+				if (data[keyCountry] < firstQuant) {
+					document.getElementById(keyCountry).style.fill = "blue";
+				}
+				else if ((data[keyCountry] > firstQuant) && (data[keyCountry] < secQuant)) {
+					document.getElementById(keyCountry).style.fill = "green";
+				}
+				else if ((data[keyCountry] > secQuant) && (data[keyCountry] < thirdQuant)) {
+					document.getElementById(keyCountry).style.fill = "yellow";
+				}
+				else if ((data[keyCountry] > thirdQuant) && (data[keyCountry] < fourthQuant)) {
+					document.getElementById(keyCountry).style.fill = "orange";
+				}
+				else if (data[keyCountry] > fourthQuant) {
+					document.getElementById(keyCountry).style.fill = "red";
+				}
+			}	
+		}
 	}
 }
 
@@ -108,9 +136,9 @@ data.
 scale is divided. Can be either "fraction" or "quantile".
 */ 
 function matrColorMap(dataFile, d, scale="fraction") {
-	d3.select("#"+d.properties.name).style("stroke", "red");
-	d3.json(dataFile, color);
+	document.getElementById(d.properties.name).style.stroke = "black";
 
+	d3.json(dataFile, color);
 	function color(error, data) {
 
 		for (var keyDic in data) {
@@ -147,6 +175,7 @@ function matrColorMap(dataFile, d, scale="fraction") {
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
 
 			for (var keyCountry in countryDic) {
+				console.log("key", keyCountry);
 				if (countryDic[keyCountry] < oneFifth) {
 					document.getElementById(keyCountry).style.fill = "blue";
 				}

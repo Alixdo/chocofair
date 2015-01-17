@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# -*- coding: unicode -*-
+# -*- coding: utf-8 -*-
 
 # Makes a json file that stores the important data of a csv 
 # file in a dictionnary.
@@ -126,12 +126,17 @@ with open(csvFile, 'rb') as csvfile:
 				row[3] = "Iran, Islamic Republic of"
 			elif row[3] == "United Republic of Tanzania":
 				row[3] = "Tanzania, United Republic of"
+			elif row[3] == "Republic of Korea":
+				row[3] = "Korea, Republic of"
 			elif row[3] == "Democratic Republic of the Congo":
 				row[3] = "Congo, the Democratic Republic of the"
 			elif row[3] == "C\u00f4te d'Ivoire":
 				row[3] = "Ivory Coast"
 			elif row[3] == "Republic of Korea":
 				row[3] = "Korea, Republic of"
+			elif row[3] == "Côte d'Ivoire":
+				row[3] = "Ivory Coast"
+
 			dataDic[row[3]] = int(row[9])
 
 with open(jsonFileName, "w") as f:

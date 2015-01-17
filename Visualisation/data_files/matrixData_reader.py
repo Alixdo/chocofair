@@ -1,11 +1,14 @@
-# Makes a json file that stores the important data of a csv 
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Makes a json file that stores the needed data of a csv 
 # file in a dictionnary.
 
 import csv
 import json
 
-csvFile = 'TradeMatrCocoaExpQuan2011.csv'
-jsonFileName = '_TradeMatrCocoaExpQuan2011.json'
+csvFile = 'TradeMatrCocoaExpVal2011.csv'
+jsonFileName = '_TradeMatrCocoaExpVal2011.json'
 
 dataDic = {}
 
@@ -127,14 +130,20 @@ with open(csvFile, 'rb') as csvfile:
 			row[5] = "Macedonia, the former Yugoslav Republic of"
 		elif row[5] == "Iran (Islamic Republic of)":
 			row[5] = "Iran, Islamic Republic of"
+		elif row[5] == "Republic of Korea":
+			row[5] = "Korea, Republic of"
 		elif row[5] == "United Republic of Tanzania":
 			row[5] = "Tanzania, United Republic of"
 		elif row[5] == "Democratic Republic of the Congo":
 			row[5] = "Congo, the Democratic Republic of the"
 		elif row[5] == "Republic of Korea":
 			row[5] = "Korea, Republic of"
+		elif row[5] == "Côte d'Ivoire":
+			row[5] = "Ivory Coast"
 
-		if row[7] == "China, mainland":
+		if row[7] == "Unspecified":
+			continue
+		elif row[7] == "China, mainland":
 			continue
 		elif row[7] == "China, Hong Kong SAR":
 			continue
@@ -155,14 +164,15 @@ with open(csvFile, 'rb') as csvfile:
 			row[7] = "Macedonia, the former Yugoslav Republic of"
 		elif row[7] == "Iran (Islamic Republic of)":
 			row[7] = "Iran, Islamic Republic of"
+		elif row[7] == "Republic of Korea":
+			row[7] = "Korea, Republic of"
 		elif row[7] == "United Republic of Tanzania":
 			row[7] = "Tanzania, United Republic of"
 		elif row[7] == "Democratic Republic of the Congo":
 			row[7] = "Congo, the Democratic Republic of the"
-		elif row[7] == "C\u00f4te d'Ivoire":
+		elif row[7] == "Côte d'Ivoire":
 			row[7] = "Ivory Coast"
-		elif row[7] == "Republic of Korea":
-			row[7] = "Korea, Republic of"
+
 
 		# Makes a new dicitonnary entry when a new reporter 
 		# country is found.
@@ -173,7 +183,7 @@ with open(csvFile, 'rb') as csvfile:
 
 		dataDic[row[5]][row[7]] = int(row[15])
 		# print dataDic
-		print row[5],row[7]
+		# print row[5],row[7]
 
 with open(jsonFileName, "w") as f:
 	json.dump(dataDic, f, indent=4)
