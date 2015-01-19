@@ -216,7 +216,10 @@ function colorMap(dataFile, scale="quantile") {
 			for (var keyCountry in data) {
 				console.log(keyCountry);
 				if (data[keyCountry] < oneFifth) {
-					document.getElementById(keyCountry).style.fill = "blue";
+					// hier here ici
+					console.log("miew"+keyCountry);
+					d3.select("[title='"+keyCountry+"']").attr("fill", "black");
+					// document.getElementById(keyCountry).style.fill = "blue";
 				}
 				else if ((data[keyCountry] > oneFifth) && (data[keyCountry] < twoFifth)) {
 					document.getElementById(keyCountry).style.fill = "green";
