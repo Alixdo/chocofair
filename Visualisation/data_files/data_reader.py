@@ -7,15 +7,15 @@
 import csv
 import json
 
-csvFile = 'ChocoImpVal2000_2011.csv'
-jsonFileName = '_ChocoImpVal2000_2011.json'
+csvFile = 'CocoaProdPrice2000_2011.csv'
+jsonFileName = '_CocoaProdPrice2000_2011.json'
 
 dataDic = {}
 
 with open(csvFile, 'rb') as csvfile:
 	csvReader = csv.reader(csvfile)
 	for row in csvReader:
-		if row[8] == '2011':
+		if row[8] == '2009':
 			if row[3] == "European Union":
 				continue
 			elif row[3] == "South-Eastern Asia":
@@ -90,6 +90,10 @@ with open(csvFile, 'rb') as csvfile:
 				continue
 			elif row[3] == "Australia & New Zealand":
 				continue
+			elif row[3] == "Micronesia":
+				continue
+			elif row[7] == "Micronesia (Federated States of)":
+				continue
 			elif row[3] == "China, mainland":
 				continue
 			elif row[3] == "Occupied Palestinian Territory":
@@ -111,8 +115,6 @@ with open(csvFile, 'rb') as csvfile:
 			elif row[3] == "Net Food Importing Developing Countries":
 				continue
 
-			elif row[3] == "Micronesia":
-				continue
 			elif row[3] == "Cabo Verde":
 				row[3] = "Cape Verde"
 			elif row[3] == "Tuvalu":
@@ -139,14 +141,12 @@ with open(csvFile, 'rb') as csvfile:
 				row[3] = "Korea, Republic of"
 			elif row[3] == "Democratic Republic of the Congo":
 				row[3] = "Congo, the Democratic Republic of the"
-			elif row[3] == "C\u00f4te d'Ivoire":
-				row[3] = "Ivory Coast"
 			elif row[3] == "Republic of Korea":
 				row[3] = "Korea, Republic of"
 			elif row[3] == "Côte d'Ivoire":
 				row[3] = "Ivory Coast"
 
-			dataDic[row[3]] = int(row[9])
+			dataDic[row[3]] = float(row[9])
 
 with open(jsonFileName, "w") as f:
 	json.dump(dataDic, f, indent=4)

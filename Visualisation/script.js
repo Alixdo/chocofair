@@ -16,7 +16,7 @@ Checks boxes after page is loaded, so that data is shown immediatly when the pag
 is opened, without the user having to choose parameters.
 */
 setTimeout(function(){
-	dataParam
+	dataParam();
 // document.getElementById("checkboxCocoa").checked = true;
 // document.getElementById("checkboxExport").checked = true;
 // document.getElementById("checkboxFractions").checked = true;
@@ -61,6 +61,8 @@ function valCheck() {
 function quanCheck() {
 	document.getElementById("checkboxVal").checked = false;
 }
+function strokeCheck() {
+}
 // <input type="checkbox" id="checkboxTrade" onchange="importCheck()"> Import <br>
 //         <input type="checkbox" id="checkboxTrade" onchange="exportCheck()"> Export <br>
 //         <input type="checkbox" id="checkboxTrade" onchange="priceCheck()"> Wage/Price <br>
@@ -68,27 +70,27 @@ function quanCheck() {
 //         <input type="checkbox" id="checkboxTrade" onchange="fractionCheck()"> Fraction <br>
 //         <input type="checkbox" id="checkboxTrade" onchange="quantileCheck()"> Quantile <br>
 
-checkboxCocoa
-checkboxChoco
-checkboxImport
-checkboxExport
-checkboxPrice
-checkboxProduction
-checkboxFractions
-checkboxQuantiles
-checkboxVal
-checkboxQuan
+// checkboxCocoa
+// checkboxChoco
+// checkboxImport
+// checkboxExport
+// checkboxPrice
+// checkboxProduction
+// checkboxFractions
+// checkboxQuantiles
+// checkboxVal
+// checkboxQuan
 
-cocoaCheck()
-chocoCheck()
-importCheck()
-exportCheck()
-priceCheck()
-productionCheck()
-fractionCheck()
-quantileCheck()
-valCheck()
-quanCheck()
+// cocoaCheck()
+// chocoCheck()
+// importCheck()
+// exportCheck()
+// priceCheck()
+// productionCheck()
+// fractionCheck()
+// quantileCheck()
+// valCheck()
+// quanCheck()
 
 /* 
 Calls the right map coloring function, according to the parameters 
@@ -109,7 +111,7 @@ function dataParam() {
 	if (document.getElementById("checkboxCocoa").checked == true){
 		if (document.getElementById("checkboxImport").checked == true){
 			if (document.getElementById("checkboxVal").checked == true) {
-				colorMap("data_files/_CocoaImpVal2000_2011.json", scale);
+				colorMap("data_files/_CocoaImpVal2011.json", scale);
 
 				country.on("click", function(d,i) {
 					blankMap();
@@ -117,7 +119,7 @@ function dataParam() {
 				});
 			}	
 			if (document.getElementById("checkboxQuan").checked == true) {
-				colorMap("data_files/_CocoaImpQuan2000_2011.json", scale);
+				colorMap("data_files/_CocoaImpQuan2011.json", scale);
 
 				country.on("click", function(d,i) {
 					blankMap();
@@ -127,7 +129,7 @@ function dataParam() {
 		}
 		if (document.getElementById("checkboxExport").checked == true){
 			if (document.getElementById("checkboxVal").checked == true) {
-				colorMap("data_files/_CocoaExpVal2000_2011.json", scale);
+				colorMap("data_files/_CocoaExpVal2011.json", scale);
 
 				country.on("click", function(d,i) {
 					blankMap();
@@ -135,7 +137,7 @@ function dataParam() {
 				});
 			}	
 			if (document.getElementById("checkboxQuan").checked == true) {
-				colorMap("data_files/_CocoaExpQuan2000_2011.json", scale);
+				colorMap("data_files/_CocoaExpQuan2011.json", scale);
 
 				country.on("click", function(d,i) {
 					blankMap();
@@ -144,16 +146,16 @@ function dataParam() {
 			}
 		}
 		if (document.getElementById("checkboxPrice").checked == true) {
-
+			colorMap("data_files/_CocoaProdPrice2011.json", scale);
 		}
 		if (document.getElementById("checkboxProduction").checked == true) {
-
+			colorMap("data_files/_CocoaProdQuan2011.json", scale);
 		}
 	}
 	if (document.getElementById("checkboxChoco").checked == true) {
 		if (document.getElementById("checkboxImport").checked == true) {
 			if (document.getElementById("checkboxVal").checked == true) {
-				colorMap("data_files/_ChocoImpVal2000_2011.json", scale);
+				colorMap("data_files/_ChocoImpVal2011.json", scale);
 
 				country.on("click", function(d,i) {
 					blankMap();
@@ -161,7 +163,7 @@ function dataParam() {
 				});
 			}	
 			if (document.getElementById("checkboxQuan").checked == true) {
-				colorMap("data_files/_ChocoImpQuan2000_2011.json", scale);
+				colorMap("data_files/_ChocoImpQuan2011.json", scale);
 
 				country.on("click", function(d,i) {
 					blankMap();
@@ -171,7 +173,7 @@ function dataParam() {
 		}
 		if (document.getElementById("checkboxExport").checked == true) {
 			if (document.getElementById("checkboxVal").checked == true) {
-				colorMap("data_files/_ChocoExpVal2000_2011.json", scale);
+				colorMap("data_files/_ChocoExpVal2011.json", scale);
 
 				country.on("click", function(d,i) {
 					blankMap();
@@ -179,7 +181,7 @@ function dataParam() {
 				});
 			}	
 			if (document.getElementById("checkboxQuan").checked == true) {
-				colorMap("data_files/_ChocoExpQuan2000_2011.json", scale);
+				colorMap("data_files/_ChocoExpQuan2011.json", scale);
 
 				country.on("click", function(d,i) {
 					blankMap();
@@ -234,10 +236,14 @@ function colorMap(dataFile, scale="quantile") {
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
 
 			for (var keyCountry in data) {
+				// d3.selectAll("." + keyCountry.replace(/\s+/g, "").replace("'", "")).style("stroke", "pink");
+			}
+
+			for (var keyCountry in data) {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, '');
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "");
 
 				console.log(keyCountry, keyCountryClass);
 
@@ -272,7 +278,7 @@ function colorMap(dataFile, scale="quantile") {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, '');
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "");
 
 				if (data[keyCountry] < firstQuant) {
 					d3.selectAll(keyCountryClass).style("fill", "blue");
@@ -362,7 +368,7 @@ function matrColorMap(dataFile, d, scale="fraction") {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, '');
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "");
 
 				console.log("key", keyCountry);
 
@@ -396,7 +402,7 @@ function matrColorMap(dataFile, d, scale="fraction") {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, '');
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "");
 
 				if (data[keyCountry] < firstQuant) {
 					d3.selectAll(keyCountryClass).style("fill", "blue");

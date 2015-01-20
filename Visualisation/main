@@ -11,25 +11,32 @@
   
 
   <body onload="checkProp()">
-    <header id="header">
+    <header id="header" class="container">
       <h2>Import and export of cocoa beans and chocolate products in the world</h2>
     </header>
     <div id="container-fluid">
-    	<div id="mapContainer"></div>
-      <div id="checkboxContainer">
-        <input type="checkbox" checked="true" id="checkboxCocoa" onchange="cocoaCheck(); dataParam()"> Cocoa beans <br>
-        <input type="checkbox" id="checkboxChoco" onchange="chocoCheck(); dataParam()"> Chocolate products <br>
-        <input type="checkbox" id="checkboxImport" onchange="importCheck(); dataParam()"> Import <br>
-        <input type="checkbox" id="checkboxExport" onchange="exportCheck(); dataParam()" checked> Export <br>
-        <input type="checkbox" id="checkboxPrice" onchange="priceCheck(); dataParam()"> Wage/Price <br>
-        <input type="checkbox" id="checkboxProduction" onchange="productionCheck(); dataParam()"> Production <br>
-        <input type="checkbox" id="checkboxFractions" onchange="fractionCheck(); dataParam()" checked> Fractions <br>
-        <input type="checkbox" id="checkboxQuantiles" onchange="quantileCheck(); dataParam()"> Quantiles <br>
-        <input type="checkbox" id="checkboxVal" onchange="valCheck(); dataParam()" checked> US dollars <br>
-        <input type="checkbox" id="checkboxQuan" onchange="quanCheck(); dataParam()"> Tonnes <br>
+    	<div id="mapContainer" class="container"></div>
+    <script type="text/javascript" src="worldmap-template/map_script.js"></script>
+
+      <div id="checkboxContainer" class="container">
+        <input type="checkbox" id="checkboxCocoa" onchange="cocoaCheck(); dataParam();" > Cocoa beans <br>
+        <input type="checkbox" id="checkboxChoco" onchange="chocoCheck(); dataParam();" checked="checked" > Chocolate products <br>
+        <input type="checkbox" id="checkboxImport" onchange="importCheck(); dataParam();"> Import <br>
+        <input type="checkbox" id="checkboxExport" onchange="exportCheck(); dataParam();" checked="checked"> Export <br>
+        <input type="checkbox" id="checkboxPrice" onchange="priceCheck(); dataParam();"> Wage/Price <br>
+        <input type="checkbox" id="checkboxProduction" onchange="productionCheck(); dataParam();"> Production <br>
+        <input type="checkbox" id="checkboxFractions" onchange="fractionCheck(); dataParam();" checked="checked"> Fractions <br>
+        <input type="checkbox" id="checkboxQuantiles" onchange="quantileCheck(); dataParam();"> Quantiles <br>
+        <input type="checkbox" id="checkboxVal" onchange="valCheck(); dataParam();" checked="checked"> US dollars <br>
+        <input type="checkbox" id="checkboxQuan" onchange="quanCheck(); dataParam();"> Tonnes <br>
+        <input type="checkbox" id="checkboxStroke" onchange="strokeCheck(); dataParam();" checked="checked"> Outline concerned countries (uncheck to make the visualisation faster) <br>
+      </div>
+
+      <div id="legend" class="container">
+
       </div>
     </div>
-  	<script type="text/javascript" src="worldmap-template/map_script.js"></script>
+  	
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

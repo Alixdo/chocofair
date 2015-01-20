@@ -67,7 +67,7 @@ function draw(topo) {
       .attr("d", path)
       .attr("id", function(d,i) { return d.id; })
       .attr("title", function(d,i) { return d.properties.name; })
-      .style("fill", function(d,i) { return d.properties.color; });
+      .style("fill", function(d,i) { return "grey"; });
 
   //offsets for tooltips
   var offsetL = document.getElementById('mapContainer').offsetLeft+20;
@@ -107,6 +107,7 @@ function redraw() {
   d3.select('svg').remove();
   setup(width,height);
   draw(topo);
+  dataParam();
 }
 
 
