@@ -63,11 +63,11 @@ function draw(topo) {
   var country = g.selectAll(".country").data(topo);
 
   country.enter().insert("path")
-      .attr("class", "country")
+      .attr("class", function(d,i) { return "country " + d.properties.name.replace(/\s+/g, '')})
       .attr("d", path)
       .attr("id", function(d,i) { return d.id; })
       .attr("title", function(d,i) { return d.properties.name; })
-      .style("fill", function(d, i) { return d.properties.color; });
+      .style("fill", function(d,i) { return d.properties.color; });
 
   //offsets for tooltips
   var offsetL = document.getElementById('mapContainer').offsetLeft+20;

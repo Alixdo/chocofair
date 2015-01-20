@@ -1,11 +1,27 @@
 "use strict";
 
+/* 
+Sets the properties of the checkbox menu to the right size.
+Is called onload in main.html.
+*/
 function checkProp() {
 	var margin_left = document.getElementById("mapContainer").offsetWidth + 20;
 	var checkWidth = document.getElementById("header").offsetWidth - margin_left - 14;	
 	document.getElementById("checkboxContainer").style.marginLeft = margin_left.toString() + "px";
 	document.getElementById("checkboxContainer").style.width = checkWidth.toString() + "px";
 }
+
+/*
+Checks boxes after page is loaded, so that data is shown immediatly when the page 
+is opened, without the user having to choose parameters.
+*/
+setTimeout(function(){
+	dataParam
+// document.getElementById("checkboxCocoa").checked = true;
+// document.getElementById("checkboxExport").checked = true;
+// document.getElementById("checkboxFractions").checked = true;
+// document.getElementById("checkboxVal").checked = true;
+}, 1000);
 
 function cocoaCheck() {
 	document.getElementById("checkboxChoco").checked = false;
@@ -74,6 +90,10 @@ quantileCheck()
 valCheck()
 quanCheck()
 
+/* 
+Calls the right map coloring function, according to the parameters 
+chosen by user.
+*/
 function dataParam() {
 	blankMap();
 	var country = d3.selectAll(".country");
@@ -214,24 +234,28 @@ function colorMap(dataFile, scale="quantile") {
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
 
 			for (var keyCountry in data) {
-				console.log(keyCountry);
+
+				// Removes the spaces of the country string, in order to correspond
+				// with the classes of the map.
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, '');
+
+				console.log(keyCountry, keyCountryClass);
+
 				if (data[keyCountry] < oneFifth) {
-					// hier here ici
 					console.log("miew"+keyCountry);
-					d3.select("[title='"+keyCountry+"']").attr("fill", "black");
-					// document.getElementById(keyCountry).style.fill = "blue";
+					d3.selectAll(keyCountryClass).style("fill", "blue");
 				}
 				else if ((data[keyCountry] > oneFifth) && (data[keyCountry] < twoFifth)) {
-					document.getElementById(keyCountry).style.fill = "green";
+					d3.selectAll(keyCountryClass).style("fill", "green");
 				}
 				else if ((data[keyCountry] > twoFifth) && (data[keyCountry] < threeFifth)) {
-					document.getElementById(keyCountry).style.fill = "yellow";
+					d3.selectAll(keyCountryClass).style("fill", "yellow");
 				}
 				else if ((data[keyCountry] > threeFifth) && (data[keyCountry] < fourFifth)) {
-					document.getElementById(keyCountry).style.fill = "orange";
+					d3.selectAll(keyCountryClass).style("fill", "orange");
 				}
 				else if (data[keyCountry] > fourFifth) {
-					document.getElementById(keyCountry).style.fill = "red";
+					d3.selectAll(keyCountryClass).style("fill", "red");
 				}
 			}
 		}
@@ -245,20 +269,27 @@ function colorMap(dataFile, scale="quantile") {
 			// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
 
 			for (var keyCountry in data) {
+
+				// Removes the spaces of the country string, in order to correspond
+				// with the classes of the map.
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, '');
+
 				if (data[keyCountry] < firstQuant) {
-					document.getElementById(keyCountry).style.fill = "blue";
+					d3.selectAll(keyCountryClass).style("fill", "blue");
 				}
 				else if ((data[keyCountry] > firstQuant) && (data[keyCountry] < secQuant)) {
-					document.getElementById(keyCountry).style.fill = "green";
-				}
+					d3.selectAll(keyCountryClass).style("fill", "green");
+									}
 				else if ((data[keyCountry] > secQuant) && (data[keyCountry] < thirdQuant)) {
-					document.getElementById(keyCountry).style.fill = "yellow";
+					d3.selectAll(keyCountryClass).style("fill", "yellow");
+
 				}
 				else if ((data[keyCountry] > thirdQuant) && (data[keyCountry] < fourthQuant)) {
-					document.getElementById(keyCountry).style.fill = "orange";
+					d3.selectAll(keyCountryClass).style("fill", "orange");
+
 				}
 				else if (data[keyCountry] > fourthQuant) {
-					document.getElementById(keyCountry).style.fill = "red";
+					d3.selectAll(keyCountryClass).style("fill", "red");
 				}
 			}	
 		}
@@ -288,7 +319,8 @@ data.
 scale is divided. Can be either "fraction" or "quantile".
 */ 
 function matrColorMap(dataFile, d, scale="fraction") {
-	document.getElementById(d.properties.name).style.stroke = "black";
+	d3.selectAll("." + d.properties.name.replace(/\s+/, '')).style("stroke", "black");
+	// document.getElementById(d.properties.name).style.stroke = "black";
 
 	d3.json(dataFile, color);
 	function color(error, data) {
@@ -327,21 +359,27 @@ function matrColorMap(dataFile, d, scale="fraction") {
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
 
 			for (var keyCountry in countryDic) {
+
+				// Removes the spaces of the country string, in order to correspond
+				// with the classes of the map.
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, '');
+
 				console.log("key", keyCountry);
+
 				if (countryDic[keyCountry] < oneFifth) {
-					document.getElementById(keyCountry).style.fill = "blue";
+					d3.selectAll(keyCountryClass).style("fill", "blue");
 				}
 				else if ((countryDic[keyCountry] > oneFifth) && (countryDic[keyCountry] < twoFifth)) {
-					document.getElementById(keyCountry).style.fill = "green";
+					d3.selectAll(keyCountryClass).style("fill", "green");
 				}
 				else if ((countryDic[keyCountry] > twoFifth) && (countryDic[keyCountry] < threeFifth)) {
-					document.getElementById(keyCountry).style.fill = "yellow";
+					d3.selectAll(keyCountryClass).style("fill", "yellow");
 				}
 				else if ((countryDic[keyCountry] > threeFifth) && (countryDic[keyCountry] < fourFifth)) {
-					document.getElementById(keyCountry).style.fill = "orange";
+					d3.selectAll(keyCountryClass).style("fill", "orange");
 				}
 				else if (countryDic[keyCountry] > fourFifth) {
-					document.getElementById(keyCountry).style.fill = "red";
+					d3.selectAll(keyCountryClass).style("fill", "red");
 				}
 			}
 		}
@@ -355,20 +393,25 @@ function matrColorMap(dataFile, d, scale="fraction") {
 			// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
 
 			for (var keyCountry in data) {
+
+				// Removes the spaces of the country string, in order to correspond
+				// with the classes of the map.
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, '');
+
 				if (data[keyCountry] < firstQuant) {
-					document.getElementById(keyCountry).style.fill = "blue";
+					d3.selectAll(keyCountryClass).style("fill", "blue");
 				}
 				else if ((data[keyCountry] > firstQuant) && (data[keyCountry] < secQuant)) {
-					document.getElementById(keyCountry).style.fill = "green";
+					d3.selectAll(keyCountryClass).style("fill", "green");
 				}
 				else if ((data[keyCountry] > secQuant) && (data[keyCountry] < thirdQuant)) {
-					document.getElementById(keyCountry).style.fill = "yellow";
+					d3.selectAll(keyCountryClass).style("fill", "yellow");
 				}
 				else if ((data[keyCountry] > thirdQuant) && (data[keyCountry] < fourthQuant)) {
-					document.getElementById(keyCountry).style.fill = "orange";
+					d3.selectAll(keyCountryClass).style("fill", "orange");
 				}
 				else if (data[keyCountry] > fourthQuant) {
-					document.getElementById(keyCountry).style.fill = "red";
+					d3.selectAll(keyCountryClass).style("fill", "red");
 				}
 			}	
 		}
