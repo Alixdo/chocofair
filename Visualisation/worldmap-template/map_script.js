@@ -63,7 +63,7 @@ function draw(topo) {
   var country = g.selectAll(".country").data(topo);
 
   country.enter().insert("path")
-      .attr("class", function(d,i) { return "country " + d.properties.name.replace(/\s+/g, '')})
+      .attr("class", function(d,i) { return "country " + d.properties.name.replace(/\s+/g, '').replace("'", "").replace(",", "")})
       .attr("d", path)
       .attr("id", function(d,i) { return d.id; })
       .attr("title", function(d,i) { return d.properties.name; })

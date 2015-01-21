@@ -32,10 +32,11 @@
         <input type="checkbox" id="checkboxStroke" onchange="strokeCheck(); dataParam();" checked="checked"> Outline concerned countries (uncheck to make the visualisation faster) <br>
       </div>
 
-      <div id="legend" class="container">
-
+      <div id="legendContainer" class="container">
+        miew
       </div>
     </div>
+    <div id="lineContainer" class="container"></div>
   	
     <script type="text/javascript" src="script.js"></script>
   </body>

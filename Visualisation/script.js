@@ -115,7 +115,7 @@ function dataParam() {
 
 				country.on("click", function(d,i) {
 					blankMap();
-					matrColorMap("data_files/_TradeMatrCocoaImpVal2011.json", d);
+					matrColorMap("data_files/_TradeMatrCocoaImpVal2011.json", d, scale);
 				});
 			}	
 			if (document.getElementById("checkboxQuan").checked == true) {
@@ -123,7 +123,7 @@ function dataParam() {
 
 				country.on("click", function(d,i) {
 					blankMap();
-					matrColorMap("data_files/_TradeMatrCocoaImpQuan2011.json", d);
+					matrColorMap("data_files/_TradeMatrCocoaImpQuan2011.json", d, scale);
 				});
 			}
 		}
@@ -133,7 +133,7 @@ function dataParam() {
 
 				country.on("click", function(d,i) {
 					blankMap();
-					matrColorMap("data_files/_TradeMatrCocoaExpVal2011.json", d);
+					matrColorMap("data_files/_TradeMatrCocoaExpVal2011.json", d, scale);
 				});
 			}	
 			if (document.getElementById("checkboxQuan").checked == true) {
@@ -141,7 +141,7 @@ function dataParam() {
 
 				country.on("click", function(d,i) {
 					blankMap();
-					matrColorMap("data_files/_TradeMatrCocoaExpQuan2011.json", d);
+					matrColorMap("data_files/_TradeMatrCocoaExpQuan2011.json", d, scale);
 				});
 			}
 		}
@@ -159,7 +159,7 @@ function dataParam() {
 
 				country.on("click", function(d,i) {
 					blankMap();
-					matrColorMap("data_files/_TradeMatrChocoImpVal2011.json", d);
+					matrColorMap("data_files/_TradeMatrChocoImpVal2011.json", d, scale);
 				});
 			}	
 			if (document.getElementById("checkboxQuan").checked == true) {
@@ -167,7 +167,7 @@ function dataParam() {
 
 				country.on("click", function(d,i) {
 					blankMap();
-					matrColorMap("data_files/_TradeMatrChocoImpQuan2011.json", d);
+					matrColorMap("data_files/_TradeMatrChocoImpQuan2011.json", d, scale);
 				});
 			}
 		}
@@ -177,7 +177,7 @@ function dataParam() {
 
 				country.on("click", function(d,i) {
 					blankMap();
-					matrColorMap("data_files/_TradeMatrChocoExpVal2011.json", d);
+					matrColorMap("data_files/_TradeMatrChocoExpVal2011.json", d, scale);
 				});
 			}	
 			if (document.getElementById("checkboxQuan").checked == true) {
@@ -185,7 +185,7 @@ function dataParam() {
 
 				country.on("click", function(d,i) {
 					blankMap();
-					matrColorMap("data_files/_TradeMatrChocoExpQuan2011.json", d);
+					matrColorMap("data_files/_TradeMatrChocoExpQuan2011.json", d, scale);
 				});
 			}	
 		}
@@ -236,19 +236,19 @@ function colorMap(dataFile, scale="quantile") {
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
 
 			for (var keyCountry in data) {
-				// d3.selectAll("." + keyCountry.replace(/\s+/g, "").replace("'", "")).style("stroke", "pink");
+				// d3.selectAll("." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","")).style("stroke", "pink");
 			}
 
 			for (var keyCountry in data) {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "");
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","");
 
-				console.log(keyCountry, keyCountryClass);
+				// console.log(keyCountry, keyCountryClass);
 
 				if (data[keyCountry] < oneFifth) {
-					console.log("miew"+keyCountry);
+					// console.log("miew"+keyCountry);
 					d3.selectAll(keyCountryClass).style("fill", "blue");
 				}
 				else if ((data[keyCountry] > oneFifth) && (data[keyCountry] < twoFifth)) {
@@ -278,7 +278,7 @@ function colorMap(dataFile, scale="quantile") {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "");
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","");
 
 				if (data[keyCountry] < firstQuant) {
 					d3.selectAll(keyCountryClass).style("fill", "blue");
@@ -325,7 +325,8 @@ data.
 scale is divided. Can be either "fraction" or "quantile".
 */ 
 function matrColorMap(dataFile, d, scale="fraction") {
-	d3.selectAll("." + d.properties.name.replace(/\s+/, '')).style("stroke", "black");
+	console.log(d.properties.name, d.properties.name.replace(",","").replace(/\s+/g, '').replace("'",""));
+	d3.selectAll("." + d.properties.name.replace(",","").replace(/\s+/g, '').replace("'","")).style("stroke", "black");
 	// document.getElementById(d.properties.name).style.stroke = "black";
 
 	d3.json(dataFile, color);
@@ -363,14 +364,16 @@ function matrColorMap(dataFile, d, scale="fraction") {
 			var threeFifth = 3*max/5;
 			var fourFifth = 4*max/5;
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
+			var rangesList = [0, oneFifth, twoFifth, threeFifth, fourFifth, max];
+			console.log("range1", rangesList);
 
 			for (var keyCountry in countryDic) {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "");
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","");
 
-				console.log("key", keyCountry);
+				// console.log("key", keyCountry);
 
 				if (countryDic[keyCountry] < oneFifth) {
 					d3.selectAll(keyCountryClass).style("fill", "blue");
@@ -391,18 +394,20 @@ function matrColorMap(dataFile, d, scale="fraction") {
 		}
 
 		if (scale == "quantile") {
-			var firstQuant = d3.quantile(dataValues, 0.2);
-			var secQuant = d3.quantile(dataValues, 0.4);
-			var thirdQuant = d3.quantile(dataValues, 0.6);
-			var fourthQuant = d3.quantile(dataValues, 0.8);
-			var fifthQuant = d3.quantile(dataValues, 1);
+			var firstQuant = d3.quantile(countryValSorted, 0.2);
+			var secQuant = d3.quantile(countryValSorted, 0.4);
+			var thirdQuant = d3.quantile(countryValSorted, 0.6);
+			var fourthQuant = d3.quantile(countryValSorted, 0.8);
+			var fifthQuant = d3.quantile(countryValSorted, 1);
 			// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
+			var rangesList = [0, firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant];
+			console.log("range2", rangesList);
 
 			for (var keyCountry in data) {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "");
+				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","");
 
 				if (data[keyCountry] < firstQuant) {
 					d3.selectAll(keyCountryClass).style("fill", "blue");
@@ -421,5 +426,110 @@ function matrColorMap(dataFile, d, scale="fraction") {
 				}
 			}	
 		}
+
+		var colorList = ["blue", "green", "yellow", "orange", "red"];
+
+		legend(rangesList, colorList);
 	}
+}
+
+
+function legend(rangesList, colorList) {
+	console.log("legend");
+	console.log(rangesList, colorList);
+
+	var legendHeight = 20;
+	var legendWidth = document.documentElement.clientWidth - 20;
+
+	var relHeight = rangesList[5]/legendWidth;
+
+	var dataScale = d3.scale.linear();
+	// dataScale.domain([0, rangesList[5]]);
+	// dataScale.range([legendHeight, 0]);
+	dataScale.domain([0, rangesList[5]]);
+	dataScale.range([0, legendWidth]);
+
+	var legend = d3.select("#lineContainer")
+		.append("svg")
+		.attr("width", legendWidth + 20)
+		.attr("height", legendHeight + 200)
+		.append("g")
+		.attr('transform', 'translate(10, 0)')
+		.selectAll(".legend")
+		.data(colorList)
+		.enter()
+		.append("g")
+		.attr("class", "legend")
+		.attr("transform", 
+			function(d,i) {
+			var horz = 0
+		    // var vert = dataScale(rangesList[i+1]);
+		    var vert = i*40
+		    console.log("vert", vert);
+		    return "translate(" + horz + "," + vert + ")";
+		});
+
+	legend.append("rect")
+		.attr("width", function(d,i) {
+			return (rangesList[i+1] - rangesList[i]) / relHeight;
+		})
+		.attr("height", legendHeight)
+		// .attr("width", legendWidth)
+		// .attr("height", function(d,i) {
+		// 	return (rangesList[i+1] - rangesList[i]) / relHeight;
+		// })
+		.attr("fill", function(d,i) {
+			return d;
+		})
+		.attr("stroke", "black");
+}
+
+function lineVis(rangesList, colorList) {
+	console.log("legend");
+	console.log(rangesList, colorList);
+
+	var legendHeight = 20;
+	var legendWidth = document.documentElement.clientWidth - 20;
+
+	var relHeight = rangesList[5]/legendWidth;
+
+	var dataScale = d3.scale.linear();
+	// dataScale.domain([0, rangesList[5]]);
+	// dataScale.range([legendHeight, 0]);
+	dataScale.domain([0, rangesList[5]]);
+	dataScale.range([0, legendWidth]);
+
+	var legend = d3.select("#lineContainer")
+		.append("svg")
+		.attr("width", legendWidth + 20)
+		.attr("height", legendHeight + 200)
+		.append("g")
+		.attr('transform', 'translate(10, 0)')
+		.selectAll(".legend")
+		.data(colorList)
+		.enter()
+		.append("g")
+		.attr("class", "legend")
+		.attr("transform", 
+			function(d,i) {
+			var horz = 0
+		    // var vert = dataScale(rangesList[i+1]);
+		    var vert = i*40
+		    console.log("vert", vert);
+		    return "translate(" + horz + "," + vert + ")";
+		});
+
+	legend.append("rect")
+		.attr("width", function(d,i) {
+			return (rangesList[i+1] - rangesList[i]) / relHeight;
+		})
+		.attr("height", legendHeight)
+		// .attr("width", legendWidth)
+		// .attr("height", function(d,i) {
+		// 	return (rangesList[i+1] - rangesList[i]) / relHeight;
+		// })
+		.attr("fill", function(d,i) {
+			return d;
+		})
+		.attr("stroke", "black");
 }
