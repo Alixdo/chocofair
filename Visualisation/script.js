@@ -97,7 +97,7 @@ Calls the right map coloring function, according to the parameters
 chosen by user.
 */
 function dataParam() {
-	blankMap();
+	resetVis();
 	var country = d3.selectAll(".country");
 	var scale = "fraction";
 
@@ -114,7 +114,7 @@ function dataParam() {
 				colorMap("data_files/_CocoaImpVal2011.json", scale);
 
 				country.on("click", function(d,i) {
-					blankMap();
+					resetVis();
 					matrColorMap("data_files/_TradeMatrCocoaImpVal2011.json", d, scale);
 				});
 			}	
@@ -122,7 +122,7 @@ function dataParam() {
 				colorMap("data_files/_CocoaImpQuan2011.json", scale);
 
 				country.on("click", function(d,i) {
-					blankMap();
+					resetVis();
 					matrColorMap("data_files/_TradeMatrCocoaImpQuan2011.json", d, scale);
 				});
 			}
@@ -132,7 +132,7 @@ function dataParam() {
 				colorMap("data_files/_CocoaExpVal2011.json", scale);
 
 				country.on("click", function(d,i) {
-					blankMap();
+					resetVis();
 					matrColorMap("data_files/_TradeMatrCocoaExpVal2011.json", d, scale);
 				});
 			}	
@@ -140,7 +140,7 @@ function dataParam() {
 				colorMap("data_files/_CocoaExpQuan2011.json", scale);
 
 				country.on("click", function(d,i) {
-					blankMap();
+					resetVis();
 					matrColorMap("data_files/_TradeMatrCocoaExpQuan2011.json", d, scale);
 				});
 			}
@@ -158,7 +158,7 @@ function dataParam() {
 				colorMap("data_files/_ChocoImpVal2011.json", scale);
 
 				country.on("click", function(d,i) {
-					blankMap();
+					resetVis();
 					matrColorMap("data_files/_TradeMatrChocoImpVal2011.json", d, scale);
 				});
 			}	
@@ -166,7 +166,7 @@ function dataParam() {
 				colorMap("data_files/_ChocoImpQuan2011.json", scale);
 
 				country.on("click", function(d,i) {
-					blankMap();
+					resetVis();
 					matrColorMap("data_files/_TradeMatrChocoImpQuan2011.json", d, scale);
 				});
 			}
@@ -176,7 +176,7 @@ function dataParam() {
 				colorMap("data_files/_ChocoExpVal2011.json", scale);
 
 				country.on("click", function(d,i) {
-					blankMap();
+					resetVis();
 					matrColorMap("data_files/_TradeMatrChocoExpVal2011.json", d, scale);
 				});
 			}	
@@ -184,7 +184,7 @@ function dataParam() {
 				colorMap("data_files/_ChocoExpQuan2011.json", scale);
 
 				country.on("click", function(d,i) {
-					blankMap();
+					resetVis();
 					matrColorMap("data_files/_TradeMatrChocoExpQuan2011.json", d, scale);
 				});
 			}	
@@ -234,6 +234,7 @@ function colorMap(dataFile, scale="quantile") {
 			var threeFifth = 3*max/5;
 			var fourFifth = 4*max/5;
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
+			var rangesList = [0, oneFifth, twoFifth, threeFifth, fourFifth, max];
 
 			for (var keyCountry in data) {
 				// d3.selectAll("." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","")).style("stroke", "pink");
@@ -243,7 +244,7 @@ function colorMap(dataFile, scale="quantile") {
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
-				var keyCountryClass = "." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","");
+				var keyCountryClass = "." + keyCountry.replace(/[ ,.]{1,}/g, "");//.replace("'", "").replace(",","");
 
 				// console.log(keyCountry, keyCountryClass);
 
@@ -273,6 +274,7 @@ function colorMap(dataFile, scale="quantile") {
 			var fourthQuant = d3.quantile(dataValues, 0.8);
 			var fifthQuant = d3.quantile(dataValues, 1);
 			// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
+			var rangesList = [0, firstQuant,secQuant, thirdQuant, fourthQuant, fifthQuant];
 
 			for (var keyCountry in data) {
 
@@ -299,17 +301,21 @@ function colorMap(dataFile, scale="quantile") {
 				}
 			}	
 		}
+
+		var colorList = ["blue", "green", "yellow", "orange", "red"];
+		drawLegend(rangesList, colorList);
 	}
 }
 
 /*
 Erase all custom fills and strokes on the map.
 */
-function blankMap() {
+function resetVis() {
 	console.log("blanK");
 	d3.selectAll(".country")
 	 	.style("fill", "grey")
 	 	.style("stroke", "none");
+	d3.select("#legendContainer").select("svg > *").remove();
 }
 
 
@@ -429,32 +435,30 @@ function matrColorMap(dataFile, d, scale="fraction") {
 
 		var colorList = ["blue", "green", "yellow", "orange", "red"];
 
-		legend(rangesList, colorList);
+		drawLegend(rangesList, colorList);
 	}
 }
 
 
-function legend(rangesList, colorList) {
+function drawLegend(rangesList, colorList) {
 	console.log("legend");
 	console.log(rangesList, colorList);
 
-	var legendHeight = 20;
-	var legendWidth = document.documentElement.clientWidth - 20;
+	// Size of colored squares in legend
+	var squareSide = 20;
+	var spacing = 10
 
-	var relHeight = rangesList[5]/legendWidth;
+	var legendWidth = 500;
+	var legendHeight = 5*squareSide + 4*spacing;
 
 	var dataScale = d3.scale.linear();
-	// dataScale.domain([0, rangesList[5]]);
-	// dataScale.range([legendHeight, 0]);
-	dataScale.domain([0, rangesList[5]]);
-	dataScale.range([0, legendWidth]);
 
-	var legend = d3.select("#lineContainer")
-		.append("svg")
-		.attr("width", legendWidth + 20)
-		.attr("height", legendHeight + 200)
+	var legend = d3.select("#legendContainer")
+		.select("svg")
+		.attr("width", legendWidth)
+		.attr("height", legendHeight)
 		.append("g")
-		.attr('transform', 'translate(10, 0)')
+		// .attr('transform', 'translate(10, 0)')
 		.selectAll(".legend")
 		.data(colorList)
 		.enter()
@@ -462,26 +466,31 @@ function legend(rangesList, colorList) {
 		.attr("class", "legend")
 		.attr("transform", 
 			function(d,i) {
-			var horz = 0
-		    // var vert = dataScale(rangesList[i+1]);
-		    var vert = i*40
-		    console.log("vert", vert);
-		    return "translate(" + horz + "," + vert + ")";
+				var horz = 0
+			    // var vert = dataScale(rangesList[i+1]);
+			    var vert = legendHeight - squareSide - i*(squareSide + spacing);
+			    console.log("vert", vert);
+			    return "translate(" + horz + "," + vert + ")";
 		});
 
+	// Draws colored rectangles
 	legend.append("rect")
-		.attr("width", function(d,i) {
-			return (rangesList[i+1] - rangesList[i]) / relHeight;
-		})
-		.attr("height", legendHeight)
-		// .attr("width", legendWidth)
-		// .attr("height", function(d,i) {
-		// 	return (rangesList[i+1] - rangesList[i]) / relHeight;
-		// })
+		.attr("width", squareSide)
+		.attr("height", squareSide)
 		.attr("fill", function(d,i) {
 			return d;
 		})
-		.attr("stroke", "black");
+		.attr("stroke", "black")
+
+	// Adds corresponding text to each rectangle (data delimitations)
+	legend.append("text")
+		.attr("x", squareSide + spacing)
+		.attr("y", (spacing + squareSide) / 2)
+		.text( function (d,i) {
+			return rangesList[i] + " - " + rangesList[i+1]; 
+		})
+		.attr("font-family", "sans-serif")
+		.attr("font-size", ((3/5)*squareSide).toString());	
 }
 
 function lineVis(rangesList, colorList) {

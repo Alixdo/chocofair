@@ -33,7 +33,7 @@
       </div>
 
       <div id="legendContainer" class="container">
-        miew
+        <svg></svg>
       </div>
     </div>
     <div id="lineContainer" class="container"></div>

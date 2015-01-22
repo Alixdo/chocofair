@@ -70,11 +70,13 @@ h2 {
   position: absolute;
 }
 #legendContainer {
+  padding: 20px;
   position: relative;
   z-index: 3;
+  background: "white";
 }
 rect {
-    stroke-width: 0.5;
+    stroke-width: 1px;
 }
 
 /*--------------------------------------------------------------------------------------*/
