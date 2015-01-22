@@ -11,13 +11,18 @@
   
 
   <body onload="checkProp()">
-    <header id="header" class="container">
-      <h2>Import and export of cocoa beans and chocolate products in the world</h2>
-    </header>
-    <div id="container-fluid">
-    	<div id="mapContainer" class="container"></div>
-    <script type="text/javascript" src="worldmap-template/map_script.js"></script>
-
+    <div id="leftColumn">
+      <div id="title" class="container">
+        <h2>Import and export of cocoa beans and chocolate products in the world</h2>
+      </div>
+    	<div id="mapContainer" class="container">
+        <div id="legendContainer" class="container"> 
+          <svg></svg>
+        </div>
+      </div>
+      <script type="text/javascript" src="worldmap-template/map_script.js"></script>
+    </div>
+    <div id="rightColumn">
       <div id="checkboxContainer" class="container">
         <input type="checkbox" id="checkboxCocoa" onchange="cocoaCheck(); dataParam();" > Cocoa beans <br>
         <input type="checkbox" id="checkboxChoco" onchange="chocoCheck(); dataParam();" checked="checked" > Chocolate products <br>
@@ -32,11 +37,9 @@
         <input type="checkbox" id="checkboxStroke" onchange="strokeCheck(); dataParam();" checked="checked"> Outline concerned countries (uncheck to make the visualisation faster) <br>
       </div>
 
-      <div id="legendContainer" class="container">
-        <svg></svg>
-      </div>
+        
     </div>
-    <div id="lineContainer" class="container"></div>
+    <!-- <div id="lineContainer" class="container"></div > -->
   	
     <script type="text/javascript" src="script.js"></script>
   </body>

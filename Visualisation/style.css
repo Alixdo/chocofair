@@ -53,27 +53,37 @@ table {
   border:2px solid #d0d0d0;
   border-radius: 5px;
 }
-header {
-  margin: 10px 10px 0px 10px;
+#leftColumn {
+  margin:10px 300px 0px 10px;
+}
+#rightColumn {
+  margin: 10px;
+}
+
+#title {
+  margin: 0px 0px 10px 0px;
   padding:10px;
   border:2px solid #d0d0d0;
   border-radius: 5px;
+  position: absolute;
 }
 h2 {
   text-align: center;
 }
 #checkboxContainer {
-  margin: 10px;
+  margin-right: 10px;
   padding: 10px;
   border: 2px solid #d0d0d0;
   border-radius: 5px;
   position: absolute;
 }
 #legendContainer {
-  padding: 20px;
-  position: relative;
+  padding: 8px;
+  float: left;
   z-index: 3;
-  background: "white";
+  background: white;
+  bottom: 20px;
+  position: absolute;
 }
 rect {
     stroke-width: 1px;
@@ -83,15 +93,14 @@ rect {
 /*--------------------------Styling of map_script.js------------------------------------*/
 /* http://techslides.com/demos/d3/worldmap-template.html */
 .country:hover {
-  stroke: #fff;
-  stroke-width: 1.5px;
+  stroke: #fff !important;
+  stroke-width: 1.5px !important;
 }
 .text {
   font-size:10px;
   text-transform:capitalize;
 }
 #mapContainer {
-  margin:10px 300px 0px 10px;
   padding: 10px;
   border:2px solid #d0d0d0;
   border-radius: 5px;
@@ -124,6 +133,3 @@ div.tooltip {
   stroke: #ccc;
   stroke-width: 1px;
 }
-
-/*--------------------------------------------------------------------------------------*/
-/*------------------------------Styling of script.js------------------------------------*/

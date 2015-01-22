@@ -1,14 +1,23 @@
 "use strict";
 
 /* 
-Sets the properties of the checkbox menu to the right size.
+Sets the margin and size properties for the title div and the left side divs.
 Is called onload in main.html.
 */
 function checkProp() {
-	var margin_left = document.getElementById("mapContainer").offsetWidth + 20;
-	var checkWidth = document.getElementById("header").offsetWidth - margin_left - 14;	
-	document.getElementById("checkboxContainer").style.marginLeft = margin_left.toString() + "px";
-	document.getElementById("checkboxContainer").style.width = checkWidth.toString() + "px";
+	// Sets the title div width to be as long as the map.
+	var titleLength = document.getElementById("mapContainer").clientWidth - 30;
+	document.getElementById("title").style.width = titleLength.toString() + "px";
+
+	// Sets the top maring of the map so as to leave room for the title above the map.
+	var mapTopMargin = document.getElementById("title").offsetHeight + 10;
+	document.getElementById("mapContainer").style.marginTop = mapTopMargin.toString() + "px";
+
+		// Sets the margin of the left column so as to leave space for the map in the right column.
+	var marginLeft = document.getElementById("mapContainer").offsetWidth + 20;
+	// var checkWidth = document.getElementById("body").offsetWidth - margin_left - 14;	
+	document.getElementById("rightColumn").style.marginLeft = marginLeft.toString() + "px";
+	// document.getElementById("rightColumn").style.width = checkWidth.toString() + "px";
 }
 
 /*
@@ -315,6 +324,11 @@ function resetVis() {
 	d3.selectAll(".country")
 	 	.style("fill", "grey")
 	 	.style("stroke", "none");
+
+	d3.selectAll(".contry:hover")
+		.style("stroke", "white")
+		.style("stroke-width", "1.5px");
+
 	d3.select("#legendContainer").select("svg > *").remove();
 }
 
@@ -445,10 +459,10 @@ function drawLegend(rangesList, colorList) {
 	console.log(rangesList, colorList);
 
 	// Size of colored squares in legend
-	var squareSide = 20;
-	var spacing = 10
+	var squareSide = 17;
+	var spacing = squareSide / 3;
 
-	var legendWidth = 500;
+	var legendWidth = squareSide * 10;
 	var legendHeight = 5*squareSide + 4*spacing;
 
 	var dataScale = d3.scale.linear();
@@ -487,7 +501,13 @@ function drawLegend(rangesList, colorList) {
 		.attr("x", squareSide + spacing)
 		.attr("y", (spacing + squareSide) / 2)
 		.text( function (d,i) {
-			return rangesList[i] + " - " + rangesList[i+1]; 
+			if ( !( isNaN(rangesList[i]) || isNaN(rangesList[i+1]) || (rangesList[i] == 0 && rangesList[i+1] == 0))) {
+				return rangesList[i] + " - " + rangesList[i+1]; 
+			}
+			// if (!((rangesList[i] == 0 && rangesList[i+1] == 0) || (rangesList[i] == NaN) || (rangesList[i+1] == NaN) ||
+			// 		(rangesList[i] == undefined) || (rangesList[i+1] == undefined))) {
+			// 	return rangesList[i] + " - " + rangesList[i+1]; 
+			// }
 		})
 		.attr("font-family", "sans-serif")
 		.attr("font-size", ((3/5)*squareSide).toString());	

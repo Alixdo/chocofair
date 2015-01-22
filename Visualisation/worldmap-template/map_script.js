@@ -29,6 +29,7 @@ function setup(width,height){
   svg = d3.select("#mapContainer").append("svg")
       .attr("width", width)
       .attr("height", height)
+      .attr("id", "svgMap")
       .call(zoom)
       .on("click", click)
       .append("g");
@@ -104,9 +105,10 @@ function draw(topo) {
 function redraw() {
   width = document.getElementById('mapContainer').offsetWidth;
   height = width / 2;
-  d3.select('svg').remove();
+  d3.select('#svgMap').remove();
   setup(width,height);
   draw(topo);
+
   dataParam();
 }
 
