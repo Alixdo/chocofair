@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="external_scripts/d3.v3.js"></script>
     <script type="text/javascript" src="external_scripts/topojson.v1.min.js"></script>
+    <script type="text/javascript" src="external_scripts/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="external_scripts/queue.v1.min.js"></script>
   </head>
 
@@ -25,14 +26,14 @@
     <div id="rightColumn">
       <div id="checkboxContainer" class="container">
         <input type="checkbox" id="checkboxCocoa" onchange="cocoaCheck(); dataParam();" > Cocoa beans <br>
-        <input type="checkbox" id="checkboxChoco" onchange="chocoCheck(); dataParam();" checked="checked" > Chocolate products <br>
+        <input type="checkbox" id="checkboxChoco" onchange="chocoCheck(); dataParam();"> Chocolate products <br>
         <input type="checkbox" id="checkboxImport" onchange="importCheck(); dataParam();"> Import <br>
-        <input type="checkbox" id="checkboxExport" onchange="exportCheck(); dataParam();" checked="checked"> Export <br>
+        <input type="checkbox" id="checkboxExport" onchange="exportCheck(); dataParam();"> Export <br>
         <input type="checkbox" id="checkboxPrice" onchange="priceCheck(); dataParam();"> Wage/Price <br>
         <input type="checkbox" id="checkboxProduction" onchange="productionCheck(); dataParam();"> Production <br>
-        <input type="checkbox" id="checkboxFractions" onchange="fractionCheck(); dataParam();" checked="checked"> Fractions <br>
+        <input type="checkbox" id="checkboxFractions" onchange="fractionCheck(); dataParam();"> Fractions <br>
         <input type="checkbox" id="checkboxQuantiles" onchange="quantileCheck(); dataParam();"> Quantiles <br>
-        <input type="checkbox" id="checkboxVal" onchange="valCheck(); dataParam();" checked="checked"> US dollars <br>
+        <input type="checkbox" id="checkboxVal" onchange="valCheck(); dataParam();"> US dollars <br>
         <input type="checkbox" id="checkboxQuan" onchange="quanCheck(); dataParam();"> Tonnes <br>
         <input type="checkbox" id="checkboxStroke" onchange="strokeCheck(); dataParam();" checked="checked"> Outline concerned countries (uncheck to make the visualisation faster) <br>
       </div>

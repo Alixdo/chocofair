@@ -20,43 +20,44 @@ function checkProp() {
 	// document.getElementById("rightColumn").style.width = checkWidth.toString() + "px";
 }
 
-/*
-Checks boxes after page is loaded, so that data is shown immediatly when the page 
-is opened, without the user having to choose parameters.
-*/
-setTimeout(function(){
-	dataParam();
-// document.getElementById("checkboxCocoa").checked = true;
-// document.getElementById("checkboxExport").checked = true;
-// document.getElementById("checkboxFractions").checked = true;
-// document.getElementById("checkboxVal").checked = true;
-}, 1000);
-
+var titleString = ["", "of", "", "", "", "", "", "in", ""];
+// Makes sure two checkboxes are not checked at the same time if they encode different data.
+// Globally encodes which strings are to be used in the title of the visualisation.
 function cocoaCheck() {
 	document.getElementById("checkboxChoco").checked = false;
+	titleString[2] = "chocolate products";
 }
 function chocoCheck() {
 	document.getElementById("checkboxCocoa").checked = false;
+	titleString[2] = "cocoa beans";
 }
 function importCheck() {
 	document.getElementById("checkboxExport").checked = false;
 	document.getElementById("checkboxPrice").checked = false;
 	document.getElementById("checkboxProduction").checked = false;
+	titleString[0] = "Import";
 }
 function exportCheck() {
 	document.getElementById("checkboxImport").checked = false;
 	document.getElementById("checkboxPrice").checked = false;
 	document.getElementById("checkboxProduction").checked = false;
+	titleString[0] = "Export";
 }
 function priceCheck() {
 	document.getElementById("checkboxImport").checked = false;
 	document.getElementById("checkboxExport").checked = false;
 	document.getElementById("checkboxProduction").checked = false;
+	titleString[0] = "Earnings";
+	titleString[3] = "farmers";
+	titleString[7] = "US dollars per tonne";
 }
 function productionCheck() {
 	document.getElementById("checkboxImport").checked = false;
 	document.getElementById("checkboxExport").checked = false;
 	document.getElementById("checkboxPrice").checked = false;
+	titleString[0] = "Production";
+	titleString[7] = "tonnes per year";
+
 }
 function fractionCheck() {
 	document.getElementById("checkboxQuantiles").checked = false;
@@ -66,9 +67,11 @@ function quantileCheck() {
 }
 function valCheck() {
 	document.getElementById("checkboxQuan").checked = false;
+	titleString[7] = "thousand US dollars";
 }
 function quanCheck() {
 	document.getElementById("checkboxVal").checked = false;
+	titleString[7] = "tonnes per year";
 }
 function strokeCheck() {
 }
@@ -101,6 +104,27 @@ function strokeCheck() {
 // valCheck()
 // quanCheck()
 
+/*
+Checks boxes after page is loaded, so that data is shown immediatly when the page 
+is opened, without the user having to choose parameters.
+*/
+
+setTimeout(function(){
+	var defer1 = $.Deferred();
+	document.getElementById("checkboxChoco").checked = true;
+	defer1.resolve();
+	defer1.done(function defer2() { var defer2 = $.Deferred(); document.getElementById("checkboxExport").checked = true; defer2.resolve();});
+
+	defer2.done( function defer3() { var defer3 = $.Deferred(); document.getElementById("checkboxFractions").checked = true; defer3.resolve();});
+	
+	defer3.done( function miew() {document.getElementById("checkboxVal").checked = true;});
+	// dataParam();
+// document.getElementById("checkboxCocoa").checked = true;
+// document.getElementById("checkboxExport").checked = true;
+// document.getElementById("checkboxFractions").checked = true;
+// document.getElementById("checkboxVal").checked = true;
+}, 1000);
+
 /* 
 Calls the right map coloring function, according to the parameters 
 chosen by user.
@@ -119,6 +143,9 @@ function dataParam() {
 
 	if (document.getElementById("checkboxCocoa").checked == true){
 		if (document.getElementById("checkboxImport").checked == true){
+
+			titleString[4] = "from";
+
 			if (document.getElementById("checkboxVal").checked == true) {
 				colorMap("data_files/_CocoaImpVal2011.json", scale);
 
@@ -137,6 +164,9 @@ function dataParam() {
 			}
 		}
 		if (document.getElementById("checkboxExport").checked == true){
+
+			titleString[4] = "to";
+
 			if (document.getElementById("checkboxVal").checked == true) {
 				colorMap("data_files/_CocoaExpVal2011.json", scale);
 
@@ -163,6 +193,9 @@ function dataParam() {
 	}
 	if (document.getElementById("checkboxChoco").checked == true) {
 		if (document.getElementById("checkboxImport").checked == true) {
+
+			titleString[4] = "from";
+
 			if (document.getElementById("checkboxVal").checked == true) {
 				colorMap("data_files/_ChocoImpVal2011.json", scale);
 
@@ -181,6 +214,9 @@ function dataParam() {
 			}
 		}
 		if (document.getElementById("checkboxExport").checked == true) {
+
+			titleString[4] = "to";
+
 			if (document.getElementById("checkboxVal").checked == true) {
 				colorMap("data_files/_ChocoExpVal2011.json", scale);
 
@@ -215,6 +251,10 @@ values as values. One data value only per country.
 scale is divided. Can be either "fraction" or "quantile".
 */ 
 function colorMap(dataFile, scale="quantile") {
+
+	titleString[4] = "per country"; 
+	document.getElementById("title").innerHTML = titleString.join(" ");
+
 	d3.json(dataFile, color);
 
 	function color(error, data) {
@@ -345,9 +385,12 @@ data.
 scale is divided. Can be either "fraction" or "quantile".
 */ 
 function matrColorMap(dataFile, d, scale="fraction") {
-	console.log(d.properties.name, d.properties.name.replace(",","").replace(/\s+/g, '').replace("'",""));
-	d3.selectAll("." + d.properties.name.replace(",","").replace(/\s+/g, '').replace("'","")).style("stroke", "black");
+	// console.log(d.properties.name, d.properties.name.replace(",","").replace(/\s+/g, '').replace("'",""));
+	// d3.selectAll("." + d.properties.name.replace(",","").replace(/\s+/g, '').replace("'","")).style("stroke", "black");
 	// document.getElementById(d.properties.name).style.stroke = "black";
+
+	titleString[5] = d.properties.name;
+	document.getElementById("title").innerHTML = titleString.join(" ");
 
 	d3.json(dataFile, color);
 	function color(error, data) {
@@ -364,16 +407,11 @@ function matrColorMap(dataFile, d, scale="fraction") {
   			return a - b;
 		}
 
-		// console.log("data", data);
 		var dataMap = d3.map(data);
 		var dataDicVal = dataMap.values();
-		// console.log(dataDicVal);
 		var countryDic = dataMap.get(d.properties.name);
-		// console.log("B", countryDic);
 		var countryMap = d3.map(countryDic);
-		// console.log("Bmap", countryMap);
 		var countryValUnsorted = countryMap.values();
-		// console.log(countryValUnsorted);
 		var countryValSorted = countryValUnsorted.sort(compareNumbers);
 
 		var max = d3.max(countryValSorted);
@@ -455,6 +493,7 @@ function matrColorMap(dataFile, d, scale="fraction") {
 
 
 function drawLegend(rangesList, colorList) {
+	document.getElementById("legendContainer").style.display = "none";
 	console.log("legend");
 	console.log(rangesList, colorList);
 
@@ -501,13 +540,11 @@ function drawLegend(rangesList, colorList) {
 		.attr("x", squareSide + spacing)
 		.attr("y", (spacing + squareSide) / 2)
 		.text( function (d,i) {
-			if ( !( isNaN(rangesList[i]) || isNaN(rangesList[i+1]) || (rangesList[i] == 0 && rangesList[i+1] == 0))) {
+			// Shows the legend only if there is data to be visualised.
+			if (!(isNaN(rangesList[i]) || isNaN(rangesList[i+1]) || (rangesList[i] == 0 && rangesList[i+1] == 0))) {
+				document.getElementById("legendContainer").style.display = "block";
 				return rangesList[i] + " - " + rangesList[i+1]; 
 			}
-			// if (!((rangesList[i] == 0 && rangesList[i+1] == 0) || (rangesList[i] == NaN) || (rangesList[i+1] == NaN) ||
-			// 		(rangesList[i] == undefined) || (rangesList[i+1] == undefined))) {
-			// 	return rangesList[i] + " - " + rangesList[i+1]; 
-			// }
 		})
 		.attr("font-family", "sans-serif")
 		.attr("font-size", ((3/5)*squareSide).toString());	
