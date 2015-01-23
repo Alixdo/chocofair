@@ -7,8 +7,8 @@
 import csv
 import json
 
-csvFile = 'CocoaProdPrice2000_2011.csv'
-jsonFileName = '_CocoaProdPrice2000_2011.json'
+csvFile = 'CocoaProdQuan2000_2011.csv'
+jsonFileName = '_CocoaProdQuan2011.json'
 
 dataDic = {}
 
@@ -92,7 +92,7 @@ with open(csvFile, 'rb') as csvfile:
 				continue
 			elif row[3] == "Micronesia":
 				continue
-			elif row[7] == "Micronesia (Federated States of)":
+			elif row[3] == "Micronesia (Federated States of)":
 				continue
 			elif row[3] == "China, mainland":
 				continue

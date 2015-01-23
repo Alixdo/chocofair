@@ -20,28 +20,76 @@ function checkProp() {
 	// document.getElementById("rightColumn").style.width = checkWidth.toString() + "px";
 }
 
+function initVis() {
+	document.getElementById("checkboxCocoa").checked = true;
+	document.getElementById("checkboxImport").checked = true;
+	document.getElementById("checkboxFractions").checked = true;
+	document.getElementById("checkboxQuan").checked = true;
+
+	cocoaCheck(); 
+	importCheck(); 
+	fractionCheck(); 
+	quanCheck(); 
+
+	dataParam();
+}
+
 var titleString = ["", "of", "", "", "", "", "", "in", ""];
 // Makes sure two checkboxes are not checked at the same time if they encode different data.
 // Globally encodes which strings are to be used in the title of the visualisation.
 function cocoaCheck() {
 	document.getElementById("checkboxChoco").checked = false;
-	titleString[2] = "chocolate products";
+	titleString[2] = "cocoa beans";
+
+	document.getElementById("checkboxProduction").disabled = false;
+	document.getElementById("textProduction").style.color = "black";
+	document.getElementById("checkboxPrice").disabled = false;
+	document.getElementById("textPrice").style.color = "black";
 }
 function chocoCheck() {
 	document.getElementById("checkboxCocoa").checked = false;
-	titleString[2] = "cocoa beans";
+	titleString[2] = "chocolate products";
+
+	document.getElementById("checkboxProduction").disabled = true;
+	document.getElementById("textProduction").style.color = "grey"
+	document.getElementById("checkboxPrice").disabled = true;
+	document.getElementById("textPrice").style.color = "grey"
 }
 function importCheck() {
 	document.getElementById("checkboxExport").checked = false;
 	document.getElementById("checkboxPrice").checked = false;
 	document.getElementById("checkboxProduction").checked = false;
 	titleString[0] = "Import";
+	titleString[3] = "";
+	if (document.getElementById("checkboxVal").checked == true) {
+		titleString[8] = "thousands US dollars per year";
+	}
+	if (document.getElementById("checkboxQuan").checked == true) {
+		titleString[8] = "tonnes per year";
+	}
+
+	document.getElementById("checkboxQuan").disabled = false;
+	document.getElementById("textQuan").style.color = "black";
+	document.getElementById("checkboxVal").disabled = false;
+	document.getElementById("textVal").style.color = "black";
 }
 function exportCheck() {
 	document.getElementById("checkboxImport").checked = false;
 	document.getElementById("checkboxPrice").checked = false;
 	document.getElementById("checkboxProduction").checked = false;
 	titleString[0] = "Export";
+	titleString[3] = "";
+	if (document.getElementById("checkboxVal").checked == true) {
+		titleString[8] = "thousands US dollars per year";
+	}
+	if (document.getElementById("checkboxQuan").checked == true) {
+		titleString[8] = "tonnes per year";
+	}
+
+	document.getElementById("checkboxQuan").disabled = false;
+	document.getElementById("textQuan").style.color = "black";
+	document.getElementById("checkboxVal").disabled = false;
+	document.getElementById("textVal").style.color = "black";
 }
 function priceCheck() {
 	document.getElementById("checkboxImport").checked = false;
@@ -49,15 +97,25 @@ function priceCheck() {
 	document.getElementById("checkboxProduction").checked = false;
 	titleString[0] = "Earnings";
 	titleString[3] = "farmers";
-	titleString[7] = "US dollars per tonne";
+	titleString[8] = "US dollars per tonne cacao";
+
+	document.getElementById("checkboxQuan").disabled = true;
+	document.getElementById("textQuan").style.color = "grey";
+	document.getElementById("checkboxVal").disabled = true;
+	document.getElementById("textVal").style.color = "grey";
 }
 function productionCheck() {
 	document.getElementById("checkboxImport").checked = false;
 	document.getElementById("checkboxExport").checked = false;
 	document.getElementById("checkboxPrice").checked = false;
 	titleString[0] = "Production";
-	titleString[7] = "tonnes per year";
+	titleString[3] = "";
+	titleString[8] = "tonnes per year";
 
+	document.getElementById("checkboxQuan").disabled = true;
+	document.getElementById("textQuan").style.color = "grey";
+	document.getElementById("checkboxVal").disabled = true;
+	document.getElementById("textVal").style.color = "grey";
 }
 function fractionCheck() {
 	document.getElementById("checkboxQuantiles").checked = false;
@@ -67,11 +125,11 @@ function quantileCheck() {
 }
 function valCheck() {
 	document.getElementById("checkboxQuan").checked = false;
-	titleString[7] = "thousand US dollars";
+	titleString[8] = "thousand US dollars per year";
 }
 function quanCheck() {
 	document.getElementById("checkboxVal").checked = false;
-	titleString[7] = "tonnes per year";
+	titleString[8] = "tonnes per year";
 }
 function strokeCheck() {
 }
@@ -109,21 +167,21 @@ Checks boxes after page is loaded, so that data is shown immediatly when the pag
 is opened, without the user having to choose parameters.
 */
 
-setTimeout(function(){
-	var defer1 = $.Deferred();
-	document.getElementById("checkboxChoco").checked = true;
-	defer1.resolve();
-	defer1.done(function defer2() { var defer2 = $.Deferred(); document.getElementById("checkboxExport").checked = true; defer2.resolve();});
+// setTimeout(function(){
+// 	var defer1 = $.Deferred();
+// 	document.getElementById("checkboxChoco").checked = true;
+// 	defer1.resolve();
+// 	defer1.done(function defer2() { var defer2 = $.Deferred(); document.getElementById("checkboxExport").checked = true; defer2.resolve();});
 
-	defer2.done( function defer3() { var defer3 = $.Deferred(); document.getElementById("checkboxFractions").checked = true; defer3.resolve();});
+// 	defer2.done( function defer3() { var defer3 = $.Deferred(); document.getElementById("checkboxFractions").checked = true; defer3.resolve();});
 	
-	defer3.done( function miew() {document.getElementById("checkboxVal").checked = true;});
-	// dataParam();
-// document.getElementById("checkboxCocoa").checked = true;
-// document.getElementById("checkboxExport").checked = true;
-// document.getElementById("checkboxFractions").checked = true;
-// document.getElementById("checkboxVal").checked = true;
-}, 1000);
+// 	defer3.done( function miew() {document.getElementById("checkboxVal").checked = true;});
+// 	// dataParam();
+// // document.getElementById("checkboxCocoa").checked = true;
+// // document.getElementById("checkboxExport").checked = true;
+// // document.getElementById("checkboxFractions").checked = true;
+// // document.getElementById("checkboxVal").checked = true;
+// }, 1000);
 
 /* 
 Calls the right map coloring function, according to the parameters 
@@ -143,9 +201,6 @@ function dataParam() {
 
 	if (document.getElementById("checkboxCocoa").checked == true){
 		if (document.getElementById("checkboxImport").checked == true){
-
-			titleString[4] = "from";
-
 			if (document.getElementById("checkboxVal").checked == true) {
 				colorMap("data_files/_CocoaImpVal2011.json", scale);
 
@@ -164,9 +219,6 @@ function dataParam() {
 			}
 		}
 		if (document.getElementById("checkboxExport").checked == true){
-
-			titleString[4] = "to";
-
 			if (document.getElementById("checkboxVal").checked == true) {
 				colorMap("data_files/_CocoaExpVal2011.json", scale);
 
@@ -186,16 +238,21 @@ function dataParam() {
 		}
 		if (document.getElementById("checkboxPrice").checked == true) {
 			colorMap("data_files/_CocoaProdPrice2011.json", scale);
+
+			country.on("click", function(d,i) { 
+				// do nothing
+			});
 		}
 		if (document.getElementById("checkboxProduction").checked == true) {
 			colorMap("data_files/_CocoaProdQuan2011.json", scale);
+
+			country.on("click", function(d,i) { 
+				// do nothing
+			});
 		}
 	}
 	if (document.getElementById("checkboxChoco").checked == true) {
 		if (document.getElementById("checkboxImport").checked == true) {
-
-			titleString[4] = "from";
-
 			if (document.getElementById("checkboxVal").checked == true) {
 				colorMap("data_files/_ChocoImpVal2011.json", scale);
 
@@ -214,9 +271,6 @@ function dataParam() {
 			}
 		}
 		if (document.getElementById("checkboxExport").checked == true) {
-
-			titleString[4] = "to";
-
 			if (document.getElementById("checkboxVal").checked == true) {
 				colorMap("data_files/_ChocoExpVal2011.json", scale);
 
@@ -235,9 +289,15 @@ function dataParam() {
 			}	
 		}
 		if (document.getElementById("checkboxPrice").checked == true) {
+			country.on("click", function(d,i) { 
+				// do nothing
+			});
 
 		}
 		if (document.getElementById("checkboxProduction").checked == true) {
+			country.on("click", function(d,i) { 
+				// do nothing
+			});
 
 		}
 	}
@@ -253,6 +313,7 @@ scale is divided. Can be either "fraction" or "quantile".
 function colorMap(dataFile, scale="quantile") {
 
 	titleString[4] = "per country"; 
+	titleString[5] = "";
 	document.getElementById("title").innerHTML = titleString.join(" ");
 
 	d3.json(dataFile, color);
@@ -285,11 +346,12 @@ function colorMap(dataFile, scale="quantile") {
 			// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
 			var rangesList = [0, oneFifth, twoFifth, threeFifth, fourFifth, max];
 
-			for (var keyCountry in data) {
-				// d3.selectAll("." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","")).style("stroke", "pink");
-			}
+			// for (var keyCountry in data) {
+			// 	// d3.selectAll("." + keyCountry.replace(/\s+/g, "").replace("'", "").replace(",","")).style("stroke", "pink");
+			// }
 
 			for (var keyCountry in data) {
+				console.log(keyCountry);
 
 				// Removes the spaces of the country string, in order to correspond
 				// with the classes of the map.
@@ -353,8 +415,47 @@ function colorMap(dataFile, scale="quantile") {
 
 		var colorList = ["blue", "green", "yellow", "orange", "red"];
 		drawLegend(rangesList, colorList);
-	}
-}
+
+		// Add data value to tooltip
+		
+			d3.selectAll(".country").on("mousemove", function (d,i) {
+	      		
+				if ((typeof data[d.properties.name] === "undefined") ||
+					 (d.properties.name.replace(/[ ,.]{1,}/g, "") == 0)) {
+					var value = " ";
+				} else {
+					var value = data[d.properties.name];
+				}
+	      		
+  var offsetL = document.getElementById('mapContainer').offsetLeft+20;
+  var offsetT = document.getElementById('mapContainer').offsetTop+10;
+  var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+		      	tooltip.classed("hidden", false)
+		             .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+		             .html(d.properties.name + "<br>" + value);
+		    })
+	    	.on("mouseout",  function(d,i) {
+	        	tooltip.classed("hidden", true);
+	    	});
+}}
+		// d3.select("#mapContainer").select(".tooltip").html()
+
+		  // country
+//     .on("mousemove", function(d,i) {
+
+//       var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+
+//       tooltip.classed("hidden", false)
+//              .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+//              .html(d.properties.name);
+
+//       })
+//       .on("mouseout",  function(d,i) {
+//         tooltip.classed("hidden", true);
+//       }); 
+
+// var tooltip = d3.select("#mapContainer").append("div").attr("class", "tooltip hidden");
+
 
 /*
 Erase all custom fills and strokes on the map.
@@ -386,9 +487,13 @@ scale is divided. Can be either "fraction" or "quantile".
 */ 
 function matrColorMap(dataFile, d, scale="fraction") {
 	// console.log(d.properties.name, d.properties.name.replace(",","").replace(/\s+/g, '').replace("'",""));
-	// d3.selectAll("." + d.properties.name.replace(",","").replace(/\s+/g, '').replace("'","")).style("stroke", "black");
+	d3.selectAll("." + d.properties.name.replace(",","").replace(/\s+/g, '').replace("'","")).style("stroke", "black");
 	// document.getElementById(d.properties.name).style.stroke = "black";
-
+	if (document.getElementById("checkboxExport").checked == true) {
+		titleString[4] = "from";
+	} else { if (document.getElementById("checkboxImport").checked == true) {
+		titleString[4] = "to";
+	}}
 	titleString[5] = d.properties.name;
 	document.getElementById("title").innerHTML = titleString.join(" ");
 
@@ -488,6 +593,28 @@ function matrColorMap(dataFile, d, scale="fraction") {
 		var colorList = ["blue", "green", "yellow", "orange", "red"];
 
 		drawLegend(rangesList, colorList);
+
+		// Add data value to tooltip
+		
+			d3.selectAll(".country").on("mousemove", function (d,i) {
+	      		
+				if ((typeof countryDic[d.properties.name] === "undefined") ||
+					 (d.properties.name.replace(/[ ,.]{1,}/g, "") == 0)) {
+					var value = " ";
+				} else {
+					var value = countryDic[d.properties.name];
+				}
+	      		
+  var offsetL = document.getElementById('mapContainer').offsetLeft+20;
+  var offsetT = document.getElementById('mapContainer').offsetTop+10;
+  var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+		      	tooltip.classed("hidden", false)
+		             .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+		             .html(d.properties.name + "<br>" + value);
+		    })
+	    	.on("mouseout",  function(d,i) {
+	        	tooltip.classed("hidden", true);
+	    	});
 	}
 }
 
