@@ -136,3 +136,7 @@ div.tooltip {
   stroke: #ccc;
   stroke-width: 1px;
 }
+
+.button {
+  float: right;
+}

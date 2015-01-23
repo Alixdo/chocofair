@@ -497,6 +497,12 @@ function matrColorMap(dataFile, d, scale="fraction") {
 	titleString[5] = d.properties.name;
 	document.getElementById("title").innerHTML = titleString.join(" ");
 
+	d3.select("#title").append("input").attr("type","button").attr("class","button")
+	.attr("value", "<-    Go back to mondial")
+	.on("click", function () {
+		dataParam();
+	});
+
 	d3.json(dataFile, color);
 	function color(error, data) {
 
