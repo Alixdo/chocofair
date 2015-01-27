@@ -24,7 +24,7 @@ function leftDivSize() {
 Returns a js map of the data stored in a JSON file. The data
 must be in the form of a dictionnary.
 */
-function loadMondialData(dataFile) {
+function loadMondialData(dataFile, dataMapName) {
 	var dataMap = null;
 
 	d3.json(dataFile, load);
@@ -41,9 +41,8 @@ function loadMondialData(dataFile) {
 		dataMap = d3.map(data);
 		}
 	}
-	while (dataMap === null) {
-		console.log("wait");
-	}
+	
+
 	return dataMap;
 }
 
@@ -52,8 +51,6 @@ Returns a js map of the data stored in a JSON file. The data
 must be in the form of a dictionnary of dictionnaries.
 */
 function loadNationalData(dataFile) {
-	var dataMap = null;
-
 	d3.json(dataFile, load);
 
 	function load(error, data) {
@@ -66,7 +63,7 @@ function loadNationalData(dataFile) {
 			}
 		dataMap = d3.map(data);
 
-		return dataMap;
+		window["cocoaImpVal2011DataMap"] = dataMap;
 		}
 	}
 	// console.log(dataMap)
@@ -77,29 +74,31 @@ function loadNationalData(dataFile) {
 Loads all data files.
 Is called onload in index.html.
 */
+var cocoaImpVal2011DataMap = null;
 function loadAllData() {
-	var cocoaImpVal2011DataMap = loadMondialData("data_files/_CocoaImpVal2011.json");
-	var cocoaImpQuan2011DataMap = loadMondialData("data_files/_CocoaImpQuan2011.json");
-	var cocoaExpVal2011DataMap = loadMondialData("data_files/_CocoaExpVal2011.json");
-	var cocoaExpQuan2011DataMap = loadMondialData("data_files/_CocoaExpQuan2011.json");
+	
+	loadMondialData("data_files/_CocoaImpVal2011.json", "cocoaImpVal2011DataMap");
+	// var cocoaImpQuan2011DataMap = loadMondialData("data_files/_CocoaImpQuan2011.json");
+	// var cocoaExpVal2011DataMap = loadMondialData("data_files/_CocoaExpVal2011.json");
+	// var cocoaExpQuan2011DataMap = loadMondialData("data_files/_CocoaExpQuan2011.json");
 
-	var tradeMatrCocoaImpVal2011DataMap = loadNationalData("data_files/_TradeMatrCocoaImpVal2011.json");
-	var tradeMatrCocoaImpQuan2011DataMap = loadNationalData("data_files/_TradeMatrCocoaImpQuan2011.json");
-	var tradeMatrCocoaExpVal2011DataMap = loadNationalData("data_files/_TradeMatrCocoaExpVal2011.json");
-	var tradeMatrCocoaExpQuan2011DataMap = loadNationalData("data_files/_TradeMatrCocoaExpQuan2011.json");
+	// var tradeMatrCocoaImpVal2011DataMap = loadNationalData("data_files/_TradeMatrCocoaImpVal2011.json");
+	// var tradeMatrCocoaImpQuan2011DataMap = loadNationalData("data_files/_TradeMatrCocoaImpQuan2011.json");
+	// var tradeMatrCocoaExpVal2011DataMap = loadNationalData("data_files/_TradeMatrCocoaExpVal2011.json");
+	// var tradeMatrCocoaExpQuan2011DataMap = loadNationalData("data_files/_TradeMatrCocoaExpQuan2011.json");
 
-	var cocoaProdPrice2011DataMap = loadMondialData("data_files/_CocoaProdPrice2011.json");
-	var cocoaProdQuan2011DataMap = loadMondialData("data_files/_CocoaProdQuan2011.json");
+	// var cocoaProdPrice2011DataMap = loadMondialData("data_files/_CocoaProdPrice2011.json");
+	// var cocoaProdQuan2011DataMap = loadMondialData("data_files/_CocoaProdQuan2011.json");
 
-	var chocoImpVal2011DataMap = loadMondialData("data_files/_ChocoImpVal2011.json");
-	var chocoImpQuan2011DataMap = loadMondialData("data_files/_ChocoImpQuan2011.json");
-	var chocoExpVal2011DataMap = loadMondialData("data_files/_ChocoExpVal2011.json");
-	var chocoExpQuan2011DataMap = loadMondialData("data_files/_ChocoExpQuan2011.json");
+	// var chocoImpVal2011DataMap = loadMondialData("data_files/_ChocoImpVal2011.json");
+	// var chocoImpQuan2011DataMap = loadMondialData("data_files/_ChocoImpQuan2011.json");
+	// var chocoExpVal2011DataMap = loadMondialData("data_files/_ChocoExpVal2011.json");
+	// var chocoExpQuan2011DataMap = loadMondialData("data_files/_ChocoExpQuan2011.json");
 
-	var tradeMatrChocoImpVal2011DataMap = loadNationalData("data_files/_TradeMatrChocoImpVal2011.json");
-	var tradeMatrChocoImpQuan2011DataMap = loadNationalData("data_files/_TradeMatrChocoImpQuan2011.json");
-	var tradeMatrChocoExpVal2011DataMap = loadNationalData("data_files/_TradeMatrChocoExpVal2011.json");
-	var tradeMatrChocoExpQuan2011DataMap = loadNationalData("data_files/_TradeMatrChocoExpQuan2011.json");
+	// var tradeMatrChocoImpVal2011DataMap = loadNationalData("data_files/_TradeMatrChocoImpVal2011.json");
+	// var tradeMatrChocoImpQuan2011DataMap = loadNationalData("data_files/_TradeMatrChocoImpQuan2011.json");
+	// var tradeMatrChocoExpVal2011DataMap = loadNationalData("data_files/_TradeMatrChocoExpVal2011.json");
+	// var tradeMatrChocoExpQuan2011DataMap = loadNationalData("data_files/_TradeMatrChocoExpQuan2011.json");
 }
 
 /*
