@@ -711,16 +711,16 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				d3.select("#countryInfoContainer").html(
 					"<span class='italic smallText'>Information about selected country:</span>"
 					+ "<br><span id='bold'>" + d.properties.name + "</span><br>"
-					+ "<br>" + tabs + "Cocoa farmer earnings: " + cocoaProdPrice2011[d.properties.name] + " US dollars/year"
-					+ "<br>" + tabs + "Production of cocoa: " + cocoaProdQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Import Quantity of Cocoa:"
-					+ "<br>" + tabs + "Import Value of Cocoa:"
-					+ "<br>" + tabs + "Export Quantity of Chocolate:"
-					+ "<br>" + tabs + "Export Value of Chocolate:"
-					+ "<br>" + tabs + "Import Quantity of Cocoa:"
-					+ "<br>" + tabs + "Import Value of Cocoa:"
-					+ "<br>" + tabs + "Export Value of Cocoa:"
-					+ "<br>" + tabs + "Export Value of Cocoa:"
+					+ "<br>" + tabs + "Cocoa farmer earnings: <br> "  + cocoaProdPrice2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Production of cocoa: <br> " + cocoaProdQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Quantity of Cocoa: <br> " + cocoaImpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Value of Cocoa: <br> " + cocoaImpVal2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Export Quantity of Cocoa: <br> " + cocoaExpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Export Value of Cocoa: <br> " + cocoaExpVal2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Import Quantity of Chocolate: <br> " + chocoImpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Value of Chocolate: <br> " + chocoImpVal2011[d.properties.name] + " US Dollars/year"
+					+ "<br>" + tabs + "Export Quantity of Chocolate: <br> " + chocoExpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Export Value of Chocolate: <br> " + chocoExpVal2011[d.properties.name] + " US dollars/year"
 				);
 			}
 							
