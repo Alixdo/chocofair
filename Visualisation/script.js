@@ -35,7 +35,7 @@ function mapMondialData(jsonDict, callback) {
 		}
 	}
 	var error = null;
-	var data = d3.map(jsonDict);
+	var data = jsonDict;
 	callback(error, data);
 }
 
@@ -65,7 +65,7 @@ function mapNationalData(jsonDictOfDict, callback) {
 		// }
 	}
 	var error = null;
-	var data = d3.map(jsonDictOfDict);
+	var data = jsonDictOfDict;
 	callback(error, data);
 }
 
@@ -386,7 +386,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				}
 
 				// If no country is selected, colors the map according to mondial data.
-				// selectedCountry is a global variable.
+				// selectedCountry is a global variable
 				if (selectedCountry === null) {
 					if (document.getElementById("checkboxCocoa").checked == true){
 						if (document.getElementById("checkboxImport").checked == true){
@@ -410,7 +410,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 						}
 						if (document.getElementById("checkboxExport").checked == true){
 							if (document.getElementById("checkboxVal").checked == true) {
-								colorMap(_CocoaExpVal2011DataMap, scale);
+								colorMap(cocoaExpVal2011DataMap, scale);
 
 								country.on("click", function(d,i) {
 									resetVis();
@@ -418,7 +418,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 								});
 							}	
 							if (document.getElementById("checkboxQuan").checked == true) {
-								colorMap(_CocoaExpQuan2011DataMap, scale);
+								colorMap(cocoaExpQuan2011DataMap, scale);
 
 								country.on("click", function(d,i) {
 									resetVis();
@@ -562,7 +562,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			@ param scale: String that determines along which lines the color 
 			scale is divided. Can be either "fraction" or "quantile".
 			*/ 
-			function colorMap(data, scale="quantile") {
+			function colorMap(data, scale) {
 				console.log("data", data);
 
 				titleString[4] = "per country"; 
@@ -574,8 +574,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 						return a - b;
 				}
 
-
-				var dataValUnsorted = data.values();
+				var dataMap = d3.map(data);
+				var dataValUnsorted = dataMap.values();
 				var dataValues = dataValUnsorted.sort(compareNumbers);
 				// console.log(dataValues)
 
@@ -743,21 +743,22 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			@ param scale: String that determines along which lines the color 
 			scale is divided. Can be either "fraction" or "quantile".
 			*/ 
-			function matrColorMap(dataMap, country, scale="fraction") {
+			function matrColorMap(data, country, scale) {
 				selectCountry(country);
 
-				for (var keyDict in data) {
-					for (var keyCountry in keyDict) {
-						if (data[keyCountry] == 0) {
-							delete data[keyCountry];
-						}
-					}
-				}
+				// for (var keyDict in data) {
+				// 	for (var keyCountry in keyDict) {
+				// 		if (data[keyCountry] == 0) {
+				// 			delete data[keyCountry];
+				// 		}
+				// 	}
+				// }
 
 				function compareNumbers(a, b) {
 						return a - b;
 				}
 
+				var dataMap = d3.map(data);
 				var dataDictVal = dataMap.values();
 				var countryDict = dataMap.get(country.properties.name);
 				var countryMap = d3.map(countryDict);
@@ -842,8 +843,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				// Add data value to tooltip
 				d3.selectAll(".country")
 					.on("mousemove", function (d,i) {
-						if ((typeof countryD{ict[d.properties.name] === "undefined") ||
-													 (d.properties.name.replace(/[ ,']{1,}/g, "") == 0)) {
+						if ((typeof countryDict[d.properties.name] === "undefined") ||
+														(d.properties.name.replace(/[ ,']{1,}/g, "") == 0)) {
 							var value = " ";
 						} else {
 							var value = countryDict[d.properties.name];
@@ -870,8 +871,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				document.getElementById("legendContainer").style.display = "none";
 				
 				// Rounds the numbers in rangesList, to avoid non-ending decimal numbers in the legend.
-				for (i = 0; i <= rangesList.length; i += 1) {
-					rangesList[i] = round(rangesList[i]);
+				for (var i = 0; i <= rangesList.length; i += 1) {
+					rangesList[i] = Math.round(rangesList[i]);
 				}
 
 				// Size of colored squares in legend
