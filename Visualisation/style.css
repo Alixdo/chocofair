@@ -88,9 +88,25 @@ h2 {
   display: none;
 }
 rect {
-    stroke-width: 1px;
+  stroke-width: 1px;
 }
 
+#loadDiv {
+  width: 200px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  z-index: 4;
+  background: white;
+  border: 2px solid #d0d0d0;
+  border-radius: 5px;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100px;
+}
 /*--------------------------------------------------------------------------------------*/
 /*--------------------------Styling of map_script.js------------------------------------*/
 /* http://techslides.com/demos/d3/worldmap-template.html */

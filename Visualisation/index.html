@@ -11,7 +11,7 @@
 
   
 
-  <body onload="leftDivSize(); loadAllData(); initVis();">
+  <body onload="leftDivSize();">
     <div id="leftColumn">
       <div id="title" class="container">
         <h2>Import and export of cocoa beans and chocolate products in the world</h2>
@@ -25,26 +25,25 @@
     </div>
     <div id="rightColumn">
       <div id="checkboxContainer" class="container">
-        <label id="textCocoa" ><input type="checkbox" id="checkboxCocoa" onchange="cocoaCheck(); dataParam();"> Cocoa beans <br> </label>
-        <label id="textChoco" ><input type="checkbox" id="checkboxChoco" onchange="chocoCheck(); dataParam();"> Chocolate products <br> </label>
+        <label id="textCocoa" ><input type="checkbox" id="checkboxCocoa"> Cocoa beans <br> </label>
+        <label id="textChoco" ><input type="checkbox" id="checkboxChoco"> Chocolate products <br> </label>
         <br>
-        <label id="textPrice" ><input type="checkbox" id="checkboxPrice" onchange="priceCheck(); dataParam();"> Farmer earning <br> </label>
-        <label id="textProduction" ><input type="checkbox" id="checkboxProduction" onchange="productionCheck(); dataParam();"> Production <br> </label>
-        <label id="textImport" ><input type="checkbox" id="checkboxImport" onchange="importCheck(); dataParam();"> Import <br> </label>
-        <label id="textExport" ><input type="checkbox" id="checkboxExport" onchange="exportCheck(); dataParam();"> Export <br> </label>
-        &nbsp;&nbsp;&nbsp;<label id="textVal" ><input type="checkbox" id="checkboxVal" onchange="valCheck(); dataParam();"> US  dollars <br> </label>
-        &nbsp;&nbsp;&nbsp;<label id="textQuan" ><input type="checkbox" id="checkboxQuan" onchange="quanCheck(); dataParam();">  Tonnes <br> </label>
+        <label id="textPrice" ><input type="checkbox" id="checkboxPrice"> Farmer earning <br> </label>
+        <label id="textProduction" ><input type="checkbox" id="checkboxProduction"> Production <br> </label>
+        <label id="textImport" ><input type="checkbox" id="checkboxImport"> Import <br> </label>
+        <label id="textExport" ><input type="checkbox" id="checkboxExport"> Export <br> </label>
+        &nbsp;&nbsp;&nbsp;<label id="textVal" ><input type="checkbox" id="checkboxVal"> US  dollars <br> </label>
+        &nbsp;&nbsp;&nbsp;<label id="textQuan" ><input type="checkbox" id="checkboxQuan">  Tonnes <br> </label>
         <br><br>
-        <label id="textFractions" ><input type="radio" id="checkboxFractions" onchange="fractionCheck(); dataParam();"> Fractions <br> </label>
-        <label id="textQuantiles" ><input type="radio" id="checkboxQuantiles" onchange="quantileCheck(); dataParam();"> Quantiles <br> </label>
+        <label id="textFractions" ><input type="radio" id="checkboxFractions"> Fractions <br> </label>
+        <label id="textQuantiles" ><input type="radio" id="checkboxQuantiles"> Quantiles <br> </label>
         
        <!--  <input type="checkbox" id="checkboxStroke" onchange="strokeCheck(); dataParam();" checked="checked"> Outline concerned countries (uncheck to make the visualisation faster) <br> -->
       </div>
-
-        
     </div>
     <!-- <div id="lineContainer" class="container"></div > -->
-  	
+  	<div id="loadDiv">Loading data...</div>
+    
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
