@@ -53,13 +53,18 @@ table {
   border:2px solid #d0d0d0;
   border-radius: 5px;
 }
+.italic {
+  font-style: italic;
+}
+.smallText {
+  font-size: 13px;
+}
 #leftColumn {
   margin:10px 300px 0px 10px;
 }
 #rightColumn {
   margin: 10px;
 }
-
 #title {
   margin: 0px 0px 10px 0px;
   padding:10px;
@@ -90,7 +95,10 @@ h2 {
 rect {
   stroke-width: 1px;
 }
-
+#countryInfoContainer {
+  margin-top: 10px;
+  padding: 10px;
+}
 #loadDiv {
   width: 200px;
   height: 100px;

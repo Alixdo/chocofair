@@ -24,26 +24,42 @@
       <script type="text/javascript" src="worldmap-template/map_script.js"></script>
     </div>
     <div id="rightColumn">
-      <div id="checkboxContainer" class="container">
-        <label id="textCocoa" ><input type="checkbox" id="checkboxCocoa"> Cocoa beans <br> </label>
-        <label id="textChoco" ><input type="checkbox" id="checkboxChoco"> Chocolate products <br> </label>
+      <div id="radioContainer" class="container">
+        <label id="textCocoa" ><input type="radio" id="radioCocoa" name="cocoaOrChoco"> Cocoa beans <br> </label>
+        <label id="textChoco" ><input type="radio" id="radioChoco" name="cocoaOrChoco"> Chocolate products <br> </label>
         <br>
-        <label id="textPrice" ><input type="checkbox" id="checkboxPrice"> Farmer earning <br> </label>
-        <label id="textProduction" ><input type="checkbox" id="checkboxProduction"> Production <br> </label>
-        <label id="textImport" ><input type="checkbox" id="checkboxImport"> Import <br> </label>
-        <label id="textExport" ><input type="checkbox" id="checkboxExport"> Export <br> </label>
-        &nbsp;&nbsp;&nbsp;<label id="textVal" ><input type="checkbox" id="checkboxVal"> US  dollars <br> </label>
-        &nbsp;&nbsp;&nbsp;<label id="textQuan" ><input type="checkbox" id="checkboxQuan">  Tonnes <br> </label>
+        <div id="priceAndProd">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label id="textPrice" ><input type="radio" id="radioPrice"  name="dataKind"> Farmer earning <br> </label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label id="textProduction" ><input type="radio" id="radioProduction" name="dataKind"> Production <br> </label>
+        </div>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label id="textImport" ><input type="radio" id="radioImport" name="dataKind"> Import <br> </label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label id="textExport" ><input type="radio" id="radioExport" name="dataKind"> Export <br> </label>
+        <br>
+
+        <div id="valAndQuan">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label id="textVal"><input type="radio" id="radioVal" name="valOrQual"> US  dollars <br> </label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <label id="textQuan"><input type="radio" id="radioQuan" name="valOrQual">  Tonnes <br> </label>
+        </div>  
         <br><br>
-        <label id="textFractions" ><input type="radio" id="checkboxFractions"> Fractions <br> </label>
-        <label id="textQuantiles" ><input type="radio" id="checkboxQuantiles"> Quantiles <br> </label>
-        
-       <!--  <input type="checkbox" id="checkboxStroke" onchange="strokeCheck(); dataParam();" checked="checked"> Outline concerned countries (uncheck to make the visualisation faster) <br> -->
+        <label id="textFractions" ><input type="radio" id="radioFractions" name="fracOrQuan"> Fractions <br> </label>
+        <label id="textQuantiles" ><input type="radio" id="radioQuantiles" name="fracOrQuan"> Quantiles <br> </label>
       </div>
+
+      <div id="countryInfoContainer" class="container"> 
+        <span class="italic smallText">Information about selected country:</span>
+      </div>
+
     </div>
     <!-- <div id="lineContainer" class="container"></div > -->
   	<div id="loadDiv">Loading data...</div>
-    
+
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

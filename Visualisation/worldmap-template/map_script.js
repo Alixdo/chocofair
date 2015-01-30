@@ -1,7 +1,9 @@
 /* http://techslides.com/demos/d3/worldmap-template.html */
 "use strict";
 
-d3.select(window).on("resize", throttle);
+// This line was copy-pasted in script.js, because the map must be recolored on redraw when the window resizes.
+// The function to color the map is defined in a callback in script.js. 
+// d3.select(window).on("resize", throttle);
 
 var zoom = d3.behavior.zoom()
     .scaleExtent([1, 9])
@@ -101,16 +103,17 @@ function draw(topo) {
 
 }
 
+// This line was copy-pasted in script.js, because the map must be recolored on redraw when the window resizes.
+// The function to color the map is defined in a callback in script.js. 
+// function redraw() {
+//   width = document.getElementById('mapContainer').offsetWidth;
+//   height = width / 2;
+//   d3.select('#svgMap').remove();
+//   setup(width,height);
+//   draw(topo);
 
-function redraw() {
-  width = document.getElementById('mapContainer').offsetWidth;
-  height = width / 2;
-  d3.select('#svgMap').remove();
-  setup(width,height);
-  draw(topo);
-
-  dataParam();
-}
+//   dataParam();
+// }
 
 
 function move() {
@@ -140,14 +143,15 @@ function move() {
 }
 
 
-
-var throttleTimer;
-function throttle() {
-  window.clearTimeout(throttleTimer);
-    throttleTimer = window.setTimeout(function() {
-      redraw();
-    }, 200);
-}
+// This line was copy-pasted in script.js, because the map must be recolored on redraw when the window resizes.
+// The function to color the map is defined in a callback in script.js. 
+// var throttleTimer;
+// function throttle() {
+//   window.clearTimeout(throttleTimer);
+//     throttleTimer = window.setTimeout(function() {
+//       redraw();
+//     }, 200);
+// }
 
 
 //geo translation on mouse click in map

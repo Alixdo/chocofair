@@ -185,17 +185,24 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			chocoImpQuan2011DataMap, chocoExpVal2011DataMap, chocoExpQuan2011DataMap, tradeMatrChocoImpVal2011DataMap, 
 			tradeMatrChocoImpQuan2011DataMap, tradeMatrChocoExpVal2011DataMap, tradeMatrChocoExpQuan2011DataMap) {
 
+			// Removes the "Loading..." div once the data is loaded.
 			d3.select("#loadDiv").remove();
-			console.log(cocoaImpVal2011DataMap);
+
+			// The global variable selectedCountry keeps track of which country is selected by the user. 
+			// It is used to avoid going back between mondial and national data when the user wants to
+			// view different datasets about the same country.
+			// When no country is selected, for example when the page just loaded, selectedCountry is null.
+			var selectedCountry = null;
+
+			initVis();
 			/*
-			Sets the standard parameters, shown when the page loads.
-			initVis is called on load in index.html.
+			Sets the standard parameters. Is called right after the data loads.
 			*/
 			function initVis() {
-				document.getElementById("checkboxCocoa").checked = true;
-				document.getElementById("checkboxImport").checked = true;
-				document.getElementById("checkboxFractions").checked = true;
-				document.getElementById("checkboxQuan").checked = true;
+				document.getElementById("radioCocoa").checked = true;
+				document.getElementById("radioImport").checked = true;
+				document.getElementById("radioFractions").checked = true;
+				document.getElementById("radioQuan").checked = true;
 
 				cocoaCheck(); 
 				importCheck(); 
@@ -205,120 +212,118 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				dataParam();
 			}
 
-			setCheckboxBehaviour();
+			setRadioButtonsBehaviour();
 
 			/*
-			Sets the functions that are executed when the user checks or unchecks a checkbox.
+			Sets the functions that are executed when the user checks or unchecks a radio button.
 			*/
-			function setCheckboxBehaviour() {
-				d3.select("#checkboxCocoa").on("change", function(d,i) {cocoaCheck(); dataParam();} );
-				d3.select("#checkboxChoco").on("change", function(d,i) {chocoCheck(); dataParam();} );
-				d3.select("#checkboxImport").on("change", function(d,i) {importCheck(); dataParam();} );
-				d3.select("#checkboxExport").on("change", function(d,i) {exportCheck(); dataParam();} );
-				d3.select("#checkboxPrice").on("change", function(d,i) {priceCheck(); dataParam();} );
-				d3.select("#checkboxProduction").on("change", function(d,i) {productionCheck(); dataParam();} );
-				d3.select("#checkboxFractions").on("change", function(d,i) {fractionCheck(); dataParam();} );
-				d3.select("#checkboxQuantiles").on("change", function(d,i) {quantileCheck(); dataParam();} );
-				d3.select("#checkboxVal").on("change", function(d,i) {valCheck(); dataParam();} );
-				d3.select("#checkboxQuan").on("change", function(d,i) {quanCheck(); dataParam();} );
+			function setRadioButtonsBehaviour() {
+				d3.select("#radioCocoa").on("change", function(d,i) {cocoaCheck(); dataParam();} );
+				d3.select("#radioChoco").on("change", function(d,i) {chocoCheck(); dataParam();} );
+				d3.select("#radioImport").on("change", function(d,i) {importCheck(); dataParam();} );
+				d3.select("#radioExport").on("change", function(d,i) {exportCheck(); dataParam();} );
+				d3.select("#radioPrice").on("change", function(d,i) {priceCheck(); dataParam();} );
+				d3.select("#radioProduction").on("change", function(d,i) {productionCheck(); dataParam();} );
+				d3.select("#radioFractions").on("change", function(d,i) {fractionCheck(); dataParam();} );
+				d3.select("#radioQuantiles").on("change", function(d,i) {quantileCheck(); dataParam();} );
+				d3.select("#radioVal").on("change", function(d,i) {valCheck(); dataParam();} );
+				d3.select("#radioQuan").on("change", function(d,i) {quanCheck(); dataParam();} );
 			}
 
-			// Makes sure two checkboxes are not checked at the same time if they encode different data.
+			// Makes sure two radio buttons are not checked at the same time if they encode different data.
 			// Globally encodes which strings are to be used in the title of the visualisation.
+			// Hides and shows the radio buttons that are not always active.
 			function cocoaCheck() {
-				document.getElementById("checkboxChoco").checked = false;
+				document.getElementById("radioChoco").checked = false;
 				titleString[2] = "cocoa beans";
 
-				document.getElementById("checkboxProduction").disabled = false;
+				document.getElementById("radioProduction").disabled = false;
 				document.getElementById("textProduction").style.color = "black";
-				document.getElementById("checkboxPrice").disabled = false;
+				document.getElementById("radioPrice").disabled = false;
 				document.getElementById("textPrice").style.color = "black";
 			}
 			function chocoCheck() {
-				document.getElementById("checkboxCocoa").checked = false;
+				document.getElementById("radioCocoa").checked = false;
 				titleString[2] = "chocolate products";
 
-				document.getElementById("checkboxProduction").disabled = true;
+				document.getElementById("radioProduction").disabled = true;
 				document.getElementById("textProduction").style.color = "grey"
-				document.getElementById("checkboxPrice").disabled = true;
+				document.getElementById("radioPrice").disabled = true;
 				document.getElementById("textPrice").style.color = "grey"
 			}
 			function importCheck() {
-				document.getElementById("checkboxExport").checked = false;
-				document.getElementById("checkboxPrice").checked = false;
-				document.getElementById("checkboxProduction").checked = false;
+				document.getElementById("radioExport").checked = false;
+				document.getElementById("radioPrice").checked = false;
+				document.getElementById("radioProduction").checked = false;
 				titleString[0] = "Import";
 				titleString[3] = "";
-				if (document.getElementById("checkboxVal").checked == true) {
+				if (document.getElementById("radioVal").checked == true) {
 					titleString[8] = "thousands US dollars per year";
 				}
-				if (document.getElementById("checkboxQuan").checked == true) {
+				if (document.getElementById("radioQuan").checked == true) {
 					titleString[8] = "tonnes per year";
 				}
 
-				document.getElementById("checkboxQuan").disabled = false;
+				d3.select("#valAndQuan").classed("hidden", false);
 				document.getElementById("textQuan").style.color = "black";
-				document.getElementById("checkboxVal").disabled = false;
 				document.getElementById("textVal").style.color = "black";
 			}
 			function exportCheck() {
-				document.getElementById("checkboxImport").checked = false;
-				document.getElementById("checkboxPrice").checked = false;
-				document.getElementById("checkboxProduction").checked = false;
+				document.getElementById("radioImport").checked = false;
+				document.getElementById("radioPrice").checked = false;
+				document.getElementById("radioProduction").checked = false;
 				titleString[0] = "Export";
 				titleString[3] = "";
-				if (document.getElementById("checkboxVal").checked == true) {
+				if (document.getElementById("radioVal").checked == true) {
 					titleString[8] = "thousands US dollars per year";
 				}
-				if (document.getElementById("checkboxQuan").checked == true) {
+				if (document.getElementById("radioQuan").checked == true) {
 					titleString[8] = "tonnes per year";
 				}
 
-				document.getElementById("checkboxQuan").disabled = false;
+				d3.select("#valAndQuan").classed("hidden", false);
 				document.getElementById("textQuan").style.color = "black";
-				document.getElementById("checkboxVal").disabled = false;
 				document.getElementById("textVal").style.color = "black";
 			}
 			function priceCheck() {
-				document.getElementById("checkboxImport").checked = false;
-				document.getElementById("checkboxExport").checked = false;
-				document.getElementById("checkboxProduction").checked = false;
+				document.getElementById("radioImport").checked = false;
+				document.getElementById("radioExport").checked = false;
+				document.getElementById("radioProduction").checked = false;
 				titleString[0] = "Earnings";
 				titleString[3] = "farmers";
 				titleString[8] = "US dollars per tonne cacao";
 
-				document.getElementById("checkboxQuan").disabled = true;
+				d3.select("#valAndQuan").classed("hidden", true);
 				document.getElementById("textQuan").style.color = "grey";
-				document.getElementById("checkboxVal").disabled = true;
 				document.getElementById("textVal").style.color = "grey";
 			}
 			function productionCheck() {
-				document.getElementById("checkboxImport").checked = false;
-				document.getElementById("checkboxExport").checked = false;
-				document.getElementById("checkboxPrice").checked = false;
+				document.getElementById("radioImport").checked = false;
+				document.getElementById("radioExport").checked = false;
+				document.getElementById("radioPrice").checked = false;
 				titleString[0] = "Production";
 				titleString[3] = "";
 				titleString[8] = "tonnes per year";
 
-				document.getElementById("checkboxQuan").disabled = true;
+				d3.select("#valAndQuan").classed("hidden", true);
 				document.getElementById("textQuan").style.color = "grey";
-				document.getElementById("checkboxVal").disabled = true;
 				document.getElementById("textVal").style.color = "grey";
 			}
-			function fractionCheck() {
-				document.getElementById("checkboxQuantiles").checked = false;
-			}
-			function quantileCheck() {
-				document.getElementById("checkboxFractions").checked = false;
-			}
 			function valCheck() {
-				document.getElementById("checkboxQuan").checked = false;
+				document.getElementById("radioQuan").checked = false;
 				titleString[8] = "thousand US dollars per year";
 			}
 			function quanCheck() {
-				document.getElementById("checkboxVal").checked = false;
+				document.getElementById("radioVal").checked = false;
 				titleString[8] = "tonnes per year";
 			}
+			function fractionCheck() {
+				document.getElementById("radioQuantiles").checked = false;
+			}
+			function quantileCheck() {
+				document.getElementById("radioFractions").checked = false;
+			}
+
 			// <input type="checkbox" id="checkboxTrade" onchange="importCheck()"> Import <br>
 			//         <input type="checkbox" id="checkboxTrade" onchange="exportCheck()"> Export <br>
 			//         <input type="checkbox" id="checkboxTrade" onchange="priceCheck()"> Wage/Price <br>
@@ -326,16 +331,16 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			//         <input type="checkbox" id="checkboxTrade" onchange="fractionCheck()"> Fraction <br>
 			//         <input type="checkbox" id="checkboxTrade" onchange="quantileCheck()"> Quantile <br>
 
-			// checkboxCocoa
-			// checkboxChoco
-			// checkboxImport
-			// checkboxExport
-			// checkboxPrice
-			// checkboxProduction
-			// checkboxFractions
-			// checkboxQuantiles
-			// checkboxVal
-			// checkboxQuan
+			// radioCocoa
+			// radioChoco
+			// radioImport
+			// radioExport
+			// radioPrice
+			// radioProduction
+			// radioFractions
+			// radioQuantiles
+			// radioVal
+			// radioQuan
 
 			// cocoaCheck()
 			// chocoCheck()
@@ -378,19 +383,24 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				var country = d3.selectAll(".country");
 				var scale = "fraction";
 
-				if (document.getElementById("checkboxFractions").checked == true){
+				if (document.getElementById("radioFractions").checked == true){
 					scale = "fraction";	
 				}			
-				if (document.getElementById("checkboxQuantiles").checked == true){
+				if (document.getElementById("radioQuantiles").checked == true){
 					scale = "quantile";
 				}
 
 				// If no country is selected, colors the map according to mondial data.
 				// selectedCountry is a global variable
 				if (selectedCountry === null) {
-					if (document.getElementById("checkboxCocoa").checked == true){
-						if (document.getElementById("checkboxImport").checked == true){
-							if (document.getElementById("checkboxVal").checked == true) {
+					// Empties the div possibly showing information about previously selected country.
+					emptyCountryInfo();
+
+					// Checks which parameters are chosen by user, and calls the right coloring functions.
+					// Also sets the right onClick events if clicking on countries should result in showing other data.
+					if (document.getElementById("radioCocoa").checked == true){
+						if (document.getElementById("radioImport").checked == true){
+							if (document.getElementById("radioVal").checked == true) {
 
 								colorMap(cocoaImpVal2011DataMap, scale);
 
@@ -399,7 +409,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 									matrColorMap(tradeMatrCocoaImpVal2011DataMap, d, scale);
 								});
 							}	
-							if (document.getElementById("checkboxQuan").checked == true) {
+							if (document.getElementById("radioQuan").checked == true) {
 								colorMap(cocoaImpQuan2011DataMap, scale);
 
 								country.on("click", function(d,i) {
@@ -408,8 +418,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 								});
 							}
 						}
-						if (document.getElementById("checkboxExport").checked == true){
-							if (document.getElementById("checkboxVal").checked == true) {
+						if (document.getElementById("radioExport").checked == true){
+							if (document.getElementById("radioVal").checked == true) {
 								colorMap(cocoaExpVal2011DataMap, scale);
 
 								country.on("click", function(d,i) {
@@ -417,7 +427,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 									matrColorMap(tradeMatrCocoaExpVal2011DataMap, d, scale);
 								});
 							}	
-							if (document.getElementById("checkboxQuan").checked == true) {
+							if (document.getElementById("radioQuan").checked == true) {
 								colorMap(cocoaExpQuan2011DataMap, scale);
 
 								country.on("click", function(d,i) {
@@ -426,14 +436,14 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 								});
 							}
 						}
-						if (document.getElementById("checkboxPrice").checked == true) {
+						if (document.getElementById("radioPrice").checked == true) {
 							colorMap(cocoaProdPrice2011DataMap, scale);
 
 							country.on("click", function(d,i) { 
 								// do nothing
 							});
 						}
-						if (document.getElementById("checkboxProduction").checked == true) {
+						if (document.getElementById("radioProduction").checked == true) {
 							colorMap(cocoaProdQuan2011DataMap, scale);
 
 							country.on("click", function(d,i) { 
@@ -441,9 +451,9 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 							});
 						}
 					}
-					if (document.getElementById("checkboxChoco").checked == true) {
-						if (document.getElementById("checkboxImport").checked == true) {
-							if (document.getElementById("checkboxVal").checked == true) {
+					if (document.getElementById("radioChoco").checked == true) {
+						if (document.getElementById("radioImport").checked == true) {
+							if (document.getElementById("radioVal").checked == true) {
 								colorMap(chocoImpVal2011DataMap, scale);
 
 								country.on("click", function(d,i) {
@@ -451,7 +461,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 									matrColorMap(tradeMatrChocoImpVal2011DataMap, d, scale);
 								});
 							}	
-							if (document.getElementById("checkboxQuan").checked == true) {
+							if (document.getElementById("radioQuan").checked == true) {
 								colorMap(chocoImpQuan2011DataMap, scale);
 
 								country.on("click", function(d,i) {
@@ -460,8 +470,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 								});
 							}
 						}
-						if (document.getElementById("checkboxExport").checked == true) {
-							if (document.getElementById("checkboxVal").checked == true) {
+						if (document.getElementById("radioExport").checked == true) {
+							if (document.getElementById("radioVal").checked == true) {
 								colorMap(chocoExpVal2011DataMap, scale);
 
 								country.on("click", function(d,i) {
@@ -469,7 +479,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 									matrColorMap(tradeMatrChocoExpVal2011DataMap, d, scale);
 								});
 							}	
-							if (document.getElementById("checkboxQuan").checked == true) {
+							if (document.getElementById("radioQuan").checked == true) {
 								colorMap(chocoExpQuan2011DataMap, scale);
 
 								country.on("click", function(d,i) {
@@ -478,13 +488,13 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 								});
 							}	
 						}
-						if (document.getElementById("checkboxPrice").checked == true) {
+						if (document.getElementById("radioPrice").checked == true) {
 							country.on("click", function(d,i) { 
 								// do nothing
 							});
 
 						}
-						if (document.getElementById("checkboxProduction").checked == true) {
+						if (document.getElementById("radioProduction").checked == true) {
 							country.on("click", function(d,i) { 
 								// do nothing
 							});
@@ -496,59 +506,59 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				// If a parameter is changed while a country is selected, colors the map according to the parameter data
 				// for that country. selectedCountry is a global variable.
 				else {
-					if (document.getElementById("checkboxCocoa").checked == true){
-						if (document.getElementById("checkboxImport").checked == true){
-							if (document.getElementById("checkboxVal").checked == true) {
+					if (document.getElementById("radioCocoa").checked == true){
+						if (document.getElementById("radioImport").checked == true){
+							if (document.getElementById("radioVal").checked == true) {
 								resetVis();
 								matrColorMap(tradeMatrCocoaImpVal2011DataMap,  selectedCountry, scale);
 							}	
-							if (document.getElementById("checkboxQuan").checked == true) {
+							if (document.getElementById("radioQuan").checked == true) {
 									resetVis();
 									matrColorMap(tradeMatrCocoaImpQuan2011DataMap, selectedCountry, scale);
 							}
 						}
-						if (document.getElementById("checkboxExport").checked == true){
-							if (document.getElementById("checkboxVal").checked == true) {
+						if (document.getElementById("radioExport").checked == true){
+							if (document.getElementById("radioVal").checked == true) {
 									resetVis();
 									matrColorMap(tradeMatrCocoaExpVal2011DataMap, selectedCountry, scale);
 							}	
-							if (document.getElementById("checkboxQuan").checked == true) {
+							if (document.getElementById("radioQuan").checked == true) {
 									resetVis();
 									matrColorMap(tradeMatrCocoaExpQuan2011DataMap, selectedCountry, scale);
 							}
 						}
-						if (document.getElementById("checkboxPrice").checked == true) {
+						if (document.getElementById("radioPrice").checked == true) {
 							resetVis();
 						}
-						if (document.getElementById("checkboxProduction").checked == true) {
+						if (document.getElementById("radioProduction").checked == true) {
 							resetVis();
 						}
 					}
-					if (document.getElementById("checkboxChoco").checked == true) {
-						if (document.getElementById("checkboxImport").checked == true) {
-							if (document.getElementById("checkboxVal").checked == true) {
+					if (document.getElementById("radioChoco").checked == true) {
+						if (document.getElementById("radioImport").checked == true) {
+							if (document.getElementById("radioVal").checked == true) {
 									resetVis();
 									matrColorMap(tradeMatrChocoImpVal2011DataMap, selectedCountry, scale);
 							}	
-							if (document.getElementById("checkboxQuan").checked == true) {
+							if (document.getElementById("radioQuan").checked == true) {
 									resetVis();
 									matrColorMap(tradeMatrChocoImpQuan2011DataMap, selectedCountry, scale);
 							}
 						}
-						if (document.getElementById("checkboxExport").checked == true) {
-							if (document.getElementById("checkboxVal").checked == true) {
+						if (document.getElementById("radioExport").checked == true) {
+							if (document.getElementById("radioVal").checked == true) {
 									resetVis();
 									matrColorMap(tradeMatrChocoExpVal2011DataMap, selectedCountry, scale);
 							}	
-							if (document.getElementById("checkboxQuan").checked == true) {
+							if (document.getElementById("radioQuan").checked == true) {
 									resetVis();
 									matrColorMap(tradeMatrChocoExpQuan2011DataMap, selectedCountry, scale);
 							}	
 						}
-						if (document.getElementById("checkboxPrice").checked == true) {
+						if (document.getElementById("radioPrice").checked == true) {
 							resetVis();
 						}
-						if (document.getElementById("checkboxProduction").checked == true) {
+						if (document.getElementById("radioProduction").checked == true) {
 							resetVis();
 						}
 					}
@@ -581,14 +591,14 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 				var max = d3.max(dataValues);
 
+				console.log("scale", scale);
 				if (scale == "fraction") {
 					var oneFifth = max/5;
 					var twoFifth = 2*max/5;
 					var threeFifth = 3*max/5;
 					var fourFifth = 4*max/5;
 
-					var rangesList = [0, oneFifth, twoFifth, threeFifth, fourFifth, max];
-
+					var rangeList = [0, oneFifth, twoFifth, threeFifth, fourFifth, max];
 
 					for (var keyCountry in data) {
 						// console.log(keyCountry);
@@ -623,9 +633,9 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					var secQuant = d3.quantile(dataValues, 0.4);
 					var thirdQuant = d3.quantile(dataValues, 0.6);
 					var fourthQuant = d3.quantile(dataValues, 0.8);
-					var fifthQuant = d3.quantile(dataValues, 1);
-					// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
-					var rangesList = [0, firstQuant,secQuant, thirdQuant, fourthQuant, fifthQuant];
+					var fifthQuant = d3.quantile(dataValues, 1); 
+
+					var rangeList = [0, firstQuant,secQuant, thirdQuant, fourthQuant, fifthQuant];
 
 					for (var keyCountry in data) {
 
@@ -654,7 +664,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				}
 
 					var colorList = ["blue", "green", "yellow", "orange", "red"];
-					drawLegend(rangesList, colorList);
+					drawLegend(rangeList, colorList);
 
 					// Add data value to tooltip
 					
@@ -695,14 +705,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				d3.select("#legendContainer").select("svg > *").remove();
 			}
 
-
-			// The global variable selectedCountry keeps track of which country is selected by the user. 
-			// It is used to avoid going back between mondial and national data when the user wants to
-			// view different datasets about the same country.
-			var selectedCountry = null;
-
 			/*
-			Does miscellaneous little tasks that need to be done when the user clicks on a country that there is data to show for.
+			Does miscellaneous little tasks that need to be done when the user clicks on a country.
 			@ param country: d3 selection of a country
 			*/
 			function selectCountry(country) {
@@ -714,9 +718,9 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				d3.selectAll("." + country.properties.name.replace(",","").replace(/\s+/g, '').replace("'","")).style("stroke", "black");
 
 				// Changes the title of the visualisation, based on the name of the selected country
-				if (document.getElementById("checkboxExport").checked == true) {
+				if (document.getElementById("radioExport").checked == true) {
 					titleString[4] = "from";
-				} else { if (document.getElementById("checkboxImport").checked == true) {
+				} else { if (document.getElementById("radioImport").checked == true) {
 					titleString[4] = "to";
 				}}
 				titleString[5] = country.properties.name;
@@ -772,9 +776,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					var twoFifth = 2*max/5;
 					var threeFifth = 3*max/5;
 					var fourFifth = 4*max/5;
-					// console.log(oneFifth, twoFifth, threeFifth, fourFifth, max);
-					var rangesList = [0, oneFifth, twoFifth, threeFifth, fourFifth, max];
-					// console.log("range1", rangesList);
+
+					var rangeList = [0, oneFifth, twoFifth, threeFifth, fourFifth, max];
 
 					for (var keyCountry in countryDict) {
 
@@ -808,9 +811,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					var thirdQuant = d3.quantile(countryValSorted, 0.6);
 					var fourthQuant = d3.quantile(countryValSorted, 0.8);
 					var fifthQuant = d3.quantile(countryValSorted, 1);
-					// console.log(firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant);
-					var rangesList = [0, firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant];
-					// console.log("range2", rangesList);
+
+					var rangeList = [0, firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant];
 
 					for (var keyCountry in data) {
 
@@ -838,7 +840,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 				var colorList = ["blue", "green", "yellow", "orange", "red"];
 
-				drawLegend(rangesList, colorList);
+				drawLegend(rangeList, colorList);
 
 				// Add data value to tooltip
 				d3.selectAll(".country")
@@ -869,9 +871,12 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			*/
 			function drawLegend(rangesList, colorList) {
 				document.getElementById("legendContainer").style.display = "none";
+				console.log(rangesList);
 				
+				// // Stores the rounded range values.
+				// var roundedRangesList = []
 				// Rounds the numbers in rangesList, to avoid non-ending decimal numbers in the legend.
-				for (var i = 0; i <= rangesList.length; i += 1) {
+				for (var i = 0; i < rangesList.length; i ++) {
 					rangesList[i] = Math.round(rangesList[i]);
 				}
 
@@ -978,6 +983,31 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					})
 					.attr("stroke", "black");
 			}
+
+
+		// Redraws and recolors the visualisation when the window is resized. 
+		// Most of this code was copy-pasted from map_script.js, the original can be found at 
+		// http://techslides.com/demos/d3/worldmap-template.html
+		d3.select(window).on("resize", throttle);
+
+		var throttleTimer;
+		function throttle() {
+		  window.clearTimeout(throttleTimer);
+		    throttleTimer = window.setTimeout(function() {
+		      redraw();
+		    }, 200);
+		}
+
+		function redraw() {
+		  width = document.getElementById('mapContainer').offsetWidth;
+		  height = width / 2;
+		  d3.select('#svgMap').remove();
+		  setup(width,height);
+		  draw(topo);
+		  dataParam();
+		}
 	});
+	
+
 // This bracket closes scriptCode(), which contains almost all the code of script.js
 }
