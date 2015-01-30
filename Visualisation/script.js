@@ -57,7 +57,6 @@ function cleanNationalData(jsonDictOfDict, callback) {
 	callback(error, data);
 }
 
-// Global variables:
 
 // Array used to make the title of the visualisation, according to the chosen parameters/the data
 // that is shown.
@@ -98,55 +97,6 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 	TradeMatrCocoaExpVal2011, TradeMatrCocoaExpQuan2011, CocoaProdPrice2011, CocoaProdQuan2011, ChocoImpVal2011, ChocoImpQuan2011,
 	ChocoExpVal2011, ChocoExpQuan2011, TradeMatrChocoImpVal2011, TradeMatrChocoImpQuan2011, TradeMatrChocoExpVal2011, 
 	TradeMatrChocoExpQuan2011);
-	// // Maps all loaded data. The maps ares stored in global variables.
-	// var cocoaImpVal2011DataMap = null
-	// var cocoaImpQuan2011DataMap = null
-	// var cocoaExpVal2011DataMap = null
-	// var cocoaExpQuan2011DataMap = null
-
-	// var tradeMatrCocoaImpVal2011DataMap = null
-	// var tradeMatrCocoaImpQuan2011DataMap = null
-	// var tradeMatrCocoaExpVal2011DataMap = null
-	// var tradeMatrCocoaExpQuan2011DataMap = null
-
-	// var cocoaProdPrice2011DataMap = null
-	// var cocoaProdQuan2011DataMap = null
-
-	// var chocoImpVal2011DataMap = null
-	// var chocoImpQuan2011DataMap = null
-	// var chocoExpVal2011DataMap = null
-	// var chocoExpQuan2011DataMap = null
-
-	// var tradeMatrChocoImpVal2011DataMap = null
-	// var tradeMatrChocoImpQuan2011DataMap = null
-	// var tradeMatrChocoExpVal2011DataMap = null
-	// var tradeMatrChocoExpQuan2011DataMap = null
-
-	// function mapAllData() {
-	// 	cocoaImpVal2011DataMap = mapMondialData(CocoaImpVal2011);
-	// 	cocoaImpQuan2011DataMap = mapMondialData(CocoaImpQuan2011);
-	// 	cocoaExpVal2011DataMap = mapMondialData(CocoaExpVal2011);
-	// 	cocoaExpQuan2011DataMap = mapMondialData(CocoaExpQuan2011);
-
-	// 	tradeMatrCocoaImpVal2011DataMap = mapNationalData(TradeMatrCocoaImpVal2011);
-	// 	tradeMatrCocoaImpQuan2011DataMap = mapNationalData(TradeMatrCocoaImpQuan2011);
-	// 	tradeMatrCocoaExpVal2011DataMap = mapNationalData(TradeMatrCocoaExpVal2011);
-	// 	tradeMatrCocoaExpQuan2011DataMap = mapNationalData(TradeMatrCocoaExpQuan2011);
-
-	// 	cocoaProdPrice2011DataMap = mapMondialData(CocoaProdPrice2011);
-	// 	cocoaProdQuan2011DataMap = mapMondialData(CocoaProdQuan2011);
-
-	// 	chocoImpVal2011DataMap = mapMondialData(ChocoImpVal2011);
-	// 	chocoImpQuan2011DataMap = mapMondialData(ChocoImpQuan2011);
-	// 	chocoExpVal2011DataMap = mapMondialData(ChocoExpVal2011);
-	// 	chocoExpQuan2011DataMap = mapMondialData(ChocoExpQuan2011);
-
-	// 	tradeMatrChocoImpVal2011DataMap = mapNationalData(TradeMatrChocoImpVal2011);
-	// 	tradeMatrChocoImpQuan2011DataMap = mapNationalData(TradeMatrChocoImpQuan2011);
-	// 	tradeMatrChocoExpVal2011DataMap = mapNationalData(TradeMatrChocoExpVal2011);
-	// 	tradeMatrChocoExpQuan2011DataMap = mapNationalData(TradeMatrChocoExpQuan2011);
-
-	// }
 
 	queue()
 		.defer(cleanMondialData, CocoaImpVal2011)
@@ -312,56 +262,6 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				document.getElementById("radioFractions").checked = false;
 			}
 
-			// <input type="checkbox" id="checkboxTrade" onchange="importCheck()"> Import <br>
-			//         <input type="checkbox" id="checkboxTrade" onchange="exportCheck()"> Export <br>
-			//         <input type="checkbox" id="checkboxTrade" onchange="priceCheck()"> Wage/Price <br>
-			//         <input type="checkbox" id="checkboxTrade" onchange="productionCheck()"> Production <br>
-			//         <input type="checkbox" id="checkboxTrade" onchange="fractionCheck()"> Fraction <br>
-			//         <input type="checkbox" id="checkboxTrade" onchange="quantileCheck()"> Quantile <br>
-
-			// radioCocoa
-			// radioChoco
-			// radioImport
-			// radioExport
-			// radioPrice
-			// radioProduction
-			// radioFractions
-			// radioQuantiles
-			// radioVal
-			// radioQuan
-
-			// cocoaCheck()
-			// chocoCheck()
-			// importCheck()
-			// exportCheck()
-			// priceCheck()
-			// productionCheck()
-			// fractionCheck()
-			// quantileCheck()
-			// valCheck()
-			// quanCheck()
-
-			/*
-			Checks boxes after page is loaded, so that data is shown immediatly when the page 
-			is opened, without the user having to choose parameters.
-			*/
-
-			// setTimeout(function(){
-			// 	var defer1 = $.Deferred();
-			// 	document.getElementById("checkboxChoco").checked = true;
-			// 	defer1.resolve();
-			// 	defer1.done(function defer2() { var defer2 = $.Deferred(); document.getElementById("checkboxExport").checked = true; defer2.resolve();});
-
-			// 	defer2.done( function defer3() { var defer3 = $.Deferred(); document.getElementById("checkboxFractions").checked = true; defer3.resolve();});
-				
-			// 	defer3.done( function miew() {document.getElementById("checkboxVal").checked = true;});
-			// 	// dataParam();
-			// // document.getElementById("checkboxCocoa").checked = true;
-			// // document.getElementById("checkboxExport").checked = true;
-			// // document.getElementById("checkboxFractions").checked = true;
-			// // document.getElementById("checkboxVal").checked = true;
-			// }, 1000);
-
 			/* 
 			Calls the right map coloring function, according to the parameters 
 			chosen by user.
@@ -383,7 +283,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				if (selectedCountry === null) {
 					// Empties the div possibly showing information about previously selected country.
 					d3.select("#countryInfoContainer").html("<span class='italic smallText'>Information about selected country:</span>"
-						+"<br><br> No country is selected");
+						+"<br><br> No country is selected <br> (Counries can only be selected, when the parameter 'Export' or 'Import'"
+						+ " is chosen.)");
 
 					// Checks which parameters are chosen by user, and calls the right coloring functions.
 					// Also sets the right onClick events if clicking on countries should result in showing other data.
@@ -395,6 +296,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 								country.on("click", function(d,i) {
 									miscNewVis();
+									fillCountryInfo(d);
 									matrColorMap(tradeMatrCocoaImpVal2011, d, scale);
 								});
 							}	
@@ -403,6 +305,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 								country.on("click", function(d,i) {
 									miscNewVis();
+									fillCountryInfo(d);
 									matrColorMap(tradeMatrCocoaImpQuan2011, d, scale);
 								});
 							}
@@ -413,6 +316,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 								country.on("click", function(d,i) {
 									miscNewVis();
+									fillCountryInfo(d);
 									matrColorMap(tradeMatrCocoaExpVal2011, d, scale);
 								});
 							}	
@@ -421,6 +325,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 								country.on("click", function(d,i) {
 									miscNewVis();
+									fillCountryInfo(d);
 									matrColorMap(tradeMatrCocoaExpQuan2011, d, scale);
 								});
 							}
@@ -447,6 +352,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 								country.on("click", function(d,i) {
 									miscNewVis();
+									fillCountryInfo(d);
 									matrColorMap(tradeMatrChocoImpVal2011, d, scale);
 								});
 							}	
@@ -455,6 +361,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 								country.on("click", function(d,i) {
 									miscNewVis();
+									fillCountryInfo(d);
 									matrColorMap(tradeMatrChocoImpQuan2011, d, scale);
 								});
 							}
@@ -465,6 +372,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 								country.on("click", function(d,i) {
 									miscNewVis();
+									fillCountryInfo(d);
 									matrColorMap(tradeMatrChocoExpVal2011, d, scale);
 								});
 							}	
@@ -473,6 +381,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 								country.on("click", function(d,i) {
 									miscNewVis();
+									fillCountryInfo(d);
 									matrColorMap(tradeMatrChocoExpQuan2011, d, scale);
 								});
 							}	
@@ -562,13 +471,15 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			scale is divided. Can be either "fraction" or "quantile".
 			*/ 
 			function colorMap(data, scale) {
-				console.log("data", data);
+				// List determining the colors used for visualisation.
+				var colorList = ["#E6C76A", "#DD6F00", "#BB5E00", "#994D00", "#552B00"];
 
+				// 
 				titleString[4] = "per country"; 
 				titleString[5] = "";
 				document.getElementById("title").innerHTML = titleString.join(" ");
 
-
+				// Function used to sort the data, so that quantiles can be made using d3.quantile.
 				function compareNumbers(a, b) {
 						return a - b;
 				}
@@ -576,11 +487,9 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				var dataMap = d3.map(data);
 				var dataValUnsorted = dataMap.values();
 				var dataValues = dataValUnsorted.sort(compareNumbers);
-				// console.log(dataValues)
 
 				var max = d3.max(dataValues);
 
-				console.log("scale", scale);
 				if (scale == "fraction") {
 					var oneFifth = max/5;
 					var twoFifth = 2*max/5;
@@ -600,19 +509,19 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 						if (data[keyCountry] < oneFifth) {
 							// console.log("miew"+keyCountry);
-							d3.selectAll(keyCountryClass).style("fill", "blue");
+							d3.selectAll(keyCountryClass).style("fill", colorList[0]);
 						}
 						else if ((data[keyCountry] > oneFifth) && (data[keyCountry] < twoFifth)) {
-							d3.selectAll(keyCountryClass).style("fill", "green");
+							d3.selectAll(keyCountryClass).style("fill", colorList[1]);
 						}
 						else if ((data[keyCountry] > twoFifth) && (data[keyCountry] < threeFifth)) {
-							d3.selectAll(keyCountryClass).style("fill", "yellow");
+							d3.selectAll(keyCountryClass).style("fill", colorList[2]);
 						}
 						else if ((data[keyCountry] > threeFifth) && (data[keyCountry] < fourFifth)) {
-							d3.selectAll(keyCountryClass).style("fill", "orange");
+							d3.selectAll(keyCountryClass).style("fill", colorList[3]);
 						}
 						else if (data[keyCountry] > fourFifth) {
-							d3.selectAll(keyCountryClass).style("fill", "red");
+							d3.selectAll(keyCountryClass).style("fill", colorList[4]);
 						}
 					}
 				}
@@ -633,49 +542,50 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 						var keyCountryClass = "." + keyCountry.replace(/[ ,']{1,}/g, "");
 
 						if (data[keyCountry] < firstQuant) {
-							d3.selectAll(keyCountryClass).style("fill", "blue");
+							d3.selectAll(keyCountryClass).style("fill", colorList[0]);
 						}
 						else if ((data[keyCountry] > firstQuant) && (data[keyCountry] < secQuant)) {
-							d3.selectAll(keyCountryClass).style("fill", "green");
+							d3.selectAll(keyCountryClass).style("fill", colorList[1]);
 											}
 						else if ((data[keyCountry] > secQuant) && (data[keyCountry] < thirdQuant)) {
-							d3.selectAll(keyCountryClass).style("fill", "yellow");
+							d3.selectAll(keyCountryClass).style("fill", colorList[2]);
 
 						}
 						else if ((data[keyCountry] > thirdQuant) && (data[keyCountry] < fourthQuant)) {
-							d3.selectAll(keyCountryClass).style("fill", "orange");
+							d3.selectAll(keyCountryClass).style("fill", colorList[3]);
 
 						}
 						else if (data[keyCountry] > fourthQuant) {
-							d3.selectAll(keyCountryClass).style("fill", "red");
+							d3.selectAll(keyCountryClass).style("fill", colorList[4]);
 						}
 					}
 				}
 
-					var colorList = ["blue", "green", "yellow", "orange", "red"];
-					drawLegend(rangeList, colorList);
+				// Draws legend
+				drawLegend(rangeList, colorList);
 
-					// Add data value to tooltip
-					
-						d3.selectAll(".country").on("mousemove", function (d,i) {
-				      		
-							if ((typeof data[d.properties.name] === "undefined") ||
-								 (d.properties.name.replace(/[ ,']{1,}/g, "") == 0)) {
-								var value = " ";
-							} else {
-								var value = data[d.properties.name];
-							}
-				      		
-			  var offsetL = document.getElementById('mapContainer').offsetLeft+20;
-			  var offsetT = document.getElementById('mapContainer').offsetTop+10;
-			  var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
-					      	tooltip.classed("hidden", false)
-					             .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
-					             .html(d.properties.name + "<br>" + value);
-					    })
-				    	.on("mouseout",  function(d,i) {
-				        	tooltip.classed("hidden", true);
-				    	});
+				// Adds data value to tooltip
+				d3.selectAll(".country").on("mousemove", function (d,i) {
+					if ((typeof data[d.properties.name] === "undefined") || (d.properties.name.replace(/[ ,']{1,}/g, "") == 0)) {
+						var value = " ";
+					} else {
+						var value = data[d.properties.name];
+					}
+		      		
+					var offsetL = document.getElementById('mapContainer').offsetLeft+20;
+					var offsetT = document.getElementById('mapContainer').offsetTop+10;
+					var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
+
+				    tooltip
+				    	.classed("hidden", false)
+				    	.attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
+				        .html(d.properties.name + "<br>" + value);
+				});
+
+		    	d3.selectAll(".country").on("mouseout", function(d,i) {
+		        		tooltip.classed("hidden", true);
+		    	});
+			    
 			}
 
 			function miscNewVis() {
@@ -702,8 +612,6 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			Writes the content of the div with information about the selected counrty.
 			Writes a standard text if no country is selected.
 			*/
-			d3.selectAll(".country").on("click", fillCountryInfo);
-
 			function fillCountryInfo(d) {
 				var tabs = "&nbsp;&nbsp;&nbsp"
 				console.log(cocoaProdPrice2011);
@@ -711,16 +619,16 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				d3.select("#countryInfoContainer").html(
 					"<span class='italic smallText'>Information about selected country:</span>"
 					+ "<br><span id='bold'>" + d.properties.name + "</span><br>"
-					+ "<br>" + tabs + "Cocoa farmer earnings: <br> "  + cocoaProdPrice2011[d.properties.name] + " US dollars/year"
-					+ "<br>" + tabs + "Production of cocoa: <br> " + cocoaProdQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Import Quantity of Cocoa: <br> " + cocoaImpQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Import Value of Cocoa: <br> " + cocoaImpVal2011[d.properties.name] + " US dollars/year"
-					+ "<br>" + tabs + "Export Quantity of Cocoa: <br> " + cocoaExpQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Export Value of Cocoa: <br> " + cocoaExpVal2011[d.properties.name] + " US dollars/year"
-					+ "<br>" + tabs + "Import Quantity of Chocolate: <br> " + chocoImpQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Import Value of Chocolate: <br> " + chocoImpVal2011[d.properties.name] + " US Dollars/year"
-					+ "<br>" + tabs + "Export Quantity of Chocolate: <br> " + chocoExpQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Export Value of Chocolate: <br> " + chocoExpVal2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Cocoa farmer earnings: <br>"  + tabs + tabs + cocoaProdPrice2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Production of cocoa: <br>" + tabs + tabs + cocoaProdQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Quantity of Cocoa: <br>" + tabs + tabs + cocoaImpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Value of Cocoa: <br>" + tabs + tabs + cocoaImpVal2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Export Quantity of Cocoa: <br>" + tabs + tabs + cocoaExpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Export Value of Cocoa: <br>" + tabs + tabs + cocoaExpVal2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Import Quantity of Chocolate: <br>" + tabs + tabs + chocoImpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Value of Chocolate: <br>" + tabs + tabs + chocoImpVal2011[d.properties.name] + " US Dollars/year"
+					+ "<br>" + tabs + "Export Quantity of Chocolate: <br>" + tabs + tabs + chocoExpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Export Value of Chocolate: <br>" + tabs + tabs + chocoExpVal2011[d.properties.name] + " US dollars/year"
 				);
 			}
 							
@@ -769,14 +677,10 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			function matrColorMap(data, country, scale) {
 				selectCountry(country);
 
-				// for (var keyDict in data) {
-				// 	for (var keyCountry in keyDict) {
-				// 		if (data[keyCountry] == 0) {
-				// 			delete data[keyCountry];
-				// 		}
-				// 	}
-				// }
+				// List determining the colors used for the visualisation.
+				var colorList = ["#E6C76A", "#DD6F00", "#BB5E00", "#994D00", "#552B00"];
 
+				// Function used to sort the data, so that quantiles can be made using d3.quantile.
 				function compareNumbers(a, b) {
 						return a - b;
 				}
@@ -790,6 +694,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 				var max = d3.max(countryValSorted);
 
+				
 				if (scale == "fraction") {
 					var oneFifth = max/5;
 					var twoFifth = 2*max/5;
@@ -807,19 +712,19 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 						// console.log("key", keyCountry);
 
 						if (countryDict[keyCountry] < oneFifth) {
-							d3.selectAll(keyCountryClass).style("fill", "blue");
+							d3.selectAll(keyCountryClass).style("fill", colorList[0]);
 						}
 						else if ((countryDict[keyCountry] > oneFifth) && (countryDict[keyCountry] < twoFifth)) {
-							d3.selectAll(keyCountryClass).style("fill", "green");
+							d3.selectAll(keyCountryClass).style("fill", colorList[1]);
 						}
 						else if ((countryDict[keyCountry] > twoFifth) && (countryDict[keyCountry] < threeFifth)) {
-							d3.selectAll(keyCountryClass).style("fill", "yellow");
+							d3.selectAll(keyCountryClass).style("fill", colorList[2]);
 						}
 						else if ((countryDict[keyCountry] > threeFifth) && (countryDict[keyCountry] < fourFifth)) {
-							d3.selectAll(keyCountryClass).style("fill", "orange");
+							d3.selectAll(keyCountryClass).style("fill", colorList[3]);
 						}
 						else if (countryDict[keyCountry] > fourFifth) {
-							d3.selectAll(keyCountryClass).style("fill", "red");
+							d3.selectAll(keyCountryClass).style("fill", colorList[4]);
 						}
 					}
 				}
@@ -840,25 +745,24 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 						var keyCountryClass = "." + keyCountry.replace(/[ ,']{1,}/g, "");
 
 						if (data[keyCountry] < firstQuant) {
-							d3.selectAll(keyCountryClass).style("fill", "blue");
+							d3.selectAll(keyCountryClass).style("fill", colorList[0]);
 						}
 						else if ((data[keyCountry] > firstQuant) && (data[keyCountry] < secQuant)) {
-							d3.selectAll(keyCountryClass).style("fill", "green");
+							d3.selectAll(keyCountryClass).style("fill", colorList[1]);
 						}
 						else if ((data[keyCountry] > secQuant) && (data[keyCountry] < thirdQuant)) {
-							d3.selectAll(keyCountryClass).style("fill", "yellow");
+							d3.selectAll(keyCountryClass).style("fill", colorList[2]);
 						}
 						else if ((data[keyCountry] > thirdQuant) && (data[keyCountry] < fourthQuant)) {
-							d3.selectAll(keyCountryClass).style("fill", "orange");
+							d3.selectAll(keyCountryClass).style("fill", colorList[3]);
 						}
 						else if (data[keyCountry] > fourthQuant) {
-							d3.selectAll(keyCountryClass).style("fill", "red");
+							d3.selectAll(keyCountryClass).style("fill", colorList[4]);
 						}
 					}	
 				}
 
-				var colorList = ["blue", "green", "yellow", "orange", "red"];
-
+				// Draws the legend.
 				drawLegend(rangeList, colorList);
 
 				// Add data value to tooltip
@@ -892,8 +796,6 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				document.getElementById("legendContainer").style.display = "none";
 				console.log(rangesList);
 				
-				// // Stores the rounded range values.
-				// var roundedRangesList = []
 				// Rounds the numbers in rangesList, to avoid non-ending decimal numbers in the legend.
 				for (var i = 0; i < rangesList.length; i ++) {
 					rangesList[i] = Math.round(rangesList[i]);
@@ -952,57 +854,6 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					.attr("font-family", "sans-serif")
 					.attr("font-size", ((3/5)*squareSide).toString());	
 			}
-
-			function lineVis(rangesList, colorList) {
-				// console.log("legend");
-				// console.log(rangesList, colorList);
-
-				var legendHeight = 20;
-				var legendWidth = document.documentElement.clientWidth - 20;
-
-				var relHeight = rangesList[5]/legendWidth;
-
-				var dataScale = d3.scale.linear();
-				// dataScale.domain([0, rangesList[5]]);
-				// dataScale.range([legendHeight, 0]);
-				dataScale.domain([0, rangesList[5]]);
-				dataScale.range([0, legendWidth]);
-
-				var legend = d3.select("#lineContainer")
-					.append("svg")
-					.attr("width", legendWidth + 20)
-					.attr("height", legendHeight + 200)
-					.append("g")
-					.attr('transform', 'translate(10, 0)')
-					.selectAll(".legend")
-					.data(colorList)
-					.enter()
-					.append("g")
-					.attr("class", "legend")
-					.attr("transform", 
-						function(d,i) {
-						var horz = 0
-					    // var vert = dataScale(rangesList[i+1]);
-					    var vert = i*40
-					    // console.log("vert", vert);
-					    return "translate(" + horz + "," + vert + ")";
-					});
-
-				legend.append("rect")
-					.attr("width", function(d,i) {
-						return (rangesList[i+1] - rangesList[i]) / relHeight;
-					})
-					.attr("height", legendHeight)
-					// .attr("width", legendWidth)
-					// .attr("height", function(d,i) {
-					// 	return (rangesList[i+1] - rangesList[i]) / relHeight;
-					// })
-					.attr("fill", function(d,i) {
-						return d;
-					})
-					.attr("stroke", "black");
-			}
-
 
 		// Redraws and recolors the visualisation when the window is resized. 
 		// Most of this code was copy-pasted from map_script.js, the original can be found at 

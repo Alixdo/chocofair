@@ -75,7 +75,7 @@ table {
   border:2px solid #d0d0d0;
   border-radius: 5px;
   text-align: center;
-  font-size: 30px;
+  font-size: 25px;
   position: absolute;
 }
 h2 {
@@ -169,4 +169,6 @@ div.tooltip {
 
 .button {
   float: right;
+  font-size: 20px;
+  font-style: bold;
 }
