@@ -21,11 +21,10 @@ function leftDivSize() {
 }
 
 /*
-Returns a js map of the loaded data stored in a JSON file. The data
-must be in the form of a dictionnary.
+Returns a JSON dictionnary of the loaded data stored in a JSON file, cleaned from entries with uninterestig data.
+The data must be in the form of a dictionnary.
 */
-function mapMondialData(jsonDict, callback) {
-	console.log(jsonDict);
+function cleanMondialData(jsonDict, callback) {
 	// Deletes entries for which the data value is 0.
 	// (For example, a country that imports 0 cocoa will not be
 	// visualised.)
@@ -40,29 +39,18 @@ function mapMondialData(jsonDict, callback) {
 }
 
 /*
-Returns a js map of the loaded data stored in a JSON file. The data
-must be in the form of a dictionnary of dictionnaries.
+Returns a JSON dict of the loaded data stored in a JSON file, cleaned from entries with uninteresting data.
+The data must be in the form of a dictionnary of dictionnaries.
 */
-function mapNationalData(jsonDictOfDict, callback) {
+function cleanNationalData(jsonDictOfDict, callback) {
 	console.log(jsonDictOfDict);
-
 	// Deletes entries for which the data value is 0.
 	for (var keyDict in jsonDictOfDict) {
-		// console.log(keyDict);
-		// if (jsonDictOfDict.hasOwnProperty(keyDict)) {
-			// console.log("key1", keyDict);
-			// console.log(jsonDictOfDict[keyDict]);
-
 			for (var keyCountry in jsonDictOfDict[keyDict]) {
-				// if (keyDict.hasOwnProperty(keyCountry)) {
-					// console.log("key2", keyCountry);
 					if (jsonDictOfDict[keyDict][keyCountry] == 0) {
-						// console.log("oh", jsonDictOfDict[keyDict][keyCountry]);
 						delete jsonDictOfDict[keyDict][keyCountry];
 					}
 				}
-			// }
-		// }
 	}
 	var error = null;
 	var data = jsonDictOfDict;
@@ -71,10 +59,10 @@ function mapNationalData(jsonDictOfDict, callback) {
 
 // Global variables:
 
-	// Array used to make the title of the visualisation, according to the chosen parameters/the data
-	// that is shown.
-	// titleString is a global variable.
-	var titleString = ["", "of", "", "", "", "", "", "in", ""];
+// Array used to make the title of the visualisation, according to the chosen parameters/the data
+// that is shown.
+// titleString is a global variable.
+var titleString = ["", "of", "", "", "", "", "", "in", ""];
 
 queue(1)
 	.defer(d3.json, "data_files/_CocoaImpVal2011.json")
@@ -161,29 +149,29 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 	// }
 
 	queue()
-		.defer(mapMondialData, CocoaImpVal2011)
-		.defer(mapMondialData, CocoaImpQuan2011)
-		.defer(mapMondialData, CocoaExpVal2011)
-		.defer(mapMondialData, CocoaExpQuan2011)
-		.defer(mapNationalData, TradeMatrCocoaImpVal2011)
-		.defer(mapNationalData, TradeMatrCocoaImpQuan2011)
-		.defer(mapNationalData, TradeMatrCocoaExpVal2011)
-		.defer(mapNationalData, TradeMatrCocoaExpQuan2011)
-		.defer(mapMondialData, CocoaProdPrice2011)
-		.defer(mapMondialData, CocoaProdQuan2011)
-		.defer(mapMondialData, ChocoImpVal2011)
-		.defer(mapMondialData, ChocoImpQuan2011)
-		.defer(mapMondialData, ChocoExpVal2011)
-		.defer(mapMondialData, ChocoExpQuan2011)
-		.defer(mapNationalData, TradeMatrChocoImpVal2011)
-		.defer(mapNationalData, TradeMatrChocoImpQuan2011)
-		.defer(mapNationalData, TradeMatrChocoExpVal2011)
-		.defer(mapNationalData, TradeMatrChocoExpQuan2011)
-		.await( function(error, cocoaImpVal2011DataMap, cocoaImpQuan2011DataMap, cocoaExpVal2011DataMap, cocoaExpQuan2011DataMap, 
-			tradeMatrCocoaImpVal2011DataMap, tradeMatrCocoaImpQuan2011DataMap, tradeMatrCocoaExpVal2011DataMap, 
-			tradeMatrCocoaExpQuan2011DataMap, cocoaProdPrice2011DataMap, cocoaProdQuan2011DataMap, chocoImpVal2011DataMap, 
-			chocoImpQuan2011DataMap, chocoExpVal2011DataMap, chocoExpQuan2011DataMap, tradeMatrChocoImpVal2011DataMap, 
-			tradeMatrChocoImpQuan2011DataMap, tradeMatrChocoExpVal2011DataMap, tradeMatrChocoExpQuan2011DataMap) {
+		.defer(cleanMondialData, CocoaImpVal2011)
+		.defer(cleanMondialData, CocoaImpQuan2011)
+		.defer(cleanMondialData, CocoaExpVal2011)
+		.defer(cleanMondialData, CocoaExpQuan2011)
+		.defer(cleanNationalData, TradeMatrCocoaImpVal2011)
+		.defer(cleanNationalData, TradeMatrCocoaImpQuan2011)
+		.defer(cleanNationalData, TradeMatrCocoaExpVal2011)
+		.defer(cleanNationalData, TradeMatrCocoaExpQuan2011)
+		.defer(cleanMondialData, CocoaProdPrice2011)
+		.defer(cleanMondialData, CocoaProdQuan2011)
+		.defer(cleanMondialData, ChocoImpVal2011)
+		.defer(cleanMondialData, ChocoImpQuan2011)
+		.defer(cleanMondialData, ChocoExpVal2011)
+		.defer(cleanMondialData, ChocoExpQuan2011)
+		.defer(cleanNationalData, TradeMatrChocoImpVal2011)
+		.defer(cleanNationalData, TradeMatrChocoImpQuan2011)
+		.defer(cleanNationalData, TradeMatrChocoExpVal2011)
+		.defer(cleanNationalData, TradeMatrChocoExpQuan2011)
+		.await( function(error, cocoaImpVal2011, cocoaImpQuan2011, cocoaExpVal2011, cocoaExpQuan2011, 
+			tradeMatrCocoaImpVal2011, tradeMatrCocoaImpQuan2011, tradeMatrCocoaExpVal2011, 
+			tradeMatrCocoaExpQuan2011, cocoaProdPrice2011, cocoaProdQuan2011, chocoImpVal2011, 
+			chocoImpQuan2011, chocoExpVal2011, chocoExpQuan2011, tradeMatrChocoImpVal2011, 
+			tradeMatrChocoImpQuan2011, tradeMatrChocoExpVal2011, tradeMatrChocoExpQuan2011) {
 
 			// Removes the "Loading..." div once the data is loaded.
 			d3.select("#loadDiv").remove();
@@ -379,7 +367,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			chosen by user.
 			*/
 			function dataParam() {
-				resetVis();
+				miscNewVis();
 				var country = d3.selectAll(".country");
 				var scale = "fraction";
 
@@ -394,7 +382,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				// selectedCountry is a global variable
 				if (selectedCountry === null) {
 					// Empties the div possibly showing information about previously selected country.
-					emptyCountryInfo();
+					d3.select("#countryInfoContainer").html("<span class='italic smallText'>Information about selected country:</span>"
+						+"<br><br> No country is selected");
 
 					// Checks which parameters are chosen by user, and calls the right coloring functions.
 					// Also sets the right onClick events if clicking on countries should result in showing other data.
@@ -402,49 +391,49 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 						if (document.getElementById("radioImport").checked == true){
 							if (document.getElementById("radioVal").checked == true) {
 
-								colorMap(cocoaImpVal2011DataMap, scale);
+								colorMap(cocoaImpVal2011, scale);
 
 								country.on("click", function(d,i) {
-									resetVis();
-									matrColorMap(tradeMatrCocoaImpVal2011DataMap, d, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrCocoaImpVal2011, d, scale);
 								});
 							}	
 							if (document.getElementById("radioQuan").checked == true) {
-								colorMap(cocoaImpQuan2011DataMap, scale);
+								colorMap(cocoaImpQuan2011, scale);
 
 								country.on("click", function(d,i) {
-									resetVis();
-									matrColorMap(tradeMatrCocoaImpQuan2011DataMap, d, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrCocoaImpQuan2011, d, scale);
 								});
 							}
 						}
 						if (document.getElementById("radioExport").checked == true){
 							if (document.getElementById("radioVal").checked == true) {
-								colorMap(cocoaExpVal2011DataMap, scale);
+								colorMap(cocoaExpVal2011, scale);
 
 								country.on("click", function(d,i) {
-									resetVis();
-									matrColorMap(tradeMatrCocoaExpVal2011DataMap, d, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrCocoaExpVal2011, d, scale);
 								});
 							}	
 							if (document.getElementById("radioQuan").checked == true) {
-								colorMap(cocoaExpQuan2011DataMap, scale);
+								colorMap(cocoaExpQuan2011, scale);
 
 								country.on("click", function(d,i) {
-									resetVis();
-									matrColorMap(tradeMatrCocoaExpQuan2011DataMap, d, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrCocoaExpQuan2011, d, scale);
 								});
 							}
 						}
 						if (document.getElementById("radioPrice").checked == true) {
-							colorMap(cocoaProdPrice2011DataMap, scale);
+							colorMap(cocoaProdPrice2011, scale);
 
 							country.on("click", function(d,i) { 
 								// do nothing
 							});
 						}
 						if (document.getElementById("radioProduction").checked == true) {
-							colorMap(cocoaProdQuan2011DataMap, scale);
+							colorMap(cocoaProdQuan2011, scale);
 
 							country.on("click", function(d,i) { 
 								// do nothing
@@ -454,37 +443,37 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					if (document.getElementById("radioChoco").checked == true) {
 						if (document.getElementById("radioImport").checked == true) {
 							if (document.getElementById("radioVal").checked == true) {
-								colorMap(chocoImpVal2011DataMap, scale);
+								colorMap(chocoImpVal2011, scale);
 
 								country.on("click", function(d,i) {
-									resetVis();
-									matrColorMap(tradeMatrChocoImpVal2011DataMap, d, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrChocoImpVal2011, d, scale);
 								});
 							}	
 							if (document.getElementById("radioQuan").checked == true) {
-								colorMap(chocoImpQuan2011DataMap, scale);
+								colorMap(chocoImpQuan2011, scale);
 
 								country.on("click", function(d,i) {
-									resetVis();
-									matrColorMap(tradeMatrChocoImpQuan2011DataMap, d, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrChocoImpQuan2011, d, scale);
 								});
 							}
 						}
 						if (document.getElementById("radioExport").checked == true) {
 							if (document.getElementById("radioVal").checked == true) {
-								colorMap(chocoExpVal2011DataMap, scale);
+								colorMap(chocoExpVal2011, scale);
 
 								country.on("click", function(d,i) {
-									resetVis();
-									matrColorMap(tradeMatrChocoExpVal2011DataMap, d, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrChocoExpVal2011, d, scale);
 								});
 							}	
 							if (document.getElementById("radioQuan").checked == true) {
-								colorMap(chocoExpQuan2011DataMap, scale);
+								colorMap(chocoExpQuan2011, scale);
 
 								country.on("click", function(d,i) {
-									resetVis();
-									matrColorMap(tradeMatrChocoExpQuan2011DataMap, d, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrChocoExpQuan2011, d, scale);
 								});
 							}	
 						}
@@ -509,57 +498,57 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					if (document.getElementById("radioCocoa").checked == true){
 						if (document.getElementById("radioImport").checked == true){
 							if (document.getElementById("radioVal").checked == true) {
-								resetVis();
-								matrColorMap(tradeMatrCocoaImpVal2011DataMap,  selectedCountry, scale);
+								miscNewVis();
+								matrColorMap(tradeMatrCocoaImpVal2011,  selectedCountry, scale);
 							}	
 							if (document.getElementById("radioQuan").checked == true) {
-									resetVis();
-									matrColorMap(tradeMatrCocoaImpQuan2011DataMap, selectedCountry, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrCocoaImpQuan2011, selectedCountry, scale);
 							}
 						}
 						if (document.getElementById("radioExport").checked == true){
 							if (document.getElementById("radioVal").checked == true) {
-									resetVis();
-									matrColorMap(tradeMatrCocoaExpVal2011DataMap, selectedCountry, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrCocoaExpVal2011, selectedCountry, scale);
 							}	
 							if (document.getElementById("radioQuan").checked == true) {
-									resetVis();
-									matrColorMap(tradeMatrCocoaExpQuan2011DataMap, selectedCountry, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrCocoaExpQuan2011, selectedCountry, scale);
 							}
 						}
 						if (document.getElementById("radioPrice").checked == true) {
-							resetVis();
+							miscNewVis();
 						}
 						if (document.getElementById("radioProduction").checked == true) {
-							resetVis();
+							miscNewVis();
 						}
 					}
 					if (document.getElementById("radioChoco").checked == true) {
 						if (document.getElementById("radioImport").checked == true) {
 							if (document.getElementById("radioVal").checked == true) {
-									resetVis();
-									matrColorMap(tradeMatrChocoImpVal2011DataMap, selectedCountry, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrChocoImpVal2011, selectedCountry, scale);
 							}	
 							if (document.getElementById("radioQuan").checked == true) {
-									resetVis();
-									matrColorMap(tradeMatrChocoImpQuan2011DataMap, selectedCountry, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrChocoImpQuan2011, selectedCountry, scale);
 							}
 						}
 						if (document.getElementById("radioExport").checked == true) {
 							if (document.getElementById("radioVal").checked == true) {
-									resetVis();
-									matrColorMap(tradeMatrChocoExpVal2011DataMap, selectedCountry, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrChocoExpVal2011, selectedCountry, scale);
 							}	
 							if (document.getElementById("radioQuan").checked == true) {
-									resetVis();
-									matrColorMap(tradeMatrChocoExpQuan2011DataMap, selectedCountry, scale);
+									miscNewVis();
+									matrColorMap(tradeMatrChocoExpQuan2011, selectedCountry, scale);
 							}	
 						}
 						if (document.getElementById("radioPrice").checked == true) {
-							resetVis();
+							miscNewVis();
 						}
 						if (document.getElementById("radioProduction").checked == true) {
-							resetVis();
+							miscNewVis();
 						}
 					}
 				} 
@@ -605,7 +594,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 						// Removes the spaces of the country string, in order to correspond
 						// with the classes of the map.
-						var keyCountryClass = "." + keyCountry.replace(/[ ,']{1,}/g, "");//.replace("'", "").replace(",","");
+						var keyCountryClass = "." + keyCountry.replace(/[ ,']{1,}/g, "");
 
 						// console.log(keyCountry, keyCountryClass);
 
@@ -689,6 +678,10 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				    	});
 			}
 
+			function miscNewVis() {
+				resetVis();
+			}
+
 			/*
 			Erase all custom fills and strokes on the map.
 			*/
@@ -700,11 +693,37 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 				d3.selectAll(".contry:hover")
 					.style("stroke", "white")
-					.style("stroke-width", "1.5px");
+					.style("stroke-width","1.5px");
 
 				d3.select("#legendContainer").select("svg > *").remove();
 			}
 
+			/*
+			Writes the content of the div with information about the selected counrty.
+			Writes a standard text if no country is selected.
+			*/
+			d3.selectAll(".country").on("click", fillCountryInfo);
+
+			function fillCountryInfo(d) {
+				var tabs = "&nbsp;&nbsp;&nbsp"
+				console.log(cocoaProdPrice2011);
+				console.log(d.properties.name);
+				d3.select("#countryInfoContainer").html(
+					"<span class='italic smallText'>Information about selected country:</span>"
+					+ "<br><span id='bold'>" + d.properties.name + "</span><br>"
+					+ "<br>" + tabs + "Cocoa farmer earnings: " + cocoaProdPrice2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Production of cocoa: " + cocoaProdQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Quantity of Cocoa:"
+					+ "<br>" + tabs + "Import Value of Cocoa:"
+					+ "<br>" + tabs + "Export Quantity of Chocolate:"
+					+ "<br>" + tabs + "Export Value of Chocolate:"
+					+ "<br>" + tabs + "Import Quantity of Cocoa:"
+					+ "<br>" + tabs + "Import Value of Cocoa:"
+					+ "<br>" + tabs + "Export Value of Cocoa:"
+					+ "<br>" + tabs + "Export Value of Cocoa:"
+				);
+			}
+							
 			/*
 			Does miscellaneous little tasks that need to be done when the user clicks on a country.
 			@ param country: d3 selection of a country
@@ -714,8 +733,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				selectedCountry = country
 
 				// Encircles the selected country
-				// console.log(d.properties.name, d.properties.name.replace(",","").replace(/\s+/g, '').replace("'",""));
-				d3.selectAll("." + country.properties.name.replace(",","").replace(/\s+/g, '').replace("'","")).style("stroke", "black");
+				// console.log(d.properties.name, d.properties.name.replace(/[ ,']{1,}/g, ""));
+				d3.selectAll("." + country.properties.name.replace(/[ ,']{1,}/g, "")).style("stroke", "black");
 
 				// Changes the title of the visualisation, based on the name of the selected country
 				if (document.getElementById("radioExport").checked == true) {
