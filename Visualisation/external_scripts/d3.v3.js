@@ -546,10 +546,8 @@
     return groups;
   }
   var d3_select = function(s, n) {
-    // console.log(s);
     return n.querySelector(s);
   }, d3_selectAll = function(s, n) {
-    // console.log(s);
     return n.querySelectorAll(s);
   }, d3_selectMatcher = d3_documentElement.matches || d3_documentElement[d3_vendorSymbol(d3_documentElement, "matchesSelector")], d3_selectMatches = function(n, s) {
     return d3_selectMatcher.call(n, s);

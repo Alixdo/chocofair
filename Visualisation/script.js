@@ -70,8 +70,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 	Returns a JSON dict of the loaded data stored in a JSON file, cleaned from entries with uninteresting data.
 	The data must be in the form of a dictionnary of dictionnaries.
 	*/
-	function cleanTradeMatrixData(jsonDictOfDict, callback) {
-		console.log(jsonDictOfDict);
+	function cleanMatrixTradeData(jsonDictOfDict, callback) {
 		// Deletes entries for which the data value is 0.
 		for (var keyDict in jsonDictOfDict) {
 				for (var keyCountry in jsonDictOfDict[keyDict]) {
@@ -141,7 +140,6 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					.attr("width", legendWidth)
 					.attr("height", legendHeight)
 					.append("g")
-					// .attr('transform', 'translate(10, 0)')
 					.selectAll(".legend")
 					.data(colorList)
 					.enter()
@@ -203,7 +201,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 				// Makes a map of the json data, so that the maximum value can be found easily.
 				var dataMap = d3.map(data);
 				var dataValUnsorted = dataMap.values();
-				var max = d3.max(dataValues);
+				var max = d3.max(dataValUnsorted);
 
 				// Colors the map according to data, when fraction is chosen as scale. 
 				if (scale == "fraction") {
@@ -335,6 +333,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 				// Makes a js map of the coutry data and finds the max value.
 				var countryMap = d3.map(countryDict);
+				var countryValUnsorted = countryMap.values();
+				var max = d3.max(countryValUnsorted);
 
 				// Colors the map according to data, when fraction is chosen as scale.
 				if (scale == "fraction") {
@@ -346,13 +346,11 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					// RangeList is used later to make the legend.
 					var rangeList = [0, oneFifth, twoFifth, threeFifth, fourFifth, max];
 
+					// Colors the world map according to data and scale.
 					for (var keyCountry in countryDict) {
-
 						// Removes the spaces of the country string, in order to correspond
 						// with the classes of the map. This is used to select the svg groups representing countries.
 						var keyCountryClass = "." + keyCountry.replace(/[ ,']{1,}/g, "");
-
-						// console.log("key", keyCountry);
 
 						if (countryDict[keyCountry] < oneFifth) {
 							d3.selectAll(keyCountryClass).style("fill", colorList[0]);
@@ -372,6 +370,14 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					}
 				}
 
+				// Function used to sort the data, so that quantiles can be made using d3.quantile.
+				function compareNumbers(a, b) {
+						return a - b;
+				}
+
+				// Sorts the data so that d3.quantile can be used.
+				var countryValSorted = countryValUnsorted.sort(compareNumbers);
+
 				// Colors the map according to data, when quantile is chosen as scale.
 				if (scale == "quantile") {
 					var firstQuant = d3.quantile(countryValSorted, 0.2);
@@ -383,25 +389,25 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 					// RangeList is used later to make the legend.
 					var rangeList = [0, firstQuant, secQuant, thirdQuant, fourthQuant, fifthQuant];
 
+					// Colors the world map according to data and scale.
 					for (var keyCountry in data) {
-
 						// Removes the spaces of the country string, in order to correspond
 						// with the classes of the map. This is used to select the svg groups representing countries.
 						var keyCountryClass = "." + keyCountry.replace(/[ ,']{1,}/g, "");
 
-						if (data[keyCountry] < firstQuant) {
+						if (countryDict[keyCountry] < firstQuant) {
 							d3.selectAll(keyCountryClass).style("fill", colorList[0]);
 						}
-						else if ((data[keyCountry] > firstQuant) && (data[keyCountry] < secQuant)) {
+						else if ((countryDict[keyCountry] > firstQuant) && (countryDict[keyCountry] < secQuant)) {
 							d3.selectAll(keyCountryClass).style("fill", colorList[1]);
 						}
-						else if ((data[keyCountry] > secQuant) && (data[keyCountry] < thirdQuant)) {
+						else if ((countryDict[keyCountry] > secQuant) && (countryDict[keyCountry] < thirdQuant)) {
 							d3.selectAll(keyCountryClass).style("fill", colorList[2]);
 						}
-						else if ((data[keyCountry] > thirdQuant) && (data[keyCountry] < fourthQuant)) {
+						else if ((countryDict[keyCountry] > thirdQuant) && (countryDict[keyCountry] < fourthQuant)) {
 							d3.selectAll(keyCountryClass).style("fill", colorList[3]);
 						}
-						else if (data[keyCountry] > fourthQuant) {
+						else if (countryDict[keyCountry] > fourthQuant) {
 							d3.selectAll(keyCountryClass).style("fill", colorList[4]);
 						}
 					}	
@@ -426,7 +432,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 						
 				      	tooltip.classed("hidden", false)
 				             .attr("style", "left:"+(mouse[0]+offsetL)+"px;top:"+(mouse[1]+offsetT)+"px")
-				             .html(d.properties.name + "<br>}" + value);
+				             .html(d.properties.name + "<br>" + value);
 				    })
 
 			    	.on("mouseout",  function(d,i) {
@@ -434,10 +440,76 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			    	});
 			}
 
-			// Changes the title according to what is now beeing visualised: mondial data per country.
-				titleString[4] = "per country"; 
-				titleString[5] = "";
+			/*
+			Erase all custom fills and strokes on the map.
+			*/
+			function resetVis() {
+				d3.selectAll(".country")
+				 	.style("fill", "grey")
+				 	.style("stroke", "none");
+
+				d3.selectAll(".contry:hover")
+					.style("stroke", "white")
+					.style("stroke-width","1.5px");
+
+				d3.select("#legendContainer").select("svg > *").remove();
+			}
+
+			// Selected country is a global variable that stores if a country is selected by the user, and, if so, which country is selected.
+			var selectedCountry = null;
+
+			/*
+			Does miscellaneous little tasks that need to be done when the user clicks on a country.
+			@ param country: d3 selection of a country
+			*/
+			function selectCountry(country) {
+				// Modifies the global variable selectedCountry
+				selectedCountry = country
+
+				// Encircles the selected country
+				d3.selectAll("." + country.properties.name.replace(/[ ,']{1,}/g, "")).style("stroke", "black");
+
+				// Changes the title of the visualisation, based on the name of the selected country
+				if (document.getElementById("radioExport").checked == true) {
+					titleString[4] = "from";
+				} else { if (document.getElementById("radioImport").checked == true) {
+					titleString[4] = "to";
+				}}
+				titleString[5] = country.properties.name;
+
 				document.getElementById("title").innerHTML = titleString.join(" ");
+
+				// Makes a button to go back to the mondial representation of the data
+				d3.select("#title").append("input").attr("type","button").attr("class","button")
+				.attr("value", "<-    Go back to mondial")
+				.on("click", function () {
+					selectedCountry = null;
+					dataParam();
+				});
+			}
+
+			/*
+			Writes the content of the div with information about the country that is selected by user.
+			Writes a standard text if no country is selected. 
+			*/
+			function fillCountryInfo(d) {
+				var tabs = "&nbsp;&nbsp;&nbsp"
+
+				d3.select("#countryInfoContainer").html(
+					"<span class='italic smallText'>Information about selected country:</span>"
+					+ "<br><span id='bold'>" + d.properties.name + "</span><br>"
+					+ "<br>" + tabs + "Cocoa farmer earnings: <br>"  + tabs + tabs + cocoaProdPrice2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Production of cocoa: <br>" + tabs + tabs + cocoaProdQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Quantity of Cocoa: <br>" + tabs + tabs + cocoaImpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Value of Cocoa: <br>" + tabs + tabs + cocoaImpVal2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Export Quantity of Cocoa: <br>" + tabs + tabs + cocoaExpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Export Value of Cocoa: <br>" + tabs + tabs + cocoaExpVal2011[d.properties.name] + " US dollars/year"
+					+ "<br>" + tabs + "Import Quantity of Chocolate: <br>" + tabs + tabs + chocoImpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Import Value of Chocolate: <br>" + tabs + tabs + chocoImpVal2011[d.properties.name] + " US Dollars/year"
+					+ "<br>" + tabs + "Export Quantity of Chocolate: <br>" + tabs + tabs + chocoExpQuan2011[d.properties.name] + " tonnes/year"
+					+ "<br>" + tabs + "Export Value of Chocolate: <br>" + tabs + tabs + chocoExpVal2011[d.properties.name] + " US dollars/year"
+				);
+			}
 
 			/* 
 			Calls the right map coloring function, according to the parameters 
@@ -446,6 +518,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			function dataParam() {
 				resetVis();
 				var country = d3.selectAll(".country");
+
 				var scale = "fraction";
 
 				if (document.getElementById("radioFractions").checked == true){
@@ -526,6 +599,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 							});
 						}
 					}
+
 					if (document.getElementById("radioChoco").checked == true) {
 						if (document.getElementById("radioImport").checked == true) {
 							if (document.getElementById("radioVal").checked == true) {
@@ -661,8 +735,8 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			}
 
 			// The functions below make sure two radio buttons are not checked at the same time if they encode different data.
-			// They globally encode which strings are to be used in the title of the visualisation.
-			// The hide and show the radio buttons that are not always active.
+			// They also globally encode which strings are to be used in the title of the visualisation.
+			// The also hide and show the radio buttons that are not always active.
 			function cocoaCheck() {
 				document.getElementById("radioChoco").checked = false;
 				titleString[2] = "cocoa beans";
@@ -772,87 +846,6 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 			setRadioButtonsBehaviour();
 
-			
-
-			function miscNewVis() {
-				resetVis();
-			}
-
-			/*
-			Erase all custom fills and strokes on the map.
-			*/
-			function resetVis() {
-				console.log("blanK");
-				d3.selectAll(".country")
-				 	.style("fill", "grey")
-				 	.style("stroke", "none");
-
-				d3.selectAll(".contry:hover")
-					.style("stroke", "white")
-					.style("stroke-width","1.5px");
-
-				d3.select("#legendContainer").select("svg > *").remove();
-			}
-
-			/*
-			Writes the content of the div with information about the selected counrty.
-			Writes a standard text if no country is selected.
-			*/
-			function fillCountryInfo(d) {
-				var tabs = "&nbsp;&nbsp;&nbsp"
-				console.log(cocoaProdPrice2011);
-				console.log(d.properties.name);
-				d3.select("#countryInfoContainer").html(
-					"<span class='italic smallText'>Information about selected country:</span>"
-					+ "<br><span id='bold'>" + d.properties.name + "</span><br>"
-					+ "<br>" + tabs + "Cocoa farmer earnings: <br>"  + tabs + tabs + cocoaProdPrice2011[d.properties.name] + " US dollars/year"
-					+ "<br>" + tabs + "Production of cocoa: <br>" + tabs + tabs + cocoaProdQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Import Quantity of Cocoa: <br>" + tabs + tabs + cocoaImpQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Import Value of Cocoa: <br>" + tabs + tabs + cocoaImpVal2011[d.properties.name] + " US dollars/year"
-					+ "<br>" + tabs + "Export Quantity of Cocoa: <br>" + tabs + tabs + cocoaExpQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Export Value of Cocoa: <br>" + tabs + tabs + cocoaExpVal2011[d.properties.name] + " US dollars/year"
-					+ "<br>" + tabs + "Import Quantity of Chocolate: <br>" + tabs + tabs + chocoImpQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Import Value of Chocolate: <br>" + tabs + tabs + chocoImpVal2011[d.properties.name] + " US Dollars/year"
-					+ "<br>" + tabs + "Export Quantity of Chocolate: <br>" + tabs + tabs + chocoExpQuan2011[d.properties.name] + " tonnes/year"
-					+ "<br>" + tabs + "Export Value of Chocolate: <br>" + tabs + tabs + chocoExpVal2011[d.properties.name] + " US dollars/year"
-				);
-			}
-							
-			/*
-			Does miscellaneous little tasks that need to be done when the user clicks on a country.
-			@ param country: d3 selection of a country
-			*/
-			function selectCountry(country) {
-				// Modifies the global variable selectedCountry
-				selectedCountry = country
-
-				// Encircles the selected country
-				// console.log(d.properties.name, d.properties.name.replace(/[ ,']{1,}/g, ""));
-				d3.selectAll("." + country.properties.name.replace(/[ ,']{1,}/g, "")).style("stroke", "black");
-
-				// Changes the title of the visualisation, based on the name of the selected country
-				if (document.getElementById("radioExport").checked == true) {
-					titleString[4] = "from";
-				} else { if (document.getElementById("radioImport").checked == true) {
-					titleString[4] = "to";
-				}}
-				titleString[5] = country.properties.name;
-
-				document.getElementById("title").innerHTML = titleString.join(" ");
-
-				// Makes a button to go back to the mondial representation of the data
-				d3.select("#title").append("input").attr("type","button").attr("class","button")
-				.attr("value", "<-    Go back to mondial")
-				.on("click", function () {
-					selectedCountry = null;
-					dataParam();
-				});
-			}
-
-			
-
-			
-
 			// Redraws and recolors the visualisation when the window is resized. 
 			// Most of this code was copy-pasted from map_script.js, the original can be found at 
 			// http://techslides.com/demos/d3/worldmap-template.html
@@ -874,7 +867,6 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 			  draw(topo);
 			  dataParam();
 			}
-		});
 
 			/*
 			Sets parameters in the menu, so that data is visualised when opening the page, without the user having to make choices yet.
@@ -896,5 +888,7 @@ function scriptCode (error, CocoaImpVal2011, CocoaImpQuan2011, CocoaExpVal2011, 
 
 			initVis();
 
-// This bracket closes scriptCode(), which contains almost all the code of script.js
+		// This bracket closes the function called by await in the second queue.
+		});
+// This bracket closes scriptCode(), which is called by await in the first queue, and which contains almost all the code of script.js
 }

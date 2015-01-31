@@ -7,8 +7,8 @@
 import csv
 import json
 
-csvFile = 'TradeMatrChocoExpVal2011.csv'
-jsonFileName = '_TradeMatrChocoExpVal2011.json'
+csvFile = 'TradeMatrCocoaExpVal2011.csv'
+jsonFileName = '_TradeMatrCocoaExpVal2011.json'
 
 dataDic = {}
 
@@ -23,92 +23,6 @@ with open(csvFile, 'rb') as csvfile:
 		if row[1] == "":
 			break
 
-		# if row[5] == "European Union":
-		# 	continue
-		# elif row[5] == "South-Eastern Asia":
-		# 	continue
-		# elif row[5] == "Eastern Asia":
-		# 	continue
-		# elif row[5] == "Eastern Africa":
-		# 	continue
-		# elif row[5] == "Northern Africa":
-		# 	continue
-		# elif row[5] == "Western Africa":
-		# 	continue
-		# elif row[5] == "Eastern Africa":
-		# 	continue
-		# elif row[5] == "Southern Africa":
-		# 	continue
-		# elif row[5] == "Northern Europe":
-		# 	continue
-		# elif row[5] == "EU(25)ex.int":
-		# 	continue
-		# elif row[5] == "World":
-		# 	continue
-		# elif row[5] == "Asia":
-		# 	continue
-		# elif row[5] == "Europe":
-		# 	continue
-		# elif row[5] == "Africa":
-		# 	continue
-		# elif row[5] == "Oceania":
-		# 	continue
-		# elif row[5] == "Americas":
-		# 	continue
-		# elif row[5] == "Central Asia":
-		# 	continue
-		# elif row[5] == "Central America":
-		# 	continue
-		# elif row[5] == "Southern Asia":
-		# 	continue
-		# elif row[5] == "Western Asia":
-		# 	continue
-		# elif row[5] == "Middle Africa":
-		# 	continue
-		# elif row[5] == "China ex.int":
-		# 	continue
-		# elif row[5] == "Melanesia":
-		# 	continue
-		# elif row[5] == "EU(12)ex.int":
-		# 	continue
-		# elif row[5] == "EU(15)ex.int":
-		# 	continue
-		# elif row[5] == "EU(27)ex.int":
-		# 	continue
-		# elif row[5] == "Caribbean":
-		# 	continue
-		# elif row[5] == "Polynesia":
-		# 	continue
-		# elif row[5] == "Southern Europe":
-		# 	continue
-		# elif row[5] == "Eastern Europe":
-		# 	continue
-		# elif row[5] == "Western Europe":
-		# 	continue
-		# elif row[5] == "Northern Europe":
-		# 	continue
-		# elif row[5] == "Northern America":
-		# 	continue
-		# elif row[5] == "South America":
-		# 	continue
-		# elif row[5] == "Southern America":
-		# 	continue
-		# elif row[5] == "North America":
-		# 	continue
-		# elif row[5] == "Australia & New Zealand":
-		# 	continue
-		# elif row[5] == "Occupied Palestinian Territory":
-		# 	continue
-		# elif row[5] == "Small Island Developing States":
-		# 	continue
-		# elif row[5] == "Least Developed Countries":
-		# 	continue
-		# elif row[5] == "Low Income Food Deficit Countries":
-		# 	continue
-		# elif row[5] == "Land Locked Developing Countries":
-		# 	continue
-		# elif row[5] == "Net Food Importing Developing Countries":
-		# 	continue
 		if row[5] == "China, mainland":
 			continue
 		elif row[5] == "China, Hong Kong SAR":
@@ -118,6 +32,8 @@ with open(csvFile, 'rb') as csvfile:
 		elif row[5] == "China, Taiwan Province of":
 			continue
 		elif row[5] == "Micronesia (Federated States of)":
+			continue
+		elif row[5] == "Tuvalu":
 			continue
 
 		elif row[5] == "Bolivia (Plurinational State of)":
@@ -142,6 +58,11 @@ with open(csvFile, 'rb') as csvfile:
 			row[5] = "Korea, Republic of"
 		elif row[5] == "Côte d'Ivoire":
 			row[5] = "Ivory Coast"
+		elif row[5] == "Sudan (former)":
+			row[5] = "Sudan"
+		elif row[5] == "Cabo Verde":
+			row[5] = "Cape Verde"
+
 
 		if row[7] == "Unspecified":
 			continue
@@ -154,6 +75,8 @@ with open(csvFile, 'rb') as csvfile:
 		elif row[7] == "China, Taiwan Province of":
 			continue
 		elif row[7] == "Micronesia (Federated States of)":
+			continue
+		elif row[7] == "Tuvalu":
 			continue
 
 		elif row[7] == "Bolivia (Plurinational State of)":
@@ -176,7 +99,10 @@ with open(csvFile, 'rb') as csvfile:
 			row[7] = "Congo, the Democratic Republic of the"
 		elif row[7] == "Côte d'Ivoire":
 			row[7] = "Ivory Coast"
-
+		elif row[7] == "Sudan (former)":
+			row[7] = "Sudan"
+		elif row[7] == "Cabo Verde":
+			row[7] = "Cape Verde"
 
 		# Makes a new dicitonnary entry when a new reporter 
 		# country is found.
@@ -186,8 +112,6 @@ with open(csvFile, 'rb') as csvfile:
 		lastCountry = row[5]
 
 		dataDic[row[5]][row[7]] = int(row[15])
-		# print dataDic
-		# print row[5],row[7]
 
 with open(jsonFileName, "w") as f:
 	json.dump(dataDic, f, indent=4)

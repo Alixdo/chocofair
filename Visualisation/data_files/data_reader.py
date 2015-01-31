@@ -114,14 +114,8 @@ with open(csvFile, 'rb') as csvfile:
 				continue
 			elif row[3] == "Net Food Importing Developing Countries":
 				continue
-
-			elif row[3] == "Cabo Verde":
-				row[3] = "Cape Verde"
 			elif row[3] == "Tuvalu":
 				continue
-			elif row[3] == "Sudan (former)":
-				row[3] = "Sudan"
-
 
 			elif row[3] == "Bolivia (Plurinational State of)":
 				row[3] = "Bolivia, Plurinational State of"
@@ -145,7 +139,11 @@ with open(csvFile, 'rb') as csvfile:
 				row[3] = "Korea, Republic of"
 			elif row[3] == "Côte d'Ivoire":
 				row[3] = "Ivory Coast"
-
+			elif row[3] == "Sudan (former)":
+				row[3] = "Sudan"
+			elif row[3] == "Cabo Verde":
+				row[3] = "Cape Verde"
+				
 			dataDic[row[3]] = float(row[9])
 
 with open(jsonFileName, "w") as f:
